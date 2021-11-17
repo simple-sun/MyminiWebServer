@@ -1,52 +1,46 @@
-//#include<boost/scoped_ptr.hpp>
-
-//#include "thread/Thread.h"
+#include "boost/noncopyable.hpp"
+#include<sched.h>
 #include<thread>
-#include <sys/syscall.h>
-#include "Channel.h"
-//#include<system.Class.hpp>
+#include <linux/unistd.h>
+#include<pthread_np.h>
+#include "unistd.h"
 
+
+#if !defined(SUNSQ_EVENTLOOP_H)
+#define SUNSQ_EVENTLOOP_H
 
 namespace SUNSQ{
+class EventLoop : boost :: noncopyable{
+    public:
+        EventLoop();
+        ~EventLoop();
 
-class EventLoop : boost :: noncopyable
-{
-public:
-    EventLoop();        //使用默认构造函数
-    ~EventLoop();
+        void loop();
 
-    void loop();
+        void assertNotInLoopThread(){
 
-    void assertInLoopThread(){
-        if( ! isInLoopThread())
-        {
-            abortNotInLoopThread();
         }
 
-    }
+        bool isInLoopThread() const{
+            pid_t id = getpid();
+            //pid_t thisId = std::pthread_np::pthread_getthreadid_np();
+            return threadId_ == id;
+            //std::thread::id tid = std::this_thread::get_id();
+        }
 
-    void updateChannel(Channel *Channel){
+    private:
+        void asserNotInLoopThread();
 
-    }
-
-    bool isInLoopThread() const { 
-        //std::thread idThisthread;
-        //std::thread 0Id = 0;
-        //auto tid = idThisthread.get_id();
-        //const pid_t tid = std::thread::get_id();    
-        int tid = syscall(SYS_gettid);
-
-        return  tid; 
-    }
-    
-private:
-
-    void abortNotInLoopThread();
-
-    bool looping_;              //原子操作
-    const pid_t threadId_;
-    //pid_t tid() = std :: thread :: get_id();
-    
+        bool looping_;
+        const pid_t threadId_;
 
 };
+
 }
+
+
+#endif // SUNSQ_EVENTLOOP_H
+
+
+
+

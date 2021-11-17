@@ -1,0 +1,1 @@
+/usr/bin/c++    -g -lpthread -DDEBUG    CMakeFiles/out.exe.dir/src/main.cpp.o  -o out.exe -rdynamic 
