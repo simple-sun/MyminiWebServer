@@ -1,6 +1,7 @@
 #include "EventLoop.h"
-#include "logging/Logging.h"
+//#include "logging/Logging.h"
 #include<syslog.h>
+#include<assert.h>
 
 
 using namespace SUNSQ;
@@ -11,7 +12,7 @@ EventLoop::EventLoop()
             : looping_(false),
             threadId_(getpid())
 {
-
+/*
     LOG_TRACE << "EventLoop created " << this << " in thread " << threadId_;
     if( t_loopInThisThread){
         LOG_FATAL << " Another EventLoop " << t_loopInThisThread
@@ -20,6 +21,7 @@ EventLoop::EventLoop()
     else{
         t_loopInThisThread = this;
     }
+    */
 }
 
 EventLoop :: ~EventLoop()
@@ -32,10 +34,9 @@ void EventLoop :: loop()
 {
     assert(!looping_);
     assertInLoopThread();
-    looping_ = true;
-    
-
+    looping_ = true; 
 }
+
 
 
 

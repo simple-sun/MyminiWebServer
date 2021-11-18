@@ -1,12 +1,12 @@
 #include "boost/noncopyable.hpp"
 #include<sched.h>
 #include<thread>
-#include <linux/unistd.h>
-#include<pthread_np.h>
+//#include <linux/unistd.h>
+//#include<pthread_np.h>
 #include "unistd.h"
 
 
-#if !defined(SUNSQ_EVENTLOOP_H)
+#ifndef  SUNSQ_EVENTLOOP_H
 #define SUNSQ_EVENTLOOP_H
 
 namespace SUNSQ{
@@ -17,8 +17,11 @@ class EventLoop : boost :: noncopyable{
 
         void loop();
 
-        void assertNotInLoopThread(){
-
+        void assertInLoopThread(){
+            if(!isInLoopThread())
+            {
+                abortNotInLoopThread();
+            }
         }
 
         bool isInLoopThread() const{
@@ -28,8 +31,10 @@ class EventLoop : boost :: noncopyable{
             //std::thread::id tid = std::this_thread::get_id();
         }
 
+        EventLoop* getEventLoopOfCurrentThread();
+
     private:
-        void asserNotInLoopThread();
+        void abortNotInLoopThread();
 
         bool looping_;
         const pid_t threadId_;
