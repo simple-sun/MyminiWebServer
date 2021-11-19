@@ -5,6 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include",
+<<<<<<< HEAD
                 "/usr/local/include",
                 "/usr/local/bin"
             ],
@@ -12,6 +13,14 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
+=======
+                "/usr/local/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+>>>>>>> 4d4138eca56c73144444ad2ddeaf93bd7f82c049
             "intelliSenseMode": "linux-gcc-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
