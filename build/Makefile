@@ -129,30 +129,6 @@ out.exe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/build
 .PHONY : out.exe/fast
 
-EventLoop.o: EventLoop.cpp.o
-.PHONY : EventLoop.o
-
-# target to build an object file
-EventLoop.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/EventLoop.cpp.o
-.PHONY : EventLoop.cpp.o
-
-EventLoop.i: EventLoop.cpp.i
-.PHONY : EventLoop.i
-
-# target to preprocess a source file
-EventLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/EventLoop.cpp.i
-.PHONY : EventLoop.cpp.i
-
-EventLoop.s: EventLoop.cpp.s
-.PHONY : EventLoop.s
-
-# target to generate assembly for a file
-EventLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/EventLoop.cpp.s
-.PHONY : EventLoop.cpp.s
-
 TCP/src/EventLoop.o: TCP/src/EventLoop.cpp.o
 .PHONY : TCP/src/EventLoop.o
 
@@ -210,9 +186,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... out.exe"
-	@echo "... EventLoop.o"
-	@echo "... EventLoop.i"
-	@echo "... EventLoop.s"
 	@echo "... TCP/src/EventLoop.o"
 	@echo "... TCP/src/EventLoop.i"
 	@echo "... TCP/src/EventLoop.s"

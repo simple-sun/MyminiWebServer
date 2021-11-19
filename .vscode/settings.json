@@ -1,11 +1,6 @@
 {
     "files.associations": {
-<<<<<<< HEAD
         "*.tcc": "cpp",
         "algorithm": "cpp"
-=======
-        "thread": "cpp",
-        
->>>>>>> 4d4138eca56c73144444ad2ddeaf93bd7f82c049
     }
 }
