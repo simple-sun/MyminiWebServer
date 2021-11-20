@@ -1,15 +1,21 @@
 #include "boost/noncopyable.hpp"
+#include"boost/scoped_ptr.hpp"
 #include<sched.h>
 #include<thread>
 //#include <linux/unistd.h>
 //#include<pthread_np.h>
 #include "unistd.h"
+//#include"Channel.h"
 
 
-#ifndef  SUNSQ_EVENTLOOP_H
-#define SUNSQ_EVENTLOOP_H
+#ifndef EVENTLOOP_H
+#define EVENTLOOP_H
 
 namespace SUNSQ{
+
+class Channel;
+class Epoller;
+
 class EventLoop : boost :: noncopyable{
     public:
         EventLoop();
@@ -33,11 +39,14 @@ class EventLoop : boost :: noncopyable{
 
         EventLoop* getEventLoopOfCurrentThread();
 
+        void updateChannel(Channel* channel);
+
     private:
         void abortNotInLoopThread();
 
         bool looping_;
         const pid_t threadId_;
+        Epoller epoller_;
 
 };
 

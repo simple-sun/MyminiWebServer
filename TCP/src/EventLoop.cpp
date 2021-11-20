@@ -3,6 +3,7 @@
 #include<syslog.h>
 #include<assert.h>
 #include<poll.h>
+#include"Channel.h"
 
 
 
@@ -28,7 +29,8 @@ EventLoop::EventLoop()
 
 EventLoop :: ~EventLoop()
 {
-    assert(!looping_);          //looping_如果是0，就说明没有EL，就不需要析构
+    assert(!looping_);          //looping_如果是0，就说明没有EL，
+                                //就不需要下一步
     t_loopInThisThread = NULL;
 }
 
@@ -54,5 +56,13 @@ EventLoop* EventLoop :: getEventLoopOfCurrentThread(){
 
 void EventLoop::abortNotInLoopThread()
 {
-  
+  //日志记录文件
+}
+
+
+void EventLoop::updateChannel(Channel* channel)
+{
+    assert(channel->belongLoop() == this);
+    assertInLoopThread();
+    epoller_->updateChannel(channel);
 }
