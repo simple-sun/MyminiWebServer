@@ -7,15 +7,16 @@
 
 using namespace SUNSQ;
 
-static const int kReadEvents_ = 0;
-static const int kWriteEvents_ = EPOLLIN | EPOLLPRI;
-static const int kNoEvents_ = EPOLLOUT;
+ const int Channel::kReadEvents_ = 0;
+ const int Channel::kWriteEvents_ = EPOLLIN | EPOLLPRI;
+ const int Channel::kNoEvents_ = EPOLLOUT;
 
 
 
 Channel::Channel( EventLoop* loop, int fdA):loop_(loop),
-        epollfd_(fdA),events_(0),revents_(0),idx_(-1),
+        fd_(fdA),events_(0),revents_(0),idx_(-1),
         MAX_EVENT_NUM(1024) {}
+Channel::~Channel(){}
 
 void Channel :: update()
 {

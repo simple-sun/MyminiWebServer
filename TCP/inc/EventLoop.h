@@ -1,15 +1,12 @@
+#ifndef EVENTLOOP_H
+#define EVENTLOOP_H
+
 #include "boost/noncopyable.hpp"
 #include"boost/scoped_ptr.hpp"
 #include<sched.h>
 #include<thread>
-//#include <linux/unistd.h>
-//#include<pthread_np.h>
-#include "unistd.h"
-//#include"Channel.h"
-
-
-#ifndef EVENTLOOP_H
-#define EVENTLOOP_H
+#include<vector>
+//#include <linux/uni
 
 namespace SUNSQ{
 
@@ -23,33 +20,35 @@ class EventLoop : boost :: noncopyable{
 
         void loop();
 
-        void assertInLoopThread(){
+        void assertInLoopThread();
+        /*{
             if(!isInLoopThread())
             {
                 abortNotInLoopThread();
             }
         }
+        */
 
-        bool isInLoopThread() const{
-            pid_t id = getpid();
-            //pid_t thisId = std::pthread_np::pthread_getthreadid_np();
-            return threadId_ == id;
-            //std::thread::id tid = std::this_thread::get_id();
-        }
+        
 
         EventLoop* getEventLoopOfCurrentThread();
 
         void updateChannel(Channel* channel);
+        void quit();
 
     private:
         void abortNotInLoopThread();
 
+        typedef std::vector<Channel*> ChannelList;
+
+        bool quit_;
         bool looping_;
         const pid_t threadId_;
-        Epoller epoller_;
+        //Epoller epoller_;
+        boost::scoped_ptr<Epoller> epoller_;
+        ChannelList activeChannels_;
 
 };
-
 }
 
 

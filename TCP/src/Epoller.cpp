@@ -1,6 +1,8 @@
-#include"EventLoop.h"
+//#include"EventLoop.h"
 #include"Channel.h"
 #include"Epoller.h"
+#include<map>
+#include"sys/epoll.h"
 
 using namespace SUNSQ;
 
@@ -9,15 +11,17 @@ const int kAdd = 1;
 const int kDel = 2;
 
 
+
 Epoller::Epoller(EventLoop* loop_) : ownerLoop_(loop_),
-            epollfd_(::epoll_create1(EPOLL_CLOEXEC)),
-            events_(kInitEventListSize) {} ;
+            epollfd_(::epoll_create1(0)),
+            events_(kInitEventListSize)
+            {} 
 Epoller::~Epoller(){ ::close(epollfd_);}
 
 void Epoller::epoll(int timeoutMs, ChannelList* activeChannels)
 {
     int numEvents = epoll_wait(epollfd_,&*events_.data(),
-    events_.size(),timeoutMs);
+                                    events_.size(),timeoutMs);
     if(numEvents > 0)
     {
         //此处应有日志写： <<numEvents << " events happened."
@@ -62,8 +66,8 @@ void Epoller::update(int operation, Channel* channel)
     bzero(&event,sizeof(epoll_event));
     event.data.ptr = channel;
     int epollfd = channel->epollFd();
-
-    if(::epoll_ctl(epollfd_, operation, epollfd, &event) < 0)
+    int num = ::epoll_ctl(epollfd_, operation, epollfd, &event);
+    if( num < 0)
     {
         if(operation == EPOLL_CTL_DEL)
         {
@@ -80,6 +84,7 @@ void Epoller::update(int operation, Channel* channel)
 void Epoller::updateChannel(Channel* channel)
 {
     assertInLoopThread();
+    
     //日志记录，<< " fd= " << channel->fd() << " events="
     //          <<channel->events();
     const int index = channel->index();
@@ -88,10 +93,21 @@ void Epoller::updateChannel(Channel* channel)
         int fd = channel->epollFd();
         if( index == kNew)
         {
-            assert(channels_.find(fd) == channels_.end());
+            //auto it = channels_.find(fd);
+            //channels_[fd] == channel;
+            //assert();   
+            /*调试
+            std::map<int, Channel*> mp;
+            size_t s = mp.size();
+            size_t sz = channels_.size();  
+            ChannelMap mp;
+            size_t x = mp.size();
+            mp[fd] = channel;     
+            */
+            
+            //muduo 写在if的最后了，但是我觉得应该写在这          
+            //channels_的构造失败了，没有内存
             channels_[fd] = channel;
-            //muduo 写在if的最后了，但是我觉得应该写在这
-            update(EPOLL_CTL_ADD,channel);  
         }
         else    //index == kDel
         {
@@ -100,6 +116,7 @@ void Epoller::updateChannel(Channel* channel)
             //update(EPOLL_CTL_DEL, channel);     //muduo没写这个，但是觉得应该有
         }
         channel->set_index(kAdd);
+        update(EPOLL_CTL_ADD,channel); 
     }
     else    //index = kAdd
     {
@@ -117,4 +134,21 @@ void Epoller::updateChannel(Channel* channel)
             update(EPOLL_CTL_MOD,channel);            
         }
     }
+}
+
+void Epoller::removeChannel(Channel* channel)
+{
+    int fd = channel->epollFd();
+    ChannelMap::const_iterator it = channels_.find(fd);
+    if(it == channels_.end())
+    {
+        channels_.erase(fd);
+    }
+    
+    int index = channel->index();
+    if(index = kDel)
+    {
+        update(EPOLL_CTL_DEL,channel);
+    }
+    channel->set_index(kNew);    
 }

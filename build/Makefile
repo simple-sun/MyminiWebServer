@@ -129,6 +129,54 @@ out.exe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/build
 .PHONY : out.exe/fast
 
+TCP/src/Channel.o: TCP/src/Channel.cpp.o
+.PHONY : TCP/src/Channel.o
+
+# target to build an object file
+TCP/src/Channel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o
+.PHONY : TCP/src/Channel.cpp.o
+
+TCP/src/Channel.i: TCP/src/Channel.cpp.i
+.PHONY : TCP/src/Channel.i
+
+# target to preprocess a source file
+TCP/src/Channel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.i
+.PHONY : TCP/src/Channel.cpp.i
+
+TCP/src/Channel.s: TCP/src/Channel.cpp.s
+.PHONY : TCP/src/Channel.s
+
+# target to generate assembly for a file
+TCP/src/Channel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.s
+.PHONY : TCP/src/Channel.cpp.s
+
+TCP/src/Epoller.o: TCP/src/Epoller.cpp.o
+.PHONY : TCP/src/Epoller.o
+
+# target to build an object file
+TCP/src/Epoller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o
+.PHONY : TCP/src/Epoller.cpp.o
+
+TCP/src/Epoller.i: TCP/src/Epoller.cpp.i
+.PHONY : TCP/src/Epoller.i
+
+# target to preprocess a source file
+TCP/src/Epoller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.i
+.PHONY : TCP/src/Epoller.cpp.i
+
+TCP/src/Epoller.s: TCP/src/Epoller.cpp.s
+.PHONY : TCP/src/Epoller.s
+
+# target to generate assembly for a file
+TCP/src/Epoller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.s
+.PHONY : TCP/src/Epoller.cpp.s
+
 TCP/src/EventLoop.o: TCP/src/EventLoop.cpp.o
 .PHONY : TCP/src/EventLoop.o
 
@@ -186,6 +234,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... out.exe"
+	@echo "... TCP/src/Channel.o"
+	@echo "... TCP/src/Channel.i"
+	@echo "... TCP/src/Channel.s"
+	@echo "... TCP/src/Epoller.o"
+	@echo "... TCP/src/Epoller.i"
+	@echo "... TCP/src/Epoller.s"
 	@echo "... TCP/src/EventLoop.o"
 	@echo "... TCP/src/EventLoop.i"
 	@echo "... TCP/src/EventLoop.s"

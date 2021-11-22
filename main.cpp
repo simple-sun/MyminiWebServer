@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include "syscall.h"
 #include "unistd.h"
-
+#include"Channel.h"
+#include"Epoller.h"
+#include<sys/timerfd.h>
 
 /*
 int main()
@@ -15,31 +17,38 @@ int main()
 }
 */
 
-
 using namespace muduo;
 using namespace SUNSQ;
-
-void threadFunc()
+SUNSQ::EventLoop* g_loop;
+void timeout()
 {
-  printf("threadFunc(): pid = %d, tid = %d\n",
-         getpid(), getpid());
-
-  SUNSQ::EventLoop loop;
-  loop.loop();
+  
+  printf("Timeout!\n");
+  g_loop->quit();
 }
 
 int main()
 {
-  printf("main(): pid = %d, tid = %d\n",
-         getpid(), getpid());
+  SUNSQ::EventLoop loop_;
+  g_loop = &loop_;
 
-  SUNSQ::EventLoop loop;
+  int timerfd = ::timerfd_create(CLOCK_MONOTONIC, 
+                          TFD_NONBLOCK | TFD_CLOEXEC);
+  SUNSQ::Channel channel(&loop_,timerfd);
+  channel.setReadCallback(timeout); 
+  channel.enableReading();
 
-  //muduo::Thread thread(threadFunc);
-  //thread.start();
+  struct itimerspec howlong;
+  bzero(&howlong,sizeof(howlong));
+  howlong.it_value.tv_sec = 5;
+  ::timerfd_settime(timerfd,0,&howlong,NULL);
+  
+  (loop_).loop();
 
-  loop.loop();
-   printf("到这就成功了");
+  ::close(timerfd);
+
+
+  printf("到这就成功了");
   pthread_exit(NULL);
 
  

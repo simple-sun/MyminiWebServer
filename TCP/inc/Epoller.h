@@ -33,7 +33,11 @@ namespace SUNSQ
         void removeChannel(Channel* chanenl);
 
         void assertInLoopThread() 
-        {ownerLoop_->assertInLoopThread();}
+        {
+            //ownerLoop_->assertInLoopThread();
+        }
+        
+        
 
     private:
         static const int kInitEventListSize = 16;
@@ -43,7 +47,7 @@ namespace SUNSQ
         void update(int operation, Channel* channel);
 
         typedef std::vector<epoll_event> EventList;
-        typedef std::map<int, Channel*> ChannelMap;
+        typedef std::map <int, Channel*> ChannelMap;
 
         EventLoop* ownerLoop_;
         int epollfd_;

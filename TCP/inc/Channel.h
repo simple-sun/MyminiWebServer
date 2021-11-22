@@ -22,19 +22,21 @@ namespace SUNSQ{
         Channel(EventLoop* loop, int fd);           //作为处理fd的函数，获取一个loop，以及fd
 
         void handleEvent();
-        void setReadCallback(const EventCallback* cb)
+        void setReadCallback(const EventCallback& cb)
         {   readCallback = cb;}
-        void setWriteCallback(const EventCallback* cb)
+        void setWriteCallback(const EventCallback& cb)
         {   writeCallback = cb;}
-        void setErrorCallback(const EventCallback* cb)
+        void setErrorCallback(const EventCallback& cb)
         {   errorCallback = cb;}
 
-        int epollFd() const{   return epollfd_;}
+        int epollFd() const{   return fd_;}
         int events() const {    return events_;}
         void set_revents(int revt){ revents_ = revt;}
         bool eventsNull() const { return events_ == kNoEvents_;}
 
-        void enableReading() { events_ |= kReadEvents_; update(); }
+        void enableReading() { 
+            events_ |= kReadEvents_; 
+            update(); }
         void enableWriting() { events_ |= kWriteEvents_; update(); }
         void disableReading() { events_ &= kReadEvents_; update();}
         void disableWriting() { events_ &= kReadEvents_; update();}
@@ -62,7 +64,7 @@ namespace SUNSQ{
         static const int kNoEvents_ ;
 
         //epoll的成员
-        const int epollfd_;
+        const int fd_;
         int events_;
         int revents_;
         int MAX_EVENT_NUM;
