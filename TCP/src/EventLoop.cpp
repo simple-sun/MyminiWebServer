@@ -7,6 +7,7 @@
 #include"Epoller.h"
 #include<stdio.h>
 #include<iostream>
+#include"sys/eventfd.h"
 
 
 using namespace SUNSQ;
@@ -18,6 +19,7 @@ EventLoop::EventLoop()
             : looping_(false),
             threadId_(getpid()),
             epoller_(new Epoller(this))
+            ,wakeupEventfd_(eventfd(0,EFD_CLOEXEC | EFD_NONBLOCK))
 {
 /*
     LOG_TRACE << "EventLoop created " << this << " in thread " << threadId_;
@@ -54,8 +56,9 @@ void EventLoop :: loop()
             {
                 (*it)->handleEvent();
             }
-        std::printf("Reading.....");
-        std::cout<<"Reading...."<< std::endl;
+        //std::printf("Reading.....");
+        std::cout<<"Reading...."<< threadId_ <<std::endl;
+        doPendingFunctors();
     }
     
     ::poll(NULL,0,1000);
@@ -88,19 +91,106 @@ void EventLoop::updateChannel(Channel* channel)
 void EventLoop::quit()
 {
     quit_=true;
+    if(! isInLoopThread())
+    {
+        wakeup();
+    }
 }
 
 
-bool isInLoopThread() {
+bool EventLoop::isInLoopThread() {
             pid_t id = getpid();
             //pid_t thisId = std::pthread_np::pthread_getthreadid_np();
-            return 1;//EventLoop::threadId_ == id;
+            return threadId_ == id;
             //std::thread::id tid = std::this_thread::get_id();
         }
 
 void EventLoop::assertInLoopThread()
 {
-    if(!isInLoopThread){
+    if(!isInLoopThread()){
         abortNotInLoopThread();
     }
 }
+
+void EventLoop::runLoop(const Functors &cb)
+{
+    //如果调进来的函数的是当前线程的，
+    //返回callback回调，否则放在队列中排队。
+    if(isInLoopThread())
+    {
+        cb();
+    }
+    else
+    {
+        queueLoop(cb);
+    }
+}
+
+//使用重载，这样就能实现两个功能，调取和插入cb
+void EventLoop::queueLoop(const Functors &cb)
+{
+    {
+        pthread_mutex_lock(mutex_);
+        queueLoop_.push(cb);
+    }
+    if( !isInLoopThread() || callingPendingFunctors_)
+    {
+        wakeup();
+    }    
+}
+boost::function<void()> EventLoop::queueLoop()
+{
+    boost::function<void()> cb = queueLoop_.front();
+    queueLoop_.pop();
+    return cb;    
+}
+
+void EventLoop::wakeup()
+{
+    uint64_t __buf = 0;    
+    if(::read(wakeupEventfd_,&__buf,8)<0){
+        //日志记录错误
+    }     
+}
+
+//写一个处理wakeupEventfd的函数，这样就能处理不同的事件了
+void EventLoop::handleWakeupEventfd(const int &wakeupEventfd_)
+{
+    //wakeupEfd 如果是-1,说明error，如果>0,说明readable，
+    if(wakeupEventfd_<0){
+        //日志记录错误
+    }else {
+        handleRead();
+    }    
+}
+
+
+void EventLoop::handleRead()
+{
+    uint64_t __buf = 0;
+    if(::write(wakeupEventfd_,&__buf,8) < 0)
+    {
+        //日志记录错误
+    }
+    
+}
+
+
+void EventLoop::doPendingFunctors()
+{
+    std::queue<Functors> functors;
+    callingPendingFunctors_ = true;
+    {
+        //有bug
+        //pthread_mutex_lock(mutex_);
+        
+        functors.swap(queueLoop_);
+        while(functors.size())
+        {
+            functors.front()();
+            functors.pop();
+        }
+        callingPendingFunctors_ = false;
+    }
+}
+
