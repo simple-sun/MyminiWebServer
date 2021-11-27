@@ -8,11 +8,13 @@
 #include<stdio.h>
 #include<iostream>
 #include"sys/eventfd.h"
-
+#include<mutex>
+#include<thread>
+#include<syslog.h>
 
 using namespace SUNSQ;
 
-__thread EventLoop* t_loopInThisThread = 0;
+thread_local EventLoop* t_loopInThisThread = 0;
 const int kEpollTimeMs = 1000;
 
 EventLoop::EventLoop()
@@ -21,6 +23,9 @@ EventLoop::EventLoop()
             epoller_(new Epoller(this))
             ,wakeupEventfd_(eventfd(0,EFD_CLOEXEC | EFD_NONBLOCK))
 {
+    
+
+    syslog(LOG_INFO,"EventLoop created ");
 /*
     LOG_TRACE << "EventLoop created " << this << " in thread " << threadId_;
     if( t_loopInThisThread){
@@ -130,8 +135,11 @@ void EventLoop::runLoop(const Functors &cb)
 void EventLoop::queueLoop(const Functors &cb)
 {
     {
-        pthread_mutex_lock(mutex_);
+        //pthread_mutex_lock(mutex_);
+        mutex_.lock();
+        
         queueLoop_.push(cb);
+        mutex_.unlock();
     }
     if( !isInLoopThread() || callingPendingFunctors_)
     {
@@ -183,6 +191,7 @@ void EventLoop::doPendingFunctors()
     {
         //有bug
         //pthread_mutex_lock(mutex_);
+        mutex_.lock();
         
         functors.swap(queueLoop_);
         while(functors.size())
@@ -191,6 +200,7 @@ void EventLoop::doPendingFunctors()
             functors.pop();
         }
         callingPendingFunctors_ = false;
+        mutex_.unlock();
     }
 }
 

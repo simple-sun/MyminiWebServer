@@ -129,6 +129,30 @@ out.exe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/build
 .PHONY : out.exe/fast
 
+LOG/src/BufferUnion.o: LOG/src/BufferUnion.cpp.o
+.PHONY : LOG/src/BufferUnion.o
+
+# target to build an object file
+LOG/src/BufferUnion.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o
+.PHONY : LOG/src/BufferUnion.cpp.o
+
+LOG/src/BufferUnion.i: LOG/src/BufferUnion.cpp.i
+.PHONY : LOG/src/BufferUnion.i
+
+# target to preprocess a source file
+LOG/src/BufferUnion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.i
+.PHONY : LOG/src/BufferUnion.cpp.i
+
+LOG/src/BufferUnion.s: LOG/src/BufferUnion.cpp.s
+.PHONY : LOG/src/BufferUnion.s
+
+# target to generate assembly for a file
+LOG/src/BufferUnion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.s
+.PHONY : LOG/src/BufferUnion.cpp.s
+
 TCP/src/Channel.o: TCP/src/Channel.cpp.o
 .PHONY : TCP/src/Channel.o
 
@@ -201,6 +225,30 @@ TCP/src/EventLoop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.s
 .PHONY : TCP/src/EventLoop.cpp.s
 
+TCP/src/EventLoopThread.o: TCP/src/EventLoopThread.cpp.o
+.PHONY : TCP/src/EventLoopThread.o
+
+# target to build an object file
+TCP/src/EventLoopThread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.o
+.PHONY : TCP/src/EventLoopThread.cpp.o
+
+TCP/src/EventLoopThread.i: TCP/src/EventLoopThread.cpp.i
+.PHONY : TCP/src/EventLoopThread.i
+
+# target to preprocess a source file
+TCP/src/EventLoopThread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.i
+.PHONY : TCP/src/EventLoopThread.cpp.i
+
+TCP/src/EventLoopThread.s: TCP/src/EventLoopThread.cpp.s
+.PHONY : TCP/src/EventLoopThread.s
+
+# target to generate assembly for a file
+TCP/src/EventLoopThread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s
+.PHONY : TCP/src/EventLoopThread.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -234,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... out.exe"
+	@echo "... LOG/src/BufferUnion.o"
+	@echo "... LOG/src/BufferUnion.i"
+	@echo "... LOG/src/BufferUnion.s"
 	@echo "... TCP/src/Channel.o"
 	@echo "... TCP/src/Channel.i"
 	@echo "... TCP/src/Channel.s"
@@ -243,6 +294,9 @@ help:
 	@echo "... TCP/src/EventLoop.o"
 	@echo "... TCP/src/EventLoop.i"
 	@echo "... TCP/src/EventLoop.s"
+	@echo "... TCP/src/EventLoopThread.o"
+	@echo "... TCP/src/EventLoopThread.i"
+	@echo "... TCP/src/EventLoopThread.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

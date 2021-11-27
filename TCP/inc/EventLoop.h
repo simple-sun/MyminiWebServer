@@ -9,6 +9,7 @@
 #include<vector>
 #include<queue>
 #include"sys/eventfd.h"
+#include<mutex>
 
 //#include <linux/uni
 
@@ -60,16 +61,16 @@ class EventLoop : boost :: noncopyable{
         bool quit_;
         bool looping_;
         const pid_t threadId_;
-        std::queue<boost::function<void()>> queueLoop_;
+        std::queue<Functors> queueLoop_;
         int wakeupEventfd_;
 
-        pthread_mutex_t* mutex_;
+        std::mutex mutex_;
+        //pthread_mutex_t* mutex_;
         
 
         //Epoller epoller_;
         boost::scoped_ptr<Epoller> epoller_;
         ChannelList activeChannels_;
-
 };
 }
 

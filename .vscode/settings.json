@@ -2,6 +2,8 @@
     "files.associations": {
         "*.tcc": "cpp",
         "algorithm": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp"
     }
 }

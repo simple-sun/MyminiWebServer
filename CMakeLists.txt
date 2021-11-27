@@ -4,12 +4,12 @@ cmake_minimum_required(VERSION 3.2)
 project(template)
 
 include_directories(TCP/inc)
-#include_directories(log/inc)
+include_directories(LOG/inc)
 #include_directories(time/inc)
 #include_directories(HTTP/inc)
 
 aux_source_directory(TCP/src DIR_SRCS)
-#aux_source_directory(log/src DIR_SRCS)
+aux_source_directory(LOG/src DIR_SRCS)
 #aux_source_directory(time/src DIR_SRCS)
 #aux_source_directory(HTTP/src DIR_SRCS)
 

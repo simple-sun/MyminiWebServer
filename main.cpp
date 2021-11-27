@@ -1,11 +1,12 @@
 #include "EventLoop.h"
-#include "thread/Thread.h"
 #include <stdio.h>
 #include "syscall.h"
 #include "unistd.h"
 #include"Channel.h"
 #include"Epoller.h"
+#include"EventLoopThread.h"
 #include<sys/timerfd.h>
+#include<thread>
 
 /*
 int main()
@@ -17,9 +18,39 @@ int main()
 }
 */
 
-using namespace muduo;
+ 
 using namespace SUNSQ;
 SUNSQ::EventLoop* g_loop;
+int g_flag = 0;
+
+void run4()
+{
+  printf("run4(): pid = %d, flag = %d\n", getpid(), g_flag);
+  g_loop->quit();
+}
+
+void run3()
+{
+  printf("run3(): pid = %d, flag = %d\n", getpid(), g_flag);
+  //g_loop->runAfter(3, run4);
+  g_flag = 3;
+}
+
+void run2()
+{
+  printf("run2(): pid = %d, flag = %d\n", getpid(), g_flag);
+  g_loop->queueLoop(run4);
+}
+
+void run1()
+{
+  g_flag = 1;
+  printf("run1(): pid = %d, flag = %d\n", getpid(), g_flag);
+  g_loop->runLoop(run2);
+  g_flag = 2;
+}
+
+
 void timeout()
 {
   
@@ -27,31 +58,34 @@ void timeout()
   g_loop->quit();
 }
 
+void runInThread()
+{
+  printf("runInThread(): pid = %d, tid = %d\n",
+         getpid(),std::this_thread::get_id());
+}
+
 int main()
 {
   SUNSQ::EventLoop loop_;
   g_loop = &loop_;
 
-  int timerfd = ::timerfd_create(CLOCK_MONOTONIC, 
-                          TFD_NONBLOCK | TFD_CLOEXEC);
-  SUNSQ::Channel channel(&loop_,timerfd);
-  channel.setReadCallback(timeout); 
-  channel.enableReading();
+  printf("runInThread(): pid = %d, tid = %d\n",
+         getpid(),std::this_thread::get_id());
 
-  struct itimerspec howlong;
-  bzero(&howlong,sizeof(howlong));
-  howlong.it_value.tv_sec = 5;
-  ::timerfd_settime(timerfd,0,&howlong,NULL);
+  EventLoopThread loopThread;
+  EventLoop* loop = loopThread.startLoop();
+  loop->runLoop(runInThread);
+  sleep(1);
+  loop->quit();
+
+
   
-  (loop_).loop();
+  loop_.loop();
 
-  ::close(timerfd);
+   printf("main(): pid = %d, flag = %d\n", getpid(), g_flag);
 
 
-  printf("到这就成功了");
-  pthread_exit(NULL);
-
- 
+  printf("到这就成功了"); 
 }
 
 
