@@ -153,6 +153,54 @@ LOG/src/BufferUnion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.s
 .PHONY : LOG/src/BufferUnion.cpp.s
 
+LOG/src/Log.o: LOG/src/Log.cpp.o
+.PHONY : LOG/src/Log.o
+
+# target to build an object file
+LOG/src/Log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o
+.PHONY : LOG/src/Log.cpp.o
+
+LOG/src/Log.i: LOG/src/Log.cpp.i
+.PHONY : LOG/src/Log.i
+
+# target to preprocess a source file
+LOG/src/Log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Log.cpp.i
+.PHONY : LOG/src/Log.cpp.i
+
+LOG/src/Log.s: LOG/src/Log.cpp.s
+.PHONY : LOG/src/Log.s
+
+# target to generate assembly for a file
+LOG/src/Log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Log.cpp.s
+.PHONY : LOG/src/Log.cpp.s
+
+LOG/src/LogFile.o: LOG/src/LogFile.cpp.o
+.PHONY : LOG/src/LogFile.o
+
+# target to build an object file
+LOG/src/LogFile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o
+.PHONY : LOG/src/LogFile.cpp.o
+
+LOG/src/LogFile.i: LOG/src/LogFile.cpp.i
+.PHONY : LOG/src/LogFile.i
+
+# target to preprocess a source file
+LOG/src/LogFile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.i
+.PHONY : LOG/src/LogFile.cpp.i
+
+LOG/src/LogFile.s: LOG/src/LogFile.cpp.s
+.PHONY : LOG/src/LogFile.s
+
+# target to generate assembly for a file
+LOG/src/LogFile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.s
+.PHONY : LOG/src/LogFile.cpp.s
+
 TCP/src/Channel.o: TCP/src/Channel.cpp.o
 .PHONY : TCP/src/Channel.o
 
@@ -285,6 +333,12 @@ help:
 	@echo "... LOG/src/BufferUnion.o"
 	@echo "... LOG/src/BufferUnion.i"
 	@echo "... LOG/src/BufferUnion.s"
+	@echo "... LOG/src/Log.o"
+	@echo "... LOG/src/Log.i"
+	@echo "... LOG/src/Log.s"
+	@echo "... LOG/src/LogFile.o"
+	@echo "... LOG/src/LogFile.i"
+	@echo "... LOG/src/LogFile.s"
 	@echo "... TCP/src/Channel.o"
 	@echo "... TCP/src/Channel.i"
 	@echo "... TCP/src/Channel.s"

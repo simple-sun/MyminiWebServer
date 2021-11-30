@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o"
   "CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o.d"
+  "CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o"
+  "CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o.d"
+  "CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o"
+  "CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o"
   "CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o"

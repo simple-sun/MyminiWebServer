@@ -70,7 +70,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -108,7 +110,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -142,6 +146,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "LOG/src/BufferUnion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "LOG/src/Log.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "LOG/src/LogFile.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

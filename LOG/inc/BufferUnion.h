@@ -19,19 +19,23 @@ class BufferUnion
 {
 
 public:
-    BufferUnion();
-    BufferUnion(const BufferUnion& ) = delete;
-    ~BufferUnion();
+    BufferUnion():cur_(data_){};
+    BufferUnion(const BufferUnion& ) = delete; 
+    ~BufferUnion(){};
 
+    void bzero()
+        { memset(data_,0,sizeof(data_));};
     void append(const char* buf, int len);
-    int avail() { return static_cast<int>( end() - cur_ ) };
+    int avail() { return static_cast<int>( end() - cur_ ); };
+    int length () const;
+    //void release();
     
 private:
     const char* end()  { return data_ + sizeof(data_); };
     //const int SIZE1 = 1000;
     size_t bufferSize;
     char* cur_;
-    char data_[1000];
+    char data_[SIZE];
 
 };
 }

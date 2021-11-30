@@ -26,6 +26,16 @@
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/Log.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/LOG/src/Log.cpp"
+},
+{
+  "directory": "/home/sun/Webserver1/Mywebserver/build",
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp"
+},
+{
+  "directory": "/home/sun/Webserver1/Mywebserver/build",
   "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/main.cpp.o -c /home/sun/Webserver1/Mywebserver/main.cpp",
   "file": "/home/sun/Webserver1/Mywebserver/main.cpp"
 }
