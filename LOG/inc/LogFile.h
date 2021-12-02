@@ -1,55 +1,39 @@
-#ifndef LOGFILE_H
-#define LOGFILE_H
+#ifndef LOG_FILE_H
+#define LOG_FILE_H
 
-#include<memory>    //对内存操作的头文件
-#include<mutex>
-#include<thread>
-#include<string>
+#include <string>
+#include <sys/types.h>
 
-namespace SUNSQ
+
+namespace log
 {
+    class LogFile
+    {
+    public:
+        explicit LogFile(const char* fileName);
 
-class LogFile
-{
-public:
-    LogFile(const std::string &basename, off_t rollSize,
-                const int flushInterval);
-    LogFile(const LogFile &) = delete;
-    ~LogFile();
-    
-    void append(const char* logline, int len);
-    void flash();
-    bool rollFile();
-    off_t writtenByte(FILE* file_){    return writtenBytes;};
-    void writeToFile(const char* logLine, size_t len);
-    void flush()    {   ::fflush(file_);};
-    
+        ~LogFile();
 
-private:
+        void writeMessage(const char* message,const size_t len);
 
+        off_t writtenBytes_() {return writeBytes_;}
 
-    std::string basename_;
-    std::mutex mutex_;
-    FILE* file_;
-    off_t writtenBytes;
-    off_t rollSize_;
-    
-    time_t lastRoll_;
-    time_t lastFlush_;
-    time_t timeOfstartOfFile;
-    
+        void flush();
 
-    const static int sPerHour = 60*60;
-    const int flushInterval;
-};
+    private:
 
+        void changeFile();
+
+        void getNum(char*);
+
+        FILE* fp_;
+        char buffer_[64*1024]; //64kb
+        off_t writeBytes_;
+        const unsigned long maxSizePreFile_;
+        int fileCount_;  
+        std::string   fileName_;  
+    };
 
 }
-
-
-
-
-
-
 
 #endif

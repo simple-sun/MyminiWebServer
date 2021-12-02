@@ -346,12 +346,16 @@ CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o: \
  /usr/include/c++/8/bits/stl_deque.h /usr/include/c++/8/bits/deque.tcc \
  /usr/include/c++/8/bits/stl_queue.h /usr/include/sys/eventfd.h \
  /usr/include/bits/eventfd.h /usr/include/c++/8/mutex \
- /usr/include/c++/8/bits/std_mutex.h /usr/include/syslog.h \
- /usr/include/sys/syslog.h /usr/include/bits/syslog-path.h \
- /usr/include/poll.h /usr/include/sys/poll.h /usr/include/bits/poll.h \
+ /usr/include/c++/8/bits/std_mutex.h /usr/include/poll.h \
+ /usr/include/sys/poll.h /usr/include/bits/poll.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/Channel.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/Epoller.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/EventLoop.h \
  /usr/include/sys/epoll.h /usr/include/bits/epoll.h \
  /usr/include/c++/8/map /usr/include/c++/8/bits/stl_tree.h \
- /usr/include/c++/8/bits/stl_map.h /usr/include/c++/8/bits/stl_multimap.h
+ /usr/include/c++/8/bits/stl_map.h /usr/include/c++/8/bits/stl_multimap.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h

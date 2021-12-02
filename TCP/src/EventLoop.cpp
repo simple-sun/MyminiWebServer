@@ -1,6 +1,6 @@
 #include "EventLoop.h"
 //#include "logging/Logging.h"
-#include<syslog.h>
+//#include<syslog.h>
 #include<assert.h>
 #include<poll.h>
 #include"Channel.h"
@@ -10,7 +10,8 @@
 #include"sys/eventfd.h"
 #include<mutex>
 #include<thread>
-#include<syslog.h>
+//#include<syslog.h>
+#include"LogThread.h"
 
 using namespace SUNSQ;
 
@@ -25,7 +26,9 @@ EventLoop::EventLoop()
 {
     
 
-    syslog(LOG_INFO,"EventLoop created ");
+    //syslog(LOG_INFO,"EventLoop created ");
+    LOG_DEBUG << "EventLoop created "<< log::end;
+    
 /*
     LOG_TRACE << "EventLoop created " << this << " in thread " << threadId_;
     if( t_loopInThisThread){

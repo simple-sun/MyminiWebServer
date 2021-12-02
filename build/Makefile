@@ -129,53 +129,29 @@ out.exe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/build
 .PHONY : out.exe/fast
 
-LOG/src/BufferUnion.o: LOG/src/BufferUnion.cpp.o
-.PHONY : LOG/src/BufferUnion.o
+LOG/src/LogBuffer.o: LOG/src/LogBuffer.cpp.o
+.PHONY : LOG/src/LogBuffer.o
 
 # target to build an object file
-LOG/src/BufferUnion.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o
-.PHONY : LOG/src/BufferUnion.cpp.o
+LOG/src/LogBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o
+.PHONY : LOG/src/LogBuffer.cpp.o
 
-LOG/src/BufferUnion.i: LOG/src/BufferUnion.cpp.i
-.PHONY : LOG/src/BufferUnion.i
-
-# target to preprocess a source file
-LOG/src/BufferUnion.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.i
-.PHONY : LOG/src/BufferUnion.cpp.i
-
-LOG/src/BufferUnion.s: LOG/src/BufferUnion.cpp.s
-.PHONY : LOG/src/BufferUnion.s
-
-# target to generate assembly for a file
-LOG/src/BufferUnion.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.s
-.PHONY : LOG/src/BufferUnion.cpp.s
-
-LOG/src/Log.o: LOG/src/Log.cpp.o
-.PHONY : LOG/src/Log.o
-
-# target to build an object file
-LOG/src/Log.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o
-.PHONY : LOG/src/Log.cpp.o
-
-LOG/src/Log.i: LOG/src/Log.cpp.i
-.PHONY : LOG/src/Log.i
+LOG/src/LogBuffer.i: LOG/src/LogBuffer.cpp.i
+.PHONY : LOG/src/LogBuffer.i
 
 # target to preprocess a source file
-LOG/src/Log.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Log.cpp.i
-.PHONY : LOG/src/Log.cpp.i
+LOG/src/LogBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.i
+.PHONY : LOG/src/LogBuffer.cpp.i
 
-LOG/src/Log.s: LOG/src/Log.cpp.s
-.PHONY : LOG/src/Log.s
+LOG/src/LogBuffer.s: LOG/src/LogBuffer.cpp.s
+.PHONY : LOG/src/LogBuffer.s
 
 # target to generate assembly for a file
-LOG/src/Log.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Log.cpp.s
-.PHONY : LOG/src/Log.cpp.s
+LOG/src/LogBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.s
+.PHONY : LOG/src/LogBuffer.cpp.s
 
 LOG/src/LogFile.o: LOG/src/LogFile.cpp.o
 .PHONY : LOG/src/LogFile.o
@@ -200,6 +176,78 @@ LOG/src/LogFile.s: LOG/src/LogFile.cpp.s
 LOG/src/LogFile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.s
 .PHONY : LOG/src/LogFile.cpp.s
+
+LOG/src/LogStream.o: LOG/src/LogStream.cpp.o
+.PHONY : LOG/src/LogStream.o
+
+# target to build an object file
+LOG/src/LogStream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o
+.PHONY : LOG/src/LogStream.cpp.o
+
+LOG/src/LogStream.i: LOG/src/LogStream.cpp.i
+.PHONY : LOG/src/LogStream.i
+
+# target to preprocess a source file
+LOG/src/LogStream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.i
+.PHONY : LOG/src/LogStream.cpp.i
+
+LOG/src/LogStream.s: LOG/src/LogStream.cpp.s
+.PHONY : LOG/src/LogStream.s
+
+# target to generate assembly for a file
+LOG/src/LogStream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.s
+.PHONY : LOG/src/LogStream.cpp.s
+
+LOG/src/LogThread.o: LOG/src/LogThread.cpp.o
+.PHONY : LOG/src/LogThread.o
+
+# target to build an object file
+LOG/src/LogThread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o
+.PHONY : LOG/src/LogThread.cpp.o
+
+LOG/src/LogThread.i: LOG/src/LogThread.cpp.i
+.PHONY : LOG/src/LogThread.i
+
+# target to preprocess a source file
+LOG/src/LogThread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.i
+.PHONY : LOG/src/LogThread.cpp.i
+
+LOG/src/LogThread.s: LOG/src/LogThread.cpp.s
+.PHONY : LOG/src/LogThread.s
+
+# target to generate assembly for a file
+LOG/src/LogThread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.s
+.PHONY : LOG/src/LogThread.cpp.s
+
+LOG/src/Logger.o: LOG/src/Logger.cpp.o
+.PHONY : LOG/src/Logger.o
+
+# target to build an object file
+LOG/src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o
+.PHONY : LOG/src/Logger.cpp.o
+
+LOG/src/Logger.i: LOG/src/Logger.cpp.i
+.PHONY : LOG/src/Logger.i
+
+# target to preprocess a source file
+LOG/src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.i
+.PHONY : LOG/src/Logger.cpp.i
+
+LOG/src/Logger.s: LOG/src/Logger.cpp.s
+.PHONY : LOG/src/Logger.s
+
+# target to generate assembly for a file
+LOG/src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s
+.PHONY : LOG/src/Logger.cpp.s
 
 TCP/src/Channel.o: TCP/src/Channel.cpp.o
 .PHONY : TCP/src/Channel.o
@@ -321,6 +369,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+time/src/timePoint.o: time/src/timePoint.cpp.o
+.PHONY : time/src/timePoint.o
+
+# target to build an object file
+time/src/timePoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o
+.PHONY : time/src/timePoint.cpp.o
+
+time/src/timePoint.i: time/src/timePoint.cpp.i
+.PHONY : time/src/timePoint.i
+
+# target to preprocess a source file
+time/src/timePoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/time/src/timePoint.cpp.i
+.PHONY : time/src/timePoint.cpp.i
+
+time/src/timePoint.s: time/src/timePoint.cpp.s
+.PHONY : time/src/timePoint.s
+
+# target to generate assembly for a file
+time/src/timePoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/time/src/timePoint.cpp.s
+.PHONY : time/src/timePoint.cpp.s
+
+time/src/timmer.o: time/src/timmer.cpp.o
+.PHONY : time/src/timmer.o
+
+# target to build an object file
+time/src/timmer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/time/src/timmer.cpp.o
+.PHONY : time/src/timmer.cpp.o
+
+time/src/timmer.i: time/src/timmer.cpp.i
+.PHONY : time/src/timmer.i
+
+# target to preprocess a source file
+time/src/timmer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/time/src/timmer.cpp.i
+.PHONY : time/src/timmer.cpp.i
+
+time/src/timmer.s: time/src/timmer.cpp.s
+.PHONY : time/src/timmer.s
+
+# target to generate assembly for a file
+time/src/timmer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/time/src/timmer.cpp.s
+.PHONY : time/src/timmer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -330,15 +426,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... out.exe"
-	@echo "... LOG/src/BufferUnion.o"
-	@echo "... LOG/src/BufferUnion.i"
-	@echo "... LOG/src/BufferUnion.s"
-	@echo "... LOG/src/Log.o"
-	@echo "... LOG/src/Log.i"
-	@echo "... LOG/src/Log.s"
+	@echo "... LOG/src/LogBuffer.o"
+	@echo "... LOG/src/LogBuffer.i"
+	@echo "... LOG/src/LogBuffer.s"
 	@echo "... LOG/src/LogFile.o"
 	@echo "... LOG/src/LogFile.i"
 	@echo "... LOG/src/LogFile.s"
+	@echo "... LOG/src/LogStream.o"
+	@echo "... LOG/src/LogStream.i"
+	@echo "... LOG/src/LogStream.s"
+	@echo "... LOG/src/LogThread.o"
+	@echo "... LOG/src/LogThread.i"
+	@echo "... LOG/src/LogThread.s"
+	@echo "... LOG/src/Logger.o"
+	@echo "... LOG/src/Logger.i"
+	@echo "... LOG/src/Logger.s"
 	@echo "... TCP/src/Channel.o"
 	@echo "... TCP/src/Channel.i"
 	@echo "... TCP/src/Channel.s"
@@ -354,6 +456,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... time/src/timePoint.o"
+	@echo "... time/src/timePoint.i"
+	@echo "... time/src/timePoint.s"
+	@echo "... time/src/timmer.o"
+	@echo "... time/src/timmer.i"
+	@echo "... time/src/timmer.s"
 .PHONY : help
 
 

@@ -1,99 +1,122 @@
-#include"LogFile.h"
-#include<assert.h>
-#include<errno.h>
-#include<string.h>
-#include<time.h>
+#include "LogFile.h"
+#include <assert.h>
+#include <string.h>
+#include "timePoint.h"
+#include <string>
+#include <iostream>
 
 
-using namespace SUNSQ;
 
-thread_local char t_strerror_buf[512];
+// const char *strerror_tl(int savedErrno)
+// {
+//     return strerror_r(savedErrno, t_errnobuf, sizeof t_errnobuf);
+// }
 
-LogFile::LogFile(const std::string &basename,
-                    off_t rollSize,const int flushInterval):
-    basename_(basename),
-    writtenBytes(0),
-    file_(::fopen(basename.c_str(),"ae")),
-    mutex_(),
-    rollSize_(rollSize),
-    lastRoll_(0),
-    flushInterval(flushInterval)
-    {
-        assert(basename.find('/') == std::string::npos);        
-    }
-LogFile::~LogFile()
+namespace log
 {
-    ::fclose(file_);
-}
-
-void LogFile::append(const char* buf, int len)
-{
-    mutex_.lock();
-    if(writtenByte(file_) > rollSize_)
+    LogFile::LogFile(const char *fileName)
+        : maxSizePreFile_(100 * 1024 * 1024), // 100Mb
+          writeBytes_(0),
+          fileCount_(1),
+          fileName_(fileName)
     {
-        rollFile();
+        Time::timePoint time(Time::getNowTime());
+
+        std::string name(fileName);
+
+        name += time.toLogFileName();
+
+        char buf[16]={0};
+
+        getNum(buf);
+
+        name+=buf;
+        
+        fp_ = ::fopen(name.c_str(), "ae");
+
+        assert(fp_);
+
+        ::setbuffer(fp_, buffer_, sizeof(buffer_));
     }
-    else{
-        time_t now = time(NULL);
-        if(now - lastFlush_ > flushInterval)
+
+    LogFile::~LogFile()
+    {
+        ::fclose(fp_);
+    }
+
+    void LogFile::writeMessage(const char *message, size_t len)
+    {
+        int written = 0;
+
+        while (written != len)
         {
-            flush();
-            lastFlush_ = now;
+            size_t remain = len - written;
+
+            auto n = ::fwrite_unlocked(message + written, 1, remain, fp_);
+
+            if (n != remain)
+            {
+                int err = ferror(fp_);
+                if (err)
+                {
+                    //fprintf(stderr, "AppendFile::append() failed %s\n", strerror_tl(err));
+                    break;
+                }
+            }
+            written += n;
+        }
+        writeBytes_ += written;
+        if (writeBytes_ > maxSizePreFile_)
+        {
+            std::cout<<"change log file....\n";
+            changeFile();
         }
     }
-    mutex_.unlock();
-}
-
-
-
-void LogFile::writeToFile(const char* logLine, size_t len)
-{
-    size_t hadWrite = 0;
-
-    while (hadWrite != len)
+    void LogFile::flush()
     {
-        size_t n = ::fwrite(logLine+hadWrite,1,len,file_);
-        size_t restToWrite = len -hadWrite;
-        if(restToWrite < n)
-        {
-            int error_ = ferror(file_);
-            if(error_)
-            {
-                fprintf(stderr,"LogFile::writeToFile failed s%\n", 
-                        strerror_r (error_,t_strerror_buf,
-                        sizeof(t_strerror_buf)));
-                        break;
-            }
-        }hadWrite += n;
-    } 
-
-    writtenBytes += hadWrite;
-}
-
-bool LogFile::rollFile()
-{
-    time_t now = time(NULL);
-    std::string filename = basename_;
-
-    char timebuf[32];
-    struct tm *tm;
-    tm = localtime(&now);
-    //time_t *now = &now;
-  //gmtime_r(now, &tm); // FIXME: localtime_r ?
-  //可以使用strftime（）函数将时间格式化为我们想要的格式
-    strftime(timebuf, sizeof timebuf, ".%Y%m%d-%H%M%S.", tm);
-    filename += timebuf;
-
-    //每h更新一次
-    time_t start = now/sPerHour * sPerHour;
-
-    if(now > lastRoll_)
-    {
-        lastRoll_  = now;
-        timeOfstartOfFile = start;
-        //file_ = new (FILE);
-        file_ = ::fopen(filename.c_str(),"ae");
-        return true;   
+        ::fflush(fp_);
     }
-    return false;
+
+    void LogFile::changeFile()     //当文件写入数量足够的时候，换文件
+    {
+        std::cout << "Change file.....\n";
+
+        Time::timePoint time(Time::getNowTime());
+
+        auto name = (fileName_);
+        name += time.toLogFileName();
+
+        char buf[16] = {0};
+
+
+        getNum(buf);
+
+        name += buf;
+
+        ::fclose(fp_);
+
+        fp_ = ::fopen(name.c_str(), "ae");
+
+        assert(fp_);
+
+        ::setbuffer(fp_, buffer_, sizeof(buffer_));
+
+        writeBytes_=0;
+    }
+
+    void LogFile::getNum(char *buf)
+    {
+        int temp = fileCount_;
+        *buf++ = '_';
+        while (temp)
+        {
+            *buf++ = temp % 10+'0';
+            temp /= 10;
+        }
+        *buf++ = '.';
+        *buf++ = 'l';
+        *buf++ = 'o';
+        *buf++ = 'g';
+    }
+
 }

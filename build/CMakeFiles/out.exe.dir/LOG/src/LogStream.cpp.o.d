@@ -1,14 +1,17 @@
-CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: \
- /home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp \
+CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o: \
+ /home/sun/Webserver1/Mywebserver/LOG/src/LogStream.cpp \
  /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h \
- /usr/include/c++/8/string \
- /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
- /usr/include/bits/wordsize.h \
- /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
+ /usr/include/string.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/strings.h /usr/include/c++/8/string \
+ /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
+ /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
  /usr/include/c++/8/bits/stringfwd.h /usr/include/c++/8/bits/memoryfwd.h \
  /usr/include/c++/8/bits/char_traits.h \
@@ -27,15 +30,13 @@ CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: \
  /usr/include/c++/8/bits/ptr_traits.h /usr/include/c++/8/debug/debug.h \
  /usr/include/c++/8/bits/predefined_ops.h \
  /usr/include/c++/8/bits/postypes.h /usr/include/c++/8/cwchar \
- /usr/include/wchar.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
+ /usr/include/wchar.h /usr/include/bits/floatn.h \
+ /usr/include/bits/floatn-common.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h \
  /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
  /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h /usr/include/c++/8/cstdint \
+ /usr/include/bits/types/FILE.h /usr/include/c++/8/cstdint \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/types.h \
  /usr/include/bits/typesizes.h /usr/include/bits/stdint-intn.h \
@@ -95,20 +96,24 @@ CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h \
  /usr/include/c++/8/bits/functional_hash.h \
- /usr/include/c++/8/bits/basic_string.tcc /usr/include/assert.h \
- /usr/include/string.h /usr/include/strings.h \
- /home/sun/Webserver1/Mywebserver/time/inc/timePoint.h \
- /usr/include/c++/8/chrono /usr/include/c++/8/ratio \
- /usr/include/c++/8/limits /usr/include/c++/8/ctime \
- /usr/include/c++/8/bits/parse_numbers.h /usr/include/c++/8/iostream \
- /usr/include/c++/8/ostream /usr/include/c++/8/ios \
- /usr/include/c++/8/bits/ios_base.h \
+ /usr/include/c++/8/bits/basic_string.tcc /usr/include/c++/8/functional \
+ /usr/include/c++/8/tuple /usr/include/c++/8/utility \
+ /usr/include/c++/8/bits/stl_relops.h /usr/include/c++/8/array \
+ /usr/include/c++/8/stdexcept /usr/include/c++/8/bits/uses_allocator.h \
+ /usr/include/c++/8/bits/invoke.h /usr/include/c++/8/bits/refwrap.h \
+ /usr/include/c++/8/bits/std_function.h /usr/include/assert.h \
+ /usr/include/c++/8/algorithm /usr/include/c++/8/bits/stl_algo.h \
+ /usr/include/c++/8/bits/algorithmfwd.h \
+ /usr/include/c++/8/bits/stl_heap.h /usr/include/c++/8/bits/stl_tempbuf.h \
+ /usr/include/c++/8/bits/stl_construct.h \
+ /usr/include/c++/8/bits/uniform_int_dist.h /usr/include/c++/8/limits \
+ /usr/include/c++/8/iostream /usr/include/c++/8/ostream \
+ /usr/include/c++/8/ios /usr/include/c++/8/bits/ios_base.h \
  /usr/include/c++/8/bits/locale_classes.h \
  /usr/include/c++/8/bits/locale_classes.tcc \
  /usr/include/c++/8/system_error \
  /usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
- /usr/include/c++/8/stdexcept /usr/include/c++/8/streambuf \
- /usr/include/c++/8/bits/streambuf.tcc \
+ /usr/include/c++/8/streambuf /usr/include/c++/8/bits/streambuf.tcc \
  /usr/include/c++/8/bits/basic_ios.h \
  /usr/include/c++/8/bits/locale_facets.h /usr/include/c++/8/cwctype \
  /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \

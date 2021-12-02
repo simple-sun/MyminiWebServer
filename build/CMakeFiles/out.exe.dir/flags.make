@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc
+CXX_INCLUDES = -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc
 
-CXX_FLAGS =  -g -lpthread -DDEBUG -g
+CXX_FLAGS =  -g -lpthread -DDEBUG
 

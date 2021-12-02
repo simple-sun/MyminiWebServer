@@ -356,4 +356,9 @@ CMakeFiles/out.exe.dir/main.cpp.o: \
  /usr/include/c++/8/bits/stl_map.h /usr/include/c++/8/bits/stl_multimap.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/EventLoopThread.h \
  /usr/include/c++/8/condition_variable /usr/include/sys/timerfd.h \
- /usr/include/bits/timerfd.h
+ /usr/include/bits/timerfd.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h

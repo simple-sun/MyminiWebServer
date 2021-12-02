@@ -7,6 +7,7 @@
 #include"EventLoopThread.h"
 #include<sys/timerfd.h>
 #include<thread>
+#include"LogThread.h"
 
 /*
 int main()
@@ -66,11 +67,13 @@ void runInThread()
 
 int main()
 {
+  log::LogThread::init();
   SUNSQ::EventLoop loop_;
   g_loop = &loop_;
 
   printf("runInThread(): pid = %d, tid = %d\n",
          getpid(),std::this_thread::get_id());
+
 
   EventLoopThread loopThread;
   EventLoop* loop = loopThread.startLoop();

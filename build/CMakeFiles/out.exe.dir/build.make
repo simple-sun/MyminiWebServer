@@ -125,38 +125,24 @@ CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/TCP/src/EventLoopThread.cpp -o CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s
 
-CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o: CMakeFiles/out.exe.dir/flags.make
-CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o: ../LOG/src/BufferUnion.cpp
-CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/BufferUnion.cpp
+CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o: ../LOG/src/LogBuffer.cpp
+CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/LogBuffer.cpp
 
-CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/LOG/src/BufferUnion.cpp > CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.i
+CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/LOG/src/LogBuffer.cpp > CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.i
 
-CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/BufferUnion.cpp -o CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.s
-
-CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o: CMakeFiles/out.exe.dir/flags.make
-CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o: ../LOG/src/Log.cpp
-CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/Log.cpp
-
-CMakeFiles/out.exe.dir/LOG/src/Log.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/LOG/src/Log.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/LOG/src/Log.cpp > CMakeFiles/out.exe.dir/LOG/src/Log.cpp.i
-
-CMakeFiles/out.exe.dir/LOG/src/Log.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/Log.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/Log.cpp -o CMakeFiles/out.exe.dir/LOG/src/Log.cpp.s
+CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/LogBuffer.cpp -o CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.s
 
 CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: CMakeFiles/out.exe.dir/flags.make
 CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: ../LOG/src/LogFile.cpp
 CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp
 
 CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.i: cmake_force
@@ -167,10 +153,80 @@ CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp -o CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.s
 
+CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o: ../LOG/src/LogStream.cpp
+CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/LogStream.cpp
+
+CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/LOG/src/LogStream.cpp > CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.i
+
+CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/LogStream.cpp -o CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.s
+
+CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o: ../LOG/src/LogThread.cpp
+CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/LogThread.cpp
+
+CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/LOG/src/LogThread.cpp > CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.i
+
+CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/LogThread.cpp -o CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.s
+
+CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o: ../LOG/src/Logger.cpp
+CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o -MF CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o.d -o CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o -c /home/sun/Webserver1/Mywebserver/LOG/src/Logger.cpp
+
+CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/LOG/src/Logger.cpp > CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.i
+
+CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/LOG/src/Logger.cpp -o CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s
+
+CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o: ../time/src/timePoint.cpp
+CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o -MF CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o.d -o CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o -c /home/sun/Webserver1/Mywebserver/time/src/timePoint.cpp
+
+CMakeFiles/out.exe.dir/time/src/timePoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/time/src/timePoint.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/time/src/timePoint.cpp > CMakeFiles/out.exe.dir/time/src/timePoint.cpp.i
+
+CMakeFiles/out.exe.dir/time/src/timePoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/time/src/timePoint.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/time/src/timePoint.cpp -o CMakeFiles/out.exe.dir/time/src/timePoint.cpp.s
+
+CMakeFiles/out.exe.dir/time/src/timmer.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/time/src/timmer.cpp.o: ../time/src/timmer.cpp
+CMakeFiles/out.exe.dir/time/src/timmer.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/out.exe.dir/time/src/timmer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/time/src/timmer.cpp.o -MF CMakeFiles/out.exe.dir/time/src/timmer.cpp.o.d -o CMakeFiles/out.exe.dir/time/src/timmer.cpp.o -c /home/sun/Webserver1/Mywebserver/time/src/timmer.cpp
+
+CMakeFiles/out.exe.dir/time/src/timmer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/time/src/timmer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sun/Webserver1/Mywebserver/time/src/timmer.cpp > CMakeFiles/out.exe.dir/time/src/timmer.cpp.i
+
+CMakeFiles/out.exe.dir/time/src/timmer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/time/src/timmer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sun/Webserver1/Mywebserver/time/src/timmer.cpp -o CMakeFiles/out.exe.dir/time/src/timmer.cpp.s
+
 CMakeFiles/out.exe.dir/main.cpp.o: CMakeFiles/out.exe.dir/flags.make
 CMakeFiles/out.exe.dir/main.cpp.o: ../main.cpp
 CMakeFiles/out.exe.dir/main.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/out.exe.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/out.exe.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/main.cpp.o -MF CMakeFiles/out.exe.dir/main.cpp.o.d -o CMakeFiles/out.exe.dir/main.cpp.o -c /home/sun/Webserver1/Mywebserver/main.cpp
 
 CMakeFiles/out.exe.dir/main.cpp.i: cmake_force
@@ -187,9 +243,13 @@ out_exe_OBJECTS = \
 "CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o" \
 "CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o" \
 "CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.o" \
-"CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o" \
-"CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o" \
+"CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o" \
 "CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o" \
+"CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o" \
+"CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o" \
+"CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o" \
+"CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o" \
+"CMakeFiles/out.exe.dir/time/src/timmer.cpp.o" \
 "CMakeFiles/out.exe.dir/main.cpp.o"
 
 # External object files for target out.exe
@@ -199,13 +259,17 @@ out.exe: CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o
 out.exe: CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o
 out.exe: CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o
 out.exe: CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.o
-out.exe: CMakeFiles/out.exe.dir/LOG/src/BufferUnion.cpp.o
-out.exe: CMakeFiles/out.exe.dir/LOG/src/Log.cpp.o
+out.exe: CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o
 out.exe: CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o
+out.exe: CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o
+out.exe: CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o
+out.exe: CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o
+out.exe: CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o
+out.exe: CMakeFiles/out.exe.dir/time/src/timmer.cpp.o
 out.exe: CMakeFiles/out.exe.dir/main.cpp.o
 out.exe: CMakeFiles/out.exe.dir/build.make
 out.exe: CMakeFiles/out.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable out.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sun/Webserver1/Mywebserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable out.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/out.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
