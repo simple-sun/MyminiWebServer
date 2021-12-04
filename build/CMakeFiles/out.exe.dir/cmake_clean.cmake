@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o.d"
   "CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o"
   "CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o.d"
+  "CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.o"
+  "CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o"
   "CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o"

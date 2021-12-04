@@ -249,6 +249,30 @@ LOG/src/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s
 .PHONY : LOG/src/Logger.cpp.s
 
+TCP/src/Acceptor.o: TCP/src/Acceptor.cpp.o
+.PHONY : TCP/src/Acceptor.o
+
+# target to build an object file
+TCP/src/Acceptor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.o
+.PHONY : TCP/src/Acceptor.cpp.o
+
+TCP/src/Acceptor.i: TCP/src/Acceptor.cpp.i
+.PHONY : TCP/src/Acceptor.i
+
+# target to preprocess a source file
+TCP/src/Acceptor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.i
+.PHONY : TCP/src/Acceptor.cpp.i
+
+TCP/src/Acceptor.s: TCP/src/Acceptor.cpp.s
+.PHONY : TCP/src/Acceptor.s
+
+# target to generate assembly for a file
+TCP/src/Acceptor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.s
+.PHONY : TCP/src/Acceptor.cpp.s
+
 TCP/src/Channel.o: TCP/src/Channel.cpp.o
 .PHONY : TCP/src/Channel.o
 
@@ -441,6 +465,9 @@ help:
 	@echo "... LOG/src/Logger.o"
 	@echo "... LOG/src/Logger.i"
 	@echo "... LOG/src/Logger.s"
+	@echo "... TCP/src/Acceptor.o"
+	@echo "... TCP/src/Acceptor.i"
+	@echo "... TCP/src/Acceptor.s"
 	@echo "... TCP/src/Channel.o"
 	@echo "... TCP/src/Channel.i"
 	@echo "... TCP/src/Channel.s"

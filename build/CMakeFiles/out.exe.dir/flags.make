@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc
 
-CXX_FLAGS =  -g -lpthread -DDEBUG
+CXX_FLAGS =  -g -lpthread -DDEBUG -g
 
