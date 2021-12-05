@@ -27,7 +27,7 @@ int main()
   printf("main(): pid = %d\n", getpid());
 
   sockaddr_in listenAddr;
-  listenAddr.sin_port = 9981;
+  listenAddr.sin_port = uint16_t( 9981 );
   EventLoop loop;
   int sockfd = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
 
