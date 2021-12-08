@@ -1,5 +1,5 @@
 #ifndef CHANNEL_H
-#define CHANNAL_H
+#define CHANNEL_H
 
 
 //#include"EventLoop.h"
@@ -34,12 +34,10 @@ namespace SUNSQ{
         void set_revents(int revt){ revents_ = revt;}
         bool eventsNull() const { return events_ == kNoEvents_;}
 
-        void enableReading() { 
-            events_ |= kReadEvents_; 
-            update(); }
+        void enableReading() { events_ |= kReadEvents_;  update(); }
         void enableWriting() { events_ |= kWriteEvents_; update(); }
-        void disableReading() { events_ &= kReadEvents_; update();}
-        void disableWriting() { events_ &= kReadEvents_; update();}
+        void disableReading() { events_ &= kReadEvents_; update(); }
+        void disableWriting() { events_ &= kReadEvents_; update(); }
         void disableALl() { events_ = kNoEvents_; update();}
 
         EventLoop* belongLoop() { return loop_;}
@@ -69,11 +67,13 @@ namespace SUNSQ{
         int revents_;
         int MAX_EVENT_NUM;
         int idx_ ;
+        int eventHandling;
 
 
         EventCallback readCallback;
         EventCallback writeCallback;
         EventCallback errorCallback;
+        EventCallback closeCallback;
 
     };
 

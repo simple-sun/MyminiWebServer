@@ -40,6 +40,7 @@ class EventLoop : boost :: noncopyable{
         EventLoop* getEventLoopOfCurrentThread();
 
         void updateChannel(Channel* channel);
+        void removeChannel(Channel* channel);
         void runLoop(const boost::function<void()> &cb);
         void queueLoop(const boost::function<void()> &cb);
         boost::function<void()> queueLoop();

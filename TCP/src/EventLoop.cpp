@@ -96,6 +96,14 @@ void EventLoop::updateChannel(Channel* channel)
     epoller_->updateChannel(channel);
 }
 
+void EventLoop::removeChannel(Channel* channel)
+{
+    assert(channel->belongLoop() == this);
+    assertInLoopThread();
+    epoller_->removeChannel(channel);
+
+}
+
 void EventLoop::quit()
 {
     quit_=true;

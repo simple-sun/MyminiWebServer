@@ -369,6 +369,54 @@ TCP/src/EventLoopThread.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s
 .PHONY : TCP/src/EventLoopThread.cpp.s
 
+TCP/src/TcpConnection.o: TCP/src/TcpConnection.cpp.o
+.PHONY : TCP/src/TcpConnection.o
+
+# target to build an object file
+TCP/src/TcpConnection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.o
+.PHONY : TCP/src/TcpConnection.cpp.o
+
+TCP/src/TcpConnection.i: TCP/src/TcpConnection.cpp.i
+.PHONY : TCP/src/TcpConnection.i
+
+# target to preprocess a source file
+TCP/src/TcpConnection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.i
+.PHONY : TCP/src/TcpConnection.cpp.i
+
+TCP/src/TcpConnection.s: TCP/src/TcpConnection.cpp.s
+.PHONY : TCP/src/TcpConnection.s
+
+# target to generate assembly for a file
+TCP/src/TcpConnection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.s
+.PHONY : TCP/src/TcpConnection.cpp.s
+
+TCP/src/TcpServer.o: TCP/src/TcpServer.cpp.o
+.PHONY : TCP/src/TcpServer.o
+
+# target to build an object file
+TCP/src/TcpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.o
+.PHONY : TCP/src/TcpServer.cpp.o
+
+TCP/src/TcpServer.i: TCP/src/TcpServer.cpp.i
+.PHONY : TCP/src/TcpServer.i
+
+# target to preprocess a source file
+TCP/src/TcpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.i
+.PHONY : TCP/src/TcpServer.cpp.i
+
+TCP/src/TcpServer.s: TCP/src/TcpServer.cpp.s
+.PHONY : TCP/src/TcpServer.s
+
+# target to generate assembly for a file
+TCP/src/TcpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.s
+.PHONY : TCP/src/TcpServer.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -480,6 +528,12 @@ help:
 	@echo "... TCP/src/EventLoopThread.o"
 	@echo "... TCP/src/EventLoopThread.i"
 	@echo "... TCP/src/EventLoopThread.s"
+	@echo "... TCP/src/TcpConnection.o"
+	@echo "... TCP/src/TcpConnection.i"
+	@echo "... TCP/src/TcpConnection.s"
+	@echo "... TCP/src/TcpServer.o"
+	@echo "... TCP/src/TcpServer.i"
+	@echo "... TCP/src/TcpServer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

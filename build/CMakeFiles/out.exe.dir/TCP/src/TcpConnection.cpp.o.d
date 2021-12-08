@@ -1,14 +1,33 @@
-CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o: \
- /home/sun/Webserver1/Mywebserver/TCP/src/Channel.cpp \
+CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.o: \
+ /home/sun/Webserver1/Mywebserver/TCP/src/TcpConnection.cpp \
  /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/TCP/inc/Channel.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/TcpConnection.h \
+ /usr/include/netinet/in.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
+ /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
+ /usr/include/bits/socket.h /usr/include/sys/types.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
+ /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
  /usr/local/include/boost/function.hpp /usr/include/c++/8/functional \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
- /usr/include/bits/wordsize.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
  /usr/include/c++/8/bits/stl_function.h /usr/include/c++/8/bits/move.h \
  /usr/include/c++/8/bits/concept_check.h /usr/include/c++/8/type_traits \
@@ -17,7 +36,6 @@ CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o: \
  /usr/include/c++/8/bits/exception_ptr.h \
  /usr/include/c++/8/bits/exception_defines.h \
  /usr/include/c++/8/bits/cxxabi_init_exception.h \
- /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
  /usr/include/c++/8/typeinfo /usr/include/c++/8/bits/hash_bytes.h \
  /usr/include/c++/8/bits/nested_exception.h /usr/include/c++/8/tuple \
  /usr/include/c++/8/utility /usr/include/c++/8/bits/stl_relops.h \
@@ -47,18 +65,14 @@ CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o: \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
  /usr/include/bits/types/__locale_t.h /usr/include/c++/8/cstdint \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/stdint-intn.h \
- /usr/include/bits/stdint-uintn.h /usr/include/c++/8/bits/allocator.h \
+ /usr/include/stdint.h /usr/include/c++/8/bits/allocator.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
  /usr/include/c++/8/ext/new_allocator.h \
  /usr/include/c++/8/bits/localefwd.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h \
  /usr/include/c++/8/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/8/iosfwd \
- /usr/include/c++/8/cctype /usr/include/ctype.h /usr/include/endian.h \
- /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
- /usr/include/bits/uintn-identity.h \
+ /usr/include/c++/8/cctype /usr/include/ctype.h \
  /usr/include/c++/8/bits/ostream_insert.h \
  /usr/include/c++/8/bits/cxxabi_forced.h \
  /usr/include/c++/8/bits/range_access.h \
@@ -66,29 +80,20 @@ CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o: \
  /usr/include/c++/8/ext/atomicity.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
  /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
  /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_timeval.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
- /usr/include/bits/types/struct_itimerspec.h \
- /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
- /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
  /usr/include/c++/8/ext/alloc_traits.h \
  /usr/include/c++/8/bits/alloc_traits.h \
  /usr/include/c++/8/ext/string_conversions.h /usr/include/c++/8/cstdlib \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/c++/8/bits/std_abs.h /usr/include/c++/8/cstdio \
- /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
- /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/bits/waitstatus.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h /usr/include/c++/8/bits/std_abs.h \
+ /usr/include/c++/8/cstdio /usr/include/stdio.h \
+ /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
  /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
@@ -328,6 +333,7 @@ CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o: \
  /usr/local/include/boost/function/detail/maybe_include.hpp \
  /usr/local/include/boost/function/function_template.hpp \
  /usr/local/include/boost/detail/no_exceptions_support.hpp \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/Channel.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/EventLoop.h \
  /usr/local/include/boost/noncopyable.hpp \
  /usr/local/include/boost/scoped_ptr.hpp \
@@ -344,8 +350,23 @@ CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o: \
  /usr/include/c++/8/bits/stl_deque.h /usr/include/c++/8/bits/deque.tcc \
  /usr/include/c++/8/bits/stl_queue.h /usr/include/sys/eventfd.h \
  /usr/include/bits/eventfd.h /usr/include/c++/8/mutex \
- /usr/include/c++/8/bits/std_mutex.h /usr/include/sys/epoll.h \
- /usr/include/bits/epoll.h \
+ /usr/include/c++/8/bits/std_mutex.h \
+ /usr/local/include/boost/enable_shared_from_this.hpp \
+ /usr/local/include/boost/smart_ptr/enable_shared_from_this.hpp \
+ /usr/local/include/boost/smart_ptr/weak_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/detail/shared_count.hpp \
+ /usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_counted_base.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_has_sync.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+ /usr/local/include/boost/smart_ptr/shared_ptr.hpp \
+ /usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
+ /usr/local/include/boost/smart_ptr/detail/spinlock_pool.hpp \
+ /usr/local/include/boost/smart_ptr/detail/spinlock.hpp \
+ /usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp \
+ /usr/local/include/boost/smart_ptr/detail/yield_k.hpp \
+ /usr/local/include/boost/memory_order.hpp \
  /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h \
  /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
  /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
