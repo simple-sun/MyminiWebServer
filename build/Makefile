@@ -369,6 +369,30 @@ TCP/src/EventLoopThread.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s
 .PHONY : TCP/src/EventLoopThread.cpp.s
 
+TCP/src/TcpBuffer.o: TCP/src/TcpBuffer.cpp.o
+.PHONY : TCP/src/TcpBuffer.o
+
+# target to build an object file
+TCP/src/TcpBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.o
+.PHONY : TCP/src/TcpBuffer.cpp.o
+
+TCP/src/TcpBuffer.i: TCP/src/TcpBuffer.cpp.i
+.PHONY : TCP/src/TcpBuffer.i
+
+# target to preprocess a source file
+TCP/src/TcpBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.i
+.PHONY : TCP/src/TcpBuffer.cpp.i
+
+TCP/src/TcpBuffer.s: TCP/src/TcpBuffer.cpp.s
+.PHONY : TCP/src/TcpBuffer.s
+
+# target to generate assembly for a file
+TCP/src/TcpBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.s
+.PHONY : TCP/src/TcpBuffer.cpp.s
+
 TCP/src/TcpConnection.o: TCP/src/TcpConnection.cpp.o
 .PHONY : TCP/src/TcpConnection.o
 
@@ -528,6 +552,9 @@ help:
 	@echo "... TCP/src/EventLoopThread.o"
 	@echo "... TCP/src/EventLoopThread.i"
 	@echo "... TCP/src/EventLoopThread.s"
+	@echo "... TCP/src/TcpBuffer.o"
+	@echo "... TCP/src/TcpBuffer.i"
+	@echo "... TCP/src/TcpBuffer.s"
 	@echo "... TCP/src/TcpConnection.o"
 	@echo "... TCP/src/TcpConnection.i"
 	@echo "... TCP/src/TcpConnection.s"

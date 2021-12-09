@@ -17,9 +17,7 @@ TcpServer::TcpServer(EventLoop* loop, const sockaddr_in &listenAddr)
 }
 
 TcpServer::~TcpServer()
-{
-    
-}
+{}
 
 
 void TcpServer::start()
@@ -37,8 +35,7 @@ void TcpServer::start()
         loop_->runLoop(
             boost::bind(&Acceptor::listenAcceptor, get_pointer( acceptor_))
                     );
-    }
-       
+    }       
 }
 
 void TcpServer::removeConnnection(const TcpConnection::TcpConnectionPtr& conn)

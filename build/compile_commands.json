@@ -26,6 +26,11 @@
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/TcpBuffer.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/TcpBuffer.cpp"
+},
+{
+  "directory": "/home/sun/Webserver1/Mywebserver/build",
   "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/TcpConnection.cpp",
   "file": "/home/sun/Webserver1/Mywebserver/TCP/src/TcpConnection.cpp"
 },

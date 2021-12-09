@@ -1,10 +1,10 @@
 # Details
 
-Date : 2021-12-04 04:30:55
+Date : 2021-12-08 18:36:46
 
 Directory /home/sun/Webserver1/Mywebserver
 
-Total : 47 files,  5426 codes, 309 comments, 1036 blanks, all 6771 lines
+Total : 53 files,  5784 codes, 344 comments, 1105 blanks, all 7233 lines
 
 [summary](results.md)
 
@@ -22,21 +22,27 @@ Total : 47 files,  5426 codes, 309 comments, 1036 blanks, all 6771 lines
 | [LOG/src/LogThread.cpp](/LOG/src/LogThread.cpp) | C++ | 111 | 1 | 31 | 143 |
 | [LOG/src/Logger.cpp](/LOG/src/Logger.cpp) | C++ | 59 | 8 | 27 | 94 |
 | [README.md](/README.md) | Markdown | 2 | 0 | 1 | 3 |
-| [TCP/inc/Acceptor.h](/TCP/inc/Acceptor.h) | C++ | 31 | 0 | 4 | 35 |
-| [TCP/inc/Channel.h](/TCP/inc/Channel.h) | C++ | 54 | 4 | 28 | 86 |
+| [TCP/inc/Acceptor.h](/TCP/inc/Acceptor.h) | C++ | 29 | 2 | 4 | 35 |
+| [TCP/inc/Channel.h](/TCP/inc/Channel.h) | C++ | 56 | 4 | 29 | 89 |
 | [TCP/inc/Epoller.h](/TCP/inc/Epoller.h) | C++ | 36 | 7 | 17 | 60 |
-| [TCP/inc/EventLoop.h](/TCP/inc/EventLoop.h) | C++ | 47 | 10 | 26 | 83 |
+| [TCP/inc/EventLoop.h](/TCP/inc/EventLoop.h) | C++ | 48 | 10 | 26 | 84 |
 | [TCP/inc/EventLoopThread.h](/TCP/inc/EventLoopThread.h) | C++ | 22 | 0 | 9 | 31 |
-| [TCP/src/Acceptor.cpp](/TCP/src/Acceptor.cpp) | C++ | 13 | 0 | 5 | 18 |
-| [TCP/src/Channel.cpp](/TCP/src/Channel.cpp) | C++ | 29 | 1 | 10 | 40 |
+| [TCP/inc/TcpBuffer.h](/TCP/inc/TcpBuffer.h) | C++ | 16 | 0 | 8 | 24 |
+| [TCP/inc/TcpConnection.h](/TCP/inc/TcpConnection.h) | C++ | 52 | 3 | 17 | 72 |
+| [TCP/inc/TcpServer.h](/TCP/inc/TcpServer.h) | C++ | 37 | 5 | 9 | 51 |
+| [TCP/src/Acceptor.cpp](/TCP/src/Acceptor.cpp) | C++ | 45 | 6 | 5 | 56 |
+| [TCP/src/Channel.cpp](/TCP/src/Channel.cpp) | C++ | 39 | 4 | 11 | 54 |
 | [TCP/src/Epoller.cpp](/TCP/src/Epoller.cpp) | C++ | 112 | 28 | 14 | 154 |
-| [TCP/src/EventLoop.cpp](/TCP/src/EventLoop.cpp) | C++ | 144 | 31 | 35 | 210 |
+| [TCP/src/EventLoop.cpp](/TCP/src/EventLoop.cpp) | C++ | 151 | 31 | 37 | 219 |
 | [TCP/src/EventLoopThread.cpp](/TCP/src/EventLoopThread.cpp) | C++ | 28 | 1 | 9 | 38 |
+| [TCP/src/TcpBuffer.cpp](/TCP/src/TcpBuffer.cpp) | C++ | 1 | 0 | 3 | 4 |
+| [TCP/src/TcpConnection.cpp](/TCP/src/TcpConnection.cpp) | C++ | 60 | 4 | 13 | 77 |
+| [TCP/src/TcpServer.cpp](/TCP/src/TcpServer.cpp) | C++ | 64 | 6 | 9 | 79 |
 | [build/.cmake/api/v1/query/client-vscode/query.json](/build/.cmake/api/v1/query/client-vscode/query.json) | JSON | 1 | 0 | 0 | 1 |
 | [build/.cmake/api/v1/reply/cache-v2-df211b901eb93ab76084.json](/build/.cmake/api/v1/reply/cache-v2-df211b901eb93ab76084.json) | JSON | 1,167 | 0 | 1 | 1,168 |
-| [build/.cmake/api/v1/reply/codemodel-v2-10469dfdd41509ea6020.json](/build/.cmake/api/v1/reply/codemodel-v2-10469dfdd41509ea6020.json) | JSON | 59 | 0 | 1 | 60 |
-| [build/.cmake/api/v1/reply/index-2021-12-04T12-11-51-0020.json](/build/.cmake/api/v1/reply/index-2021-12-04T12-11-51-0020.json) | JSON | 110 | 0 | 1 | 111 |
-| [build/.cmake/api/v1/reply/target-out.exe-Debug-d7ae03af3a0f34f5fa80.json](/build/.cmake/api/v1/reply/target-out.exe-Debug-d7ae03af3a0f34f5fa80.json) | JSON | 221 | 0 | 1 | 222 |
+| [build/.cmake/api/v1/reply/codemodel-v2-8407745949da5d57f273.json](/build/.cmake/api/v1/reply/codemodel-v2-8407745949da5d57f273.json) | JSON | 59 | 0 | 1 | 60 |
+| [build/.cmake/api/v1/reply/index-2021-12-09T01-52-05-0369.json](/build/.cmake/api/v1/reply/index-2021-12-09T01-52-05-0369.json) | JSON | 110 | 0 | 1 | 111 |
+| [build/.cmake/api/v1/reply/target-out.exe-Debug-f075e3a746f6f51b244f.json](/build/.cmake/api/v1/reply/target-out.exe-Debug-f075e3a746f6f51b244f.json) | JSON | 245 | 0 | 1 | 246 |
 | [build/.cmake/api/v1/reply/toolchains-v1-776008d071eac6db6945.json](/build/.cmake/api/v1/reply/toolchains-v1-776008d071eac6db6945.json) | JSON | 101 | 0 | 1 | 102 |
 | [build/CMakeCache.txt](/build/CMakeCache.txt) | CMake Cache | 303 | 0 | 65 | 368 |
 | [build/CMakeFiles/3.20.2/CMakeCCompiler.cmake](/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake) | CMake | 61 | 0 | 18 | 79 |
@@ -47,13 +53,13 @@ Total : 47 files,  5426 codes, 309 comments, 1036 blanks, all 6771 lines
 | [build/CMakeFiles/CMakeDirectoryInformation.cmake](/build/CMakeFiles/CMakeDirectoryInformation.cmake) | CMake | 12 | 0 | 5 | 17 |
 | [build/CMakeFiles/CMakeOutput.log](/build/CMakeFiles/CMakeOutput.log) | Log | 379 | 0 | 31 | 410 |
 | [build/CMakeFiles/Makefile.cmake](/build/CMakeFiles/Makefile.cmake) | CMake | 42 | 0 | 6 | 48 |
-| [build/CMakeFiles/out.exe.dir/DependInfo.cmake](/build/CMakeFiles/out.exe.dir/DependInfo.cmake) | CMake | 26 | 0 | 6 | 32 |
-| [build/CMakeFiles/out.exe.dir/cmake_clean.cmake](/build/CMakeFiles/out.exe.dir/cmake_clean.cmake) | CMake | 34 | 0 | 2 | 36 |
+| [build/CMakeFiles/out.exe.dir/DependInfo.cmake](/build/CMakeFiles/out.exe.dir/DependInfo.cmake) | CMake | 29 | 0 | 6 | 35 |
+| [build/CMakeFiles/out.exe.dir/cmake_clean.cmake](/build/CMakeFiles/out.exe.dir/cmake_clean.cmake) | CMake | 40 | 0 | 2 | 42 |
 | [build/CMakeFiles/out.exe.dir/compiler_depend.ts](/build/CMakeFiles/out.exe.dir/compiler_depend.ts) | TypeScript | 2 | 0 | 1 | 3 |
-| [build/Makefile](/build/Makefile) | Makefile | 303 | 84 | 119 | 506 |
+| [build/Makefile](/build/Makefile) | Makefile | 357 | 93 | 137 | 587 |
 | [build/cmake_install.cmake](/build/cmake_install.cmake) | CMake | 46 | 0 | 9 | 55 |
-| [build/compile_commands.json](/build/compile_commands.json) | JSON | 67 | 0 | 0 | 67 |
-| [main.cpp](/main.cpp) | C++ | 61 | 10 | 25 | 96 |
+| [build/compile_commands.json](/build/compile_commands.json) | JSON | 82 | 0 | 0 | 82 |
+| [main.cpp](/main.cpp) | C++ | 37 | 7 | 13 | 57 |
 | [time/inc/timePoint.h](/time/inc/timePoint.h) | C++ | 28 | 0 | 14 | 42 |
 | [time/inc/timmer.h](/time/inc/timmer.h) | C++ | 35 | 0 | 22 | 57 |
 | [time/src/timePoint.cpp](/time/src/timePoint.cpp) | C++ | 36 | 0 | 23 | 59 |

@@ -62,13 +62,13 @@ void EventLoop :: loop()
         for( ChannelList::const_iterator it = activeChannels_.begin();
             it != activeChannels_.end(); it++)
             {
-                (*it)->handleEvent();
+                system_clock::time_point reveTime = system_clock::now();
+                (*it)->handleEvent(reveTime);
             }
         //std::printf("Reading.....");
         std::cout<<"Reading...."<< threadId_ <<std::endl;
         doPendingFunctors();
-    }
-    
+    }    
     ::poll(NULL,0,1000);
     printf("EventLoop %d stop looping", this);
 
@@ -86,6 +86,7 @@ EventLoop* EventLoop :: getEventLoopOfCurrentThread(){
 void EventLoop::abortNotInLoopThread()
 {
   //日志记录文件
+  LOG_FATAL << " EventLoop::abortNotInLoopThread " << log::end;
 }
 
 

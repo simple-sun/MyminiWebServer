@@ -28,7 +28,7 @@ void Channel :: update()
     loop_->updateChannel(this);
 }
 
-void Channel::handleEvent()
+void Channel::handleEvent(system_clock::time_point recvTime)
 {
     //close事件回调
     if(!(revents_ & EPOLLIN) && (revents_ & EPOLLHUP)){
@@ -41,7 +41,7 @@ void Channel::handleEvent()
     }
     //read事件回调
     if(revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)){
-        if(readCallback)   readCallback();
+        if(readCallback)   readCallback(recvTime);
     }
     //write事件回调
     if(revents_ & EPOLLOUT)

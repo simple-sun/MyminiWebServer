@@ -4,25 +4,28 @@
 
 //#include"EventLoop.h"
 #include<boost/function.hpp>
+#include<chrono>
 
 //#define MAX_EVENT_NUM_VAL 1024;
 
 
+
 namespace SUNSQ{
 
+    using std::chrono::system_clock;
     class EventLoop;
 
     class Channel{
     public:
-        Channel();
+        Channel(EventLoop* loop, int fd);
         Channel(const Channel&) = delete;
         ~Channel();
 
         typedef boost::function<void()> EventCallback;
-        Channel(EventLoop* loop, int fd);           //作为处理fd的函数，获取一个loop，以及fd
+        typedef boost::function<void(system_clock::time_point)> ReadEventCallback;                   
 
-        void handleEvent();
-        void setReadCallback(const EventCallback& cb)
+        void handleEvent(system_clock::time_point recvTime);
+        void setReadCallback(const ReadEventCallback& cb)
         {   readCallback = cb;}
         void setWriteCallback(const EventCallback& cb)
         {   writeCallback = cb;}
@@ -70,7 +73,7 @@ namespace SUNSQ{
         int eventHandling;
 
 
-        EventCallback readCallback;
+        ReadEventCallback readCallback;
         EventCallback writeCallback;
         EventCallback errorCallback;
         EventCallback closeCallback;
