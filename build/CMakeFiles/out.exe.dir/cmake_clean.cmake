@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o"
   "CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o.d"
+  "CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.o"
+  "CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o"
   "CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o.d"
   "CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o"

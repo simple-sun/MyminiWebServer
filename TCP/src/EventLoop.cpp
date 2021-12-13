@@ -12,6 +12,7 @@
 #include<thread>
 //#include<syslog.h>
 #include"LogThread.h"
+#include"sys/socket.h"
 
 using namespace SUNSQ;
 
@@ -19,32 +20,24 @@ thread_local EventLoop* t_loopInThisThread = 0;
 const int kEpollTimeMs = 1000;
 
 EventLoop::EventLoop()
-            : looping_(false),
+        :   looping_(false),
             threadId_(getpid()),
-            epoller_(new Epoller(this))
-            ,wakeupEventfd_(eventfd(0,EFD_CLOEXEC | EFD_NONBLOCK))
-{
-    
-
-    //syslog(LOG_INFO,"EventLoop created ");
-    LOG_DEBUG << "EventLoop created "<< log::end;
-    
-/*
-    LOG_TRACE << "EventLoop created " << this << " in thread " << threadId_;
+            epoller_(new Epoller(this)),
+            wakeupEventfd_(eventfd(0,EFD_CLOEXEC | EFD_NONBLOCK))
+{  
+    LOG_INFO << "EventLoop created "<< "in thread "<< threadId_ <<log::end;
     if( t_loopInThisThread){
-        LOG_FATAL << " Another EventLoop " << t_loopInThisThread
+        LOG_FATAL << " Another EventLoop " //<< t_loopInThisThread
                         << " exists in this thread "<< threadId_;
     }
     else{
         t_loopInThisThread = this;
     }
-    */
 }
 
 EventLoop :: ~EventLoop()
 {
-    assert(!looping_);          //looping_如果是0，就说明没有EL，
-                                //就不需要下一步
+    assert(!looping_);          
     t_loopInThisThread = NULL;
 }
 
@@ -58,15 +51,13 @@ void EventLoop :: loop()
     while (!quit_)
     {
         activeChannels_.clear();
-        epoller_->epoll(kEpollTimeMs,&activeChannels_);
+        system_clock::time_point recvTime = epoller_->epoll(kEpollTimeMs,&activeChannels_);
         for( ChannelList::const_iterator it = activeChannels_.begin();
             it != activeChannels_.end(); it++)
-            {
-                system_clock::time_point reveTime = system_clock::now();
-                (*it)->handleEvent(reveTime);
-            }
-        //std::printf("Reading.....");
-        std::cout<<"Reading...."<< threadId_ <<std::endl;
+        {
+                (*it)->handleEvent(recvTime);
+        }
+        //std::cout<<"Reading...."<< threadId_ <<std::endl;
         doPendingFunctors();
     }    
     ::poll(NULL,0,1000);
@@ -75,7 +66,7 @@ void EventLoop :: loop()
     looping_ = false;
 }
 
-
+int EventLoop :: epollfd() { return epoller_->epollfd() ;}
 
 
 //EventLoop的静态成员函数返回当前的EventLoop对象
@@ -85,7 +76,6 @@ EventLoop* EventLoop :: getEventLoopOfCurrentThread(){
 
 void EventLoop::abortNotInLoopThread()
 {
-  //日志记录文件
   LOG_FATAL << " EventLoop::abortNotInLoopThread " << log::end;
 }
 
@@ -115,12 +105,11 @@ void EventLoop::quit()
 }
 
 
-bool EventLoop::isInLoopThread() {
+bool EventLoop::isInLoopThread() 
+{
             pid_t id = getpid();
-            //pid_t thisId = std::pthread_np::pthread_getthreadid_np();
             return threadId_ == id;
-            //std::thread::id tid = std::this_thread::get_id();
-        }
+}
 
 void EventLoop::assertInLoopThread()
 {
@@ -168,8 +157,9 @@ boost::function<void()> EventLoop::queueLoop()
 void EventLoop::wakeup()
 {
     uint64_t __buf = 0;    
-    if(::read(wakeupEventfd_,&__buf,8)<0){
+    if(::send(wakeupEventfd_,&__buf,sizeof(__buf),0)<0){
         //日志记录错误
+        LOG_FATAL <<  "EventLoop::wakeup() writes wrong" << log::end;
     }     
 }
 
@@ -190,9 +180,9 @@ void EventLoop::handleRead()
     uint64_t __buf = 0;
     if(::write(wakeupEventfd_,&__buf,8) < 0)
     {
-        //日志记录错误
-    }
-    
+        //日志记录错误        
+        LOG_FATAL<<"EventLoop::handleRead wrong" << log::end;
+    }    
 }
 
 

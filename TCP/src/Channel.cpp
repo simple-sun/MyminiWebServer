@@ -8,16 +8,18 @@
 
 using namespace SUNSQ;
 
- const int Channel::kReadEvents_ = 0;
- const int Channel::kWriteEvents_ = EPOLLIN | EPOLLPRI;
- const int Channel::kNoEvents_ = EPOLLOUT;
+ const int Channel::kReadEvents_ = EPOLLIN | EPOLLPRI;
+ const int Channel::kWriteEvents_ = EPOLLOUT;
+ const int Channel::kNoEvents_ = 0;
 
-
-
-Channel::Channel( EventLoop* loop, int fdA):loop_(loop),
-        fd_(fdA),events_(0),revents_(0),idx_(-1),
+Channel::Channel( EventLoop* loop, int sockfd):
+        loop_(loop),
+        fd_(sockfd),
+        events_(0),
+        revents_(0),
+        idx_(-1),
         MAX_EVENT_NUM(1024),
-        eventHandling(true) {}
+        eventHandling(false) {}
 Channel::~Channel()
 {
     assert(!eventHandling);
@@ -30,6 +32,7 @@ void Channel :: update()
 
 void Channel::handleEvent(system_clock::time_point recvTime)
 {
+    eventHandling = true;
     //close事件回调
     if(!(revents_ & EPOLLIN) && (revents_ & EPOLLHUP)){
         LOG_FATAL<<"Channel::handle_event() EPOLLHUP"<<log::end;

@@ -17,7 +17,7 @@ namespace SUNSQ{
 
     class Channel{
     public:
-        Channel(EventLoop* loop, int fd);
+        Channel(EventLoop* loop, int sockfd);
         Channel(const Channel&) = delete;
         ~Channel();
 
@@ -40,8 +40,9 @@ namespace SUNSQ{
         void enableReading() { events_ |= kReadEvents_;  update(); }
         void enableWriting() { events_ |= kWriteEvents_; update(); }
         void disableReading() { events_ &= kReadEvents_; update(); }
-        void disableWriting() { events_ &= kReadEvents_; update(); }
+        void disableWriting() { events_ &= ~kWriteEvents_; update(); }
         void disableALl() { events_ = kNoEvents_; update();}
+        bool isWriting() const { return events_ & kWriteEvents_; }
 
         EventLoop* belongLoop() { return loop_;}
 

@@ -18,7 +18,7 @@ class TcpServer
 
         //如果没有listening，start（）
         void start();
-        void removeConnnection(const TcpConnection::TcpConnectionPtr& conn);
+        
 
         //设置连接回调callback
         void setConnectionCallback(const TcpConnection::ConnectionCallback& cb)
@@ -27,10 +27,13 @@ class TcpServer
         void setMessageCallback(const TcpConnection::MessageCallback& cb)
         { messageCallback_ = cb; }
 
+        void trySend();
     private:
 
         //不是线程安全的，但是in loop
         void newConnection(int sockfd, const sockaddr_in& peerAddr );
+        void removeConnnection(const TcpConnection::TcpConnectionPtr& conn);
+
         typedef std::map<std::string, 
                     TcpConnection::TcpConnectionPtr> ConnnectionMap;
         //typedef boost::function<
@@ -40,7 +43,7 @@ class TcpServer
 
         EventLoop* loop_;
         const std::string name_;
-        boost::scoped_ptr<Acceptor> acceptor_;
+        std::unique_ptr<Acceptor> acceptor_;
 
         bool started_;
         int nextConnId;

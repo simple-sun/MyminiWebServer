@@ -358,4 +358,10 @@ CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o: \
  /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
  /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
  /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h
+ /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h \
+ /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/types/struct_osockaddr.h

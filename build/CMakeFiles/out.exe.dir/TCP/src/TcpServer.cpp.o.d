@@ -360,6 +360,7 @@ CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.o: \
  /usr/include/c++/8/map /usr/include/c++/8/bits/stl_tree.h \
  /usr/include/c++/8/bits/stl_map.h /usr/include/c++/8/bits/stl_multimap.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/TcpConnection.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/TcpBuffer.h \
  /usr/local/include/boost/enable_shared_from_this.hpp \
  /usr/local/include/boost/smart_ptr/enable_shared_from_this.hpp \
  /usr/local/include/boost/smart_ptr/weak_ptr.hpp \

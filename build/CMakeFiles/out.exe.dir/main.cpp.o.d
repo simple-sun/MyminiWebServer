@@ -364,7 +364,10 @@ CMakeFiles/out.exe.dir/main.cpp.o: \
  /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
  /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/TcpServer.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/Acceptor.h \
  /home/sun/Webserver1/Mywebserver/TCP/inc/TcpConnection.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/TcpBuffer.h \
  /usr/local/include/boost/enable_shared_from_this.hpp \
  /usr/local/include/boost/smart_ptr/enable_shared_from_this.hpp \
  /usr/local/include/boost/smart_ptr/weak_ptr.hpp \
@@ -380,4 +383,6 @@ CMakeFiles/out.exe.dir/main.cpp.o: \
  /usr/local/include/boost/smart_ptr/detail/spinlock.hpp \
  /usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp \
  /usr/local/include/boost/smart_ptr/detail/yield_k.hpp \
- /usr/local/include/boost/memory_order.hpp
+ /usr/local/include/boost/memory_order.hpp \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/TcpConnection.h \
+ /usr/include/arpa/inet.h

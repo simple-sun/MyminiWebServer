@@ -3,6 +3,7 @@
 #include"Epoller.h"
 #include<map>
 #include"sys/epoll.h"
+#include"LogThread.h"
 
 using namespace SUNSQ;
 
@@ -18,13 +19,16 @@ Epoller::Epoller(EventLoop* loop_) : ownerLoop_(loop_),
             {} 
 Epoller::~Epoller(){ ::close(epollfd_);}
 
-void Epoller::epoll(int timeoutMs, ChannelList* activeChannels)
+system_clock::time_point Epoller::epoll(int timeoutMs, ChannelList* activeChannels)
 {
-    int numEvents = epoll_wait(epollfd_,&*events_.data(),
+    
+    int numEvents = ::epoll_wait(epollfd_,&*events_.begin(),
+                                   //1,timeoutMs); 
                                     events_.size(),timeoutMs);
+    system_clock::time_point epollReturnT = system_clock::now();
     if(numEvents > 0)
     {
-        //此处应有日志写： <<numEvents << " events happened."
+        LOG_INFO << numEvents << " events happened." << log::end;
         fillActiveChannels(numEvents,activeChannels);
         if(events_.size() == numEvents){
             events_.resize(events_.size() * 2);
@@ -32,14 +36,16 @@ void Epoller::epoll(int timeoutMs, ChannelList* activeChannels)
     }
     else if ( numEvents == 0)
     {
-        //无操作
-        //此处应有日志写： << " nothing happened"
+        LOG_INFO << "Epoller::epoll nothing happened because numEvents == 0"
+                << log::end;
     }
     else
     {
-        //此处应有日志写：<< "Epoller::poll() ";
+        LOG_FATAL << "Epoller::poll() " << log::end;
     }
+    return epollReturnT;
 }
+
 void Epoller::fillActiveChannels( int numEvents,
                                    ChannelList* acitveChannels) const
 {
@@ -71,11 +77,9 @@ void Epoller::update(int operation, Channel* channel)
     {
         if(operation == EPOLL_CTL_DEL)
         {
-            //应该有日志记录， << " epoll_ctl op=" << operation
-            //  <<" fd="<<epollfd;
-        }else{
-            //应该有日志记录， << " epoll_ctl op=" << operation
-            //  <<" fd="<<epollfd;
+            LOG_FATAL << " epoll_ctl op=" << operation <<" fd="<<epollfd << log::end;
+        }else{            
+            LOG_FATAL <<  " epoll_ctl op=" << operation << " fd=" << epollfd << log::end;
         }
     }    
 }
@@ -84,29 +88,13 @@ void Epoller::update(int operation, Channel* channel)
 void Epoller::updateChannel(Channel* channel)
 {
     assertInLoopThread();
-    
-    //日志记录，<< " fd= " << channel->fd() << " events="
-    //          <<channel->events();
+    LOG_INFO << "Epoller::updateChannel(Channel* channel) fd= " << channel->epollFd() << " events=" <<channel->events() << log::end;
     const int index = channel->index();
     if( index == kNew || index == kDel )
     {
         int fd = channel->epollFd();
         if( index == kNew)
         {
-            //auto it = channels_.find(fd);
-            //channels_[fd] == channel;
-            //assert();   
-            /*调试
-            std::map<int, Channel*> mp;
-            size_t s = mp.size();
-            size_t sz = channels_.size();  
-            ChannelMap mp;
-            size_t x = mp.size();
-            mp[fd] = channel;     
-            */
-            
-            //muduo 写在if的最后了，但是我觉得应该写在这          
-            //channels_的构造失败了，没有内存
             channels_[fd] = channel;
         }
         else    //index == kDel

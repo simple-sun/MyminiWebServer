@@ -8,6 +8,7 @@
 #include<vector>
 #include"EventLoop.h"
 #include"sys/epoll.h"
+#include"chrono"
 #include<map>
 
 namespace SUNSQ
@@ -23,7 +24,7 @@ namespace SUNSQ
         typedef std::vector<Channel*> ChannelList;
 
         //Epoll I/O 事件，在loop_的线程中唤起
-        void epoll(int timeoutMs, ChannelList* 
+        std::chrono::system_clock::time_point epoll(int timeoutMs, ChannelList* 
                     activeChannels);
 
         //改变I/O 事件，在loop_的线程中唤起
@@ -36,7 +37,7 @@ namespace SUNSQ
         {
             //ownerLoop_->assertInLoopThread();
         }
-        
+        int epollfd() {return epollfd_;}
         
 
     private:

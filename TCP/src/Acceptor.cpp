@@ -8,10 +8,11 @@ using namespace SUNSQ;
 
 
 Acceptor::Acceptor(EventLoop* loop, const sockaddr_in& listenAddr)
-            :acceptChannel_(loop, acceptSocket_),
-            listening_(false),
+            :listening_(false),
             //使用socket（2,6版本以后），直接获取非阻塞socket的fd）
+            //acceptSocket_( loop->epollfd()),
             acceptSocket_(socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0)),
+            acceptChannel_(loop, acceptSocket_),
             loop_(loop)
             {
                 int ret = bind(acceptSocket_, 
@@ -25,10 +26,9 @@ void Acceptor::listenAcceptor()
     loop_->assertInLoopThread();
     //将listening_设置为true，表示正在监听
     listening_ = true;
-    // const char* argv[3];
-    // int backlog = atoi(argv[3]);
-    listen(acceptSocket_,5);
+    ::listen(acceptSocket_,5);
     acceptChannel_.enableReading();
+    //handleRead();
 }
 
 void Acceptor::handleRead()
@@ -37,7 +37,7 @@ void Acceptor::handleRead()
     bzero(&peerAddr,sizeof(peerAddr));
     int confd = ::accept4(acceptSocket_,(struct sockaddr*)(&peerAddr),
                 (socklen_t*)sizeof( peerAddr), SOCK_NONBLOCK | SOCK_CLOEXEC);
-    if(confd)
+    if(confd >= 0)
     {
         if(NewConnectionCallback_)
         {

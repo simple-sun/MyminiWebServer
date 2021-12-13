@@ -1,17 +1,17 @@
 # Summary
 
-Date : 2021-12-08 18:36:27
+Date : 2021-12-11 06:43:57
 
 Directory /home/sun/Webserver1/Mywebserver
 
-Total : 53 files,  5784 codes, 344 comments, 1105 blanks, all 7233 lines
+Total : 53 files,  5996 codes, 319 comments, 1114 blanks, all 7429 lines
 
 [details](details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| C++ | 32 | 2,094 | 193 | 668 | 2,955 |
+| C++ | 32 | 2,306 | 168 | 677 | 3,151 |
 | JSON | 7 | 1,765 | 0 | 5 | 1,770 |
 | C | 1 | 570 | 58 | 125 | 753 |
 | Log | 1 | 379 | 0 | 31 | 410 |
@@ -24,13 +24,13 @@ Total : 53 files,  5784 codes, 344 comments, 1105 blanks, all 7233 lines
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 53 | 5,784 | 344 | 1,105 | 7,233 |
+| . | 53 | 5,996 | 319 | 1,114 | 7,429 |
 | LOG | 10 | 563 | 15 | 236 | 814 |
 | LOG/inc | 5 | 189 | 0 | 101 | 290 |
 | LOG/src | 5 | 374 | 15 | 135 | 524 |
-| TCP | 16 | 796 | 111 | 220 | 1,127 |
-| TCP/inc | 8 | 296 | 31 | 119 | 446 |
-| TCP/src | 8 | 500 | 80 | 101 | 681 |
+| TCP | 16 | 988 | 93 | 224 | 1,305 |
+| TCP/inc | 8 | 320 | 31 | 122 | 473 |
+| TCP/src | 8 | 668 | 62 | 102 | 832 |
 | build | 21 | 4,249 | 211 | 559 | 5,019 |
 | build/.cmake | 6 | 1,683 | 0 | 5 | 1,688 |
 | build/.cmake/api | 6 | 1,683 | 0 | 5 | 1,688 |

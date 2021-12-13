@@ -41,4 +41,18 @@ CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.o: \
  /usr/include/c++/8/bits/stl_bvector.h \
  /usr/include/c++/8/bits/functional_hash.h \
  /usr/include/c++/8/bits/range_access.h \
- /usr/include/c++/8/bits/vector.tcc
+ /usr/include/c++/8/bits/vector.tcc /usr/include/sys/uio.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/types/clock_t.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/timer_t.h /usr/include/bits/stdint-intn.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/bits/uio_lim.h \
+ /usr/include/bits/uio-ext.h

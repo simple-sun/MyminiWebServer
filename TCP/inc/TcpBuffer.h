@@ -12,12 +12,25 @@ public:
     TcpBuffer();
     ~TcpBuffer();
 
-    void writeIn(char data);
-    void readOut(char data);
-
+    void writeIn(const char data);
+    void readOut(const char data);
+    void readOut(const size_t dataLen) {readIndex_ += dataLen;}
     void shrink();
 
+    int readableBytes() { return  writeIndex_-readIndex_; }
+    const char* itAtRdIndex() { return &*bufferData_.begin()+readIndex_;}
+    void reset()    
+    {
+        readIndex_ = kInitPrepend;
+        writeIndex_ = kInitWrite;
+    }
+
+    size_t readFd(int fd, int* savedError);
+
 private:
+
+    void rePlace(std::vector<char> bufferData_);
+    void reSizeBuffer(std::vector<char> bufferData_,int dataSize);
     std::vector<char> bufferData_;
     int readIndex_;
     int writeIndex_;

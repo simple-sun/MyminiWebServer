@@ -297,6 +297,30 @@ TCP/src/Channel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.s
 .PHONY : TCP/src/Channel.cpp.s
 
+TCP/src/Connector.o: TCP/src/Connector.cpp.o
+.PHONY : TCP/src/Connector.o
+
+# target to build an object file
+TCP/src/Connector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.o
+.PHONY : TCP/src/Connector.cpp.o
+
+TCP/src/Connector.i: TCP/src/Connector.cpp.i
+.PHONY : TCP/src/Connector.i
+
+# target to preprocess a source file
+TCP/src/Connector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.i
+.PHONY : TCP/src/Connector.cpp.i
+
+TCP/src/Connector.s: TCP/src/Connector.cpp.s
+.PHONY : TCP/src/Connector.s
+
+# target to generate assembly for a file
+TCP/src/Connector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.s
+.PHONY : TCP/src/Connector.cpp.s
+
 TCP/src/Epoller.o: TCP/src/Epoller.cpp.o
 .PHONY : TCP/src/Epoller.o
 
@@ -543,6 +567,9 @@ help:
 	@echo "... TCP/src/Channel.o"
 	@echo "... TCP/src/Channel.i"
 	@echo "... TCP/src/Channel.s"
+	@echo "... TCP/src/Connector.o"
+	@echo "... TCP/src/Connector.i"
+	@echo "... TCP/src/Connector.s"
 	@echo "... TCP/src/Epoller.o"
 	@echo "... TCP/src/Epoller.i"
 	@echo "... TCP/src/Epoller.s"

@@ -11,7 +11,7 @@
 #include"sys/eventfd.h"
 #include<mutex>
 
-//#include <linux/uni
+
 
 namespace SUNSQ{
 
@@ -26,14 +26,8 @@ class EventLoop : boost :: noncopyable{
         void loop();
 
         void assertInLoopThread();
-        /*{
-            if(!isInLoopThread())
-            {
-                abortNotInLoopThread();
-            }
-        }
-        */
-       bool isInLoopThread();
+        
+        bool isInLoopThread();
 
         
 
@@ -45,6 +39,7 @@ class EventLoop : boost :: noncopyable{
         void queueLoop(const boost::function<void()> &cb);
         boost::function<void()> queueLoop();
         void handleWakeupEventfd(const int &wakeupEventfd_);
+        int epollfd(); 
         
 
         void quit();
@@ -65,9 +60,7 @@ class EventLoop : boost :: noncopyable{
         std::queue<Functors> queueLoop_;
         int wakeupEventfd_;
 
-        std::mutex mutex_;
-        //pthread_mutex_t* mutex_;
-        
+        std::mutex mutex_;     
 
         //Epoller epoller_;
         boost::scoped_ptr<Epoller> epoller_;
