@@ -249,221 +249,101 @@ LOG/src/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s
 .PHONY : LOG/src/Logger.cpp.s
 
-TCP/src/Acceptor.o: TCP/src/Acceptor.cpp.o
-.PHONY : TCP/src/Acceptor.o
+TCP/src/EpollTools.o: TCP/src/EpollTools.cpp.o
+.PHONY : TCP/src/EpollTools.o
 
 # target to build an object file
-TCP/src/Acceptor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.o
-.PHONY : TCP/src/Acceptor.cpp.o
+TCP/src/EpollTools.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EpollTools.cpp.o
+.PHONY : TCP/src/EpollTools.cpp.o
 
-TCP/src/Acceptor.i: TCP/src/Acceptor.cpp.i
-.PHONY : TCP/src/Acceptor.i
+TCP/src/EpollTools.i: TCP/src/EpollTools.cpp.i
+.PHONY : TCP/src/EpollTools.i
 
 # target to preprocess a source file
-TCP/src/Acceptor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.i
-.PHONY : TCP/src/Acceptor.cpp.i
+TCP/src/EpollTools.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EpollTools.cpp.i
+.PHONY : TCP/src/EpollTools.cpp.i
 
-TCP/src/Acceptor.s: TCP/src/Acceptor.cpp.s
-.PHONY : TCP/src/Acceptor.s
+TCP/src/EpollTools.s: TCP/src/EpollTools.cpp.s
+.PHONY : TCP/src/EpollTools.s
 
 # target to generate assembly for a file
-TCP/src/Acceptor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.s
-.PHONY : TCP/src/Acceptor.cpp.s
+TCP/src/EpollTools.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EpollTools.cpp.s
+.PHONY : TCP/src/EpollTools.cpp.s
 
-TCP/src/Channel.o: TCP/src/Channel.cpp.o
-.PHONY : TCP/src/Channel.o
+TCP/src/HttpServer.o: TCP/src/HttpServer.cpp.o
+.PHONY : TCP/src/HttpServer.o
 
 # target to build an object file
-TCP/src/Channel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o
-.PHONY : TCP/src/Channel.cpp.o
+TCP/src/HttpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/HttpServer.cpp.o
+.PHONY : TCP/src/HttpServer.cpp.o
 
-TCP/src/Channel.i: TCP/src/Channel.cpp.i
-.PHONY : TCP/src/Channel.i
+TCP/src/HttpServer.i: TCP/src/HttpServer.cpp.i
+.PHONY : TCP/src/HttpServer.i
 
 # target to preprocess a source file
-TCP/src/Channel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.i
-.PHONY : TCP/src/Channel.cpp.i
+TCP/src/HttpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/HttpServer.cpp.i
+.PHONY : TCP/src/HttpServer.cpp.i
 
-TCP/src/Channel.s: TCP/src/Channel.cpp.s
-.PHONY : TCP/src/Channel.s
+TCP/src/HttpServer.s: TCP/src/HttpServer.cpp.s
+.PHONY : TCP/src/HttpServer.s
 
 # target to generate assembly for a file
-TCP/src/Channel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.s
-.PHONY : TCP/src/Channel.cpp.s
+TCP/src/HttpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/HttpServer.cpp.s
+.PHONY : TCP/src/HttpServer.cpp.s
 
-TCP/src/Connector.o: TCP/src/Connector.cpp.o
-.PHONY : TCP/src/Connector.o
+TCP/src/ThreadPool.o: TCP/src/ThreadPool.cpp.o
+.PHONY : TCP/src/ThreadPool.o
 
 # target to build an object file
-TCP/src/Connector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.o
-.PHONY : TCP/src/Connector.cpp.o
+TCP/src/ThreadPool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/ThreadPool.cpp.o
+.PHONY : TCP/src/ThreadPool.cpp.o
 
-TCP/src/Connector.i: TCP/src/Connector.cpp.i
-.PHONY : TCP/src/Connector.i
+TCP/src/ThreadPool.i: TCP/src/ThreadPool.cpp.i
+.PHONY : TCP/src/ThreadPool.i
 
 # target to preprocess a source file
-TCP/src/Connector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.i
-.PHONY : TCP/src/Connector.cpp.i
+TCP/src/ThreadPool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/ThreadPool.cpp.i
+.PHONY : TCP/src/ThreadPool.cpp.i
 
-TCP/src/Connector.s: TCP/src/Connector.cpp.s
-.PHONY : TCP/src/Connector.s
+TCP/src/ThreadPool.s: TCP/src/ThreadPool.cpp.s
+.PHONY : TCP/src/ThreadPool.s
 
 # target to generate assembly for a file
-TCP/src/Connector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.s
-.PHONY : TCP/src/Connector.cpp.s
+TCP/src/ThreadPool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/ThreadPool.cpp.s
+.PHONY : TCP/src/ThreadPool.cpp.s
 
-TCP/src/Epoller.o: TCP/src/Epoller.cpp.o
-.PHONY : TCP/src/Epoller.o
+TCP/src/locker.o: TCP/src/locker.cpp.o
+.PHONY : TCP/src/locker.o
 
 # target to build an object file
-TCP/src/Epoller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o
-.PHONY : TCP/src/Epoller.cpp.o
+TCP/src/locker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/locker.cpp.o
+.PHONY : TCP/src/locker.cpp.o
 
-TCP/src/Epoller.i: TCP/src/Epoller.cpp.i
-.PHONY : TCP/src/Epoller.i
-
-# target to preprocess a source file
-TCP/src/Epoller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.i
-.PHONY : TCP/src/Epoller.cpp.i
-
-TCP/src/Epoller.s: TCP/src/Epoller.cpp.s
-.PHONY : TCP/src/Epoller.s
-
-# target to generate assembly for a file
-TCP/src/Epoller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.s
-.PHONY : TCP/src/Epoller.cpp.s
-
-TCP/src/EventLoop.o: TCP/src/EventLoop.cpp.o
-.PHONY : TCP/src/EventLoop.o
-
-# target to build an object file
-TCP/src/EventLoop.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o
-.PHONY : TCP/src/EventLoop.cpp.o
-
-TCP/src/EventLoop.i: TCP/src/EventLoop.cpp.i
-.PHONY : TCP/src/EventLoop.i
+TCP/src/locker.i: TCP/src/locker.cpp.i
+.PHONY : TCP/src/locker.i
 
 # target to preprocess a source file
-TCP/src/EventLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.i
-.PHONY : TCP/src/EventLoop.cpp.i
+TCP/src/locker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/locker.cpp.i
+.PHONY : TCP/src/locker.cpp.i
 
-TCP/src/EventLoop.s: TCP/src/EventLoop.cpp.s
-.PHONY : TCP/src/EventLoop.s
-
-# target to generate assembly for a file
-TCP/src/EventLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.s
-.PHONY : TCP/src/EventLoop.cpp.s
-
-TCP/src/EventLoopThread.o: TCP/src/EventLoopThread.cpp.o
-.PHONY : TCP/src/EventLoopThread.o
-
-# target to build an object file
-TCP/src/EventLoopThread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.o
-.PHONY : TCP/src/EventLoopThread.cpp.o
-
-TCP/src/EventLoopThread.i: TCP/src/EventLoopThread.cpp.i
-.PHONY : TCP/src/EventLoopThread.i
-
-# target to preprocess a source file
-TCP/src/EventLoopThread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.i
-.PHONY : TCP/src/EventLoopThread.cpp.i
-
-TCP/src/EventLoopThread.s: TCP/src/EventLoopThread.cpp.s
-.PHONY : TCP/src/EventLoopThread.s
+TCP/src/locker.s: TCP/src/locker.cpp.s
+.PHONY : TCP/src/locker.s
 
 # target to generate assembly for a file
-TCP/src/EventLoopThread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.s
-.PHONY : TCP/src/EventLoopThread.cpp.s
-
-TCP/src/TcpBuffer.o: TCP/src/TcpBuffer.cpp.o
-.PHONY : TCP/src/TcpBuffer.o
-
-# target to build an object file
-TCP/src/TcpBuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.o
-.PHONY : TCP/src/TcpBuffer.cpp.o
-
-TCP/src/TcpBuffer.i: TCP/src/TcpBuffer.cpp.i
-.PHONY : TCP/src/TcpBuffer.i
-
-# target to preprocess a source file
-TCP/src/TcpBuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.i
-.PHONY : TCP/src/TcpBuffer.cpp.i
-
-TCP/src/TcpBuffer.s: TCP/src/TcpBuffer.cpp.s
-.PHONY : TCP/src/TcpBuffer.s
-
-# target to generate assembly for a file
-TCP/src/TcpBuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.s
-.PHONY : TCP/src/TcpBuffer.cpp.s
-
-TCP/src/TcpConnection.o: TCP/src/TcpConnection.cpp.o
-.PHONY : TCP/src/TcpConnection.o
-
-# target to build an object file
-TCP/src/TcpConnection.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.o
-.PHONY : TCP/src/TcpConnection.cpp.o
-
-TCP/src/TcpConnection.i: TCP/src/TcpConnection.cpp.i
-.PHONY : TCP/src/TcpConnection.i
-
-# target to preprocess a source file
-TCP/src/TcpConnection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.i
-.PHONY : TCP/src/TcpConnection.cpp.i
-
-TCP/src/TcpConnection.s: TCP/src/TcpConnection.cpp.s
-.PHONY : TCP/src/TcpConnection.s
-
-# target to generate assembly for a file
-TCP/src/TcpConnection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.s
-.PHONY : TCP/src/TcpConnection.cpp.s
-
-TCP/src/TcpServer.o: TCP/src/TcpServer.cpp.o
-.PHONY : TCP/src/TcpServer.o
-
-# target to build an object file
-TCP/src/TcpServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.o
-.PHONY : TCP/src/TcpServer.cpp.o
-
-TCP/src/TcpServer.i: TCP/src/TcpServer.cpp.i
-.PHONY : TCP/src/TcpServer.i
-
-# target to preprocess a source file
-TCP/src/TcpServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.i
-.PHONY : TCP/src/TcpServer.cpp.i
-
-TCP/src/TcpServer.s: TCP/src/TcpServer.cpp.s
-.PHONY : TCP/src/TcpServer.s
-
-# target to generate assembly for a file
-TCP/src/TcpServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.s
-.PHONY : TCP/src/TcpServer.cpp.s
+TCP/src/locker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/locker.cpp.s
+.PHONY : TCP/src/locker.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -561,33 +441,18 @@ help:
 	@echo "... LOG/src/Logger.o"
 	@echo "... LOG/src/Logger.i"
 	@echo "... LOG/src/Logger.s"
-	@echo "... TCP/src/Acceptor.o"
-	@echo "... TCP/src/Acceptor.i"
-	@echo "... TCP/src/Acceptor.s"
-	@echo "... TCP/src/Channel.o"
-	@echo "... TCP/src/Channel.i"
-	@echo "... TCP/src/Channel.s"
-	@echo "... TCP/src/Connector.o"
-	@echo "... TCP/src/Connector.i"
-	@echo "... TCP/src/Connector.s"
-	@echo "... TCP/src/Epoller.o"
-	@echo "... TCP/src/Epoller.i"
-	@echo "... TCP/src/Epoller.s"
-	@echo "... TCP/src/EventLoop.o"
-	@echo "... TCP/src/EventLoop.i"
-	@echo "... TCP/src/EventLoop.s"
-	@echo "... TCP/src/EventLoopThread.o"
-	@echo "... TCP/src/EventLoopThread.i"
-	@echo "... TCP/src/EventLoopThread.s"
-	@echo "... TCP/src/TcpBuffer.o"
-	@echo "... TCP/src/TcpBuffer.i"
-	@echo "... TCP/src/TcpBuffer.s"
-	@echo "... TCP/src/TcpConnection.o"
-	@echo "... TCP/src/TcpConnection.i"
-	@echo "... TCP/src/TcpConnection.s"
-	@echo "... TCP/src/TcpServer.o"
-	@echo "... TCP/src/TcpServer.i"
-	@echo "... TCP/src/TcpServer.s"
+	@echo "... TCP/src/EpollTools.o"
+	@echo "... TCP/src/EpollTools.i"
+	@echo "... TCP/src/EpollTools.s"
+	@echo "... TCP/src/HttpServer.o"
+	@echo "... TCP/src/HttpServer.i"
+	@echo "... TCP/src/HttpServer.s"
+	@echo "... TCP/src/ThreadPool.o"
+	@echo "... TCP/src/ThreadPool.i"
+	@echo "... TCP/src/ThreadPool.s"
+	@echo "... TCP/src/locker.o"
+	@echo "... TCP/src/locker.i"
+	@echo "... TCP/src/locker.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

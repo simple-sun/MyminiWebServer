@@ -1,48 +1,23 @@
 [
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/Acceptor.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/Acceptor.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/Acceptor.cpp"
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/EpollTools.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/EpollTools.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/EpollTools.cpp"
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/Channel.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/Channel.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/Channel.cpp"
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/HttpServer.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/HttpServer.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/HttpServer.cpp"
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/Connector.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/Connector.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/Connector.cpp"
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/ThreadPool.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/ThreadPool.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/ThreadPool.cpp"
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/Epoller.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/Epoller.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/Epoller.cpp"
-},
-{
-  "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/EventLoop.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/EventLoop.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/EventLoop.cpp"
-},
-{
-  "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/EventLoopThread.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/EventLoopThread.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/EventLoopThread.cpp"
-},
-{
-  "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/TcpBuffer.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/TcpBuffer.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/TcpBuffer.cpp"
-},
-{
-  "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/TcpConnection.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/TcpConnection.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/TcpConnection.cpp"
-},
-{
-  "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/TcpServer.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/TcpServer.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/TcpServer.cpp"
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/TCP/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/TCP/src/locker.cpp.o -c /home/sun/Webserver1/Mywebserver/TCP/src/locker.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/TCP/src/locker.cpp"
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
