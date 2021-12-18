@@ -71,7 +71,7 @@ int main()
     for(int i = 0; i < num; i++)
     {
       int sockfd = events[i].data.fd;
-      std::cout << events[i].events << " "<< events->data.ptr << std::endl;
+      //std::cout << events[i].events << " "<< events->data.ptr << std::endl;
       if(sockfd == listenfd)
       {
         struct sockaddr_in cAddress;
@@ -90,7 +90,7 @@ int main()
           continue;
         }
         //初始化连接
-        addfd(epollfd,connfd,false); 
+        //addfd(epollfd,connfd,false); 
         users[connfd].init( connfd,cAddress);
       }
       else if( events[i].events & ( EPOLLRDHUP | EPOLLHUP | EPOLLERR))

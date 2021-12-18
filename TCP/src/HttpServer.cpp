@@ -38,7 +38,7 @@ void HttpServer::init(int sockfd, const sockaddr_in& sockAddr)
     sockfd_ = sockfd;
     sockAddr_ = sockAddr;
     // epollfd_ = epoll_create(5);
-    // addfd(epollfd_,sockfd,true);
+    addfd(epollfd_,sockfd,true);
     userConn_cnt++;
     reset();
 }
@@ -126,7 +126,7 @@ HttpServer::LINE_STAUS HttpServer::parse_line()
     char tmp;
     for(; checkIndex_ < readIndex_; checkIndex_++)
     {
-        tmp = readBuf[readIndex_];
+        tmp = readBuf[checkIndex_];
         if(tmp == '\r')
         {
             if(checkIndex_ + 1 == readIndex_)

@@ -109,6 +109,7 @@ void ThreadPool< T >::run()
             continue;
         }
         T* request = workqueue_.front();
+        workqueue_.pop_front();
         queuelocker_.unlock();
         if( !request)
         {
