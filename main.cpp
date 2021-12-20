@@ -18,7 +18,7 @@
 
 typedef HttpServer HS;
 
-int main1()
+int main()
 {
   
 
@@ -40,15 +40,16 @@ int main1()
 
   epoll_event events[MAXEVENTNUM];
 
+  clock_t start,finish;
+  double totaltime;
+
   while(1)
   {
-    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-    std::time_t tt = std::chrono::system_clock::to_time_t(now);
-    std::cout << ctime(&tt) << std::endl;
+    start = clock();
     int num = epoll_wait(epollfd, events, MAXEVENTNUM,-1);
-    std::chrono::system_clock::time_point now1 = std::chrono::system_clock::now();
-    std::time_t tt1 = std::chrono::system_clock::to_time_t(now1);
-    std::cout << ctime(&tt1) << std::endl;
+    finish = clock();
+    totaltime=(double)(finish-start)/CLOCKS_PER_SEC;
+    std::cout << "/n epoll_wait的运行时间为"<<totaltime<<"秒！" << std::endl;
     printf("%d events has been got\n", num);
 
     for(int i = 0; i < num; i++)
@@ -58,9 +59,12 @@ int main1()
       {
         struct sockaddr_in cAddress;
         socklen_t len = sizeof(cAddress);
-        
+        //start = clock();
         int connfd = accept(listenfd,(struct sockaddr*)&cAddress,
                         &len);
+        finish = clock();
+        totaltime=(double)(finish-start)/CLOCKS_PER_SEC;
+        std::cout << "/n accept的运行时间为"<<totaltime<<"秒！" << std::endl;
       }
     }
   }
@@ -83,7 +87,7 @@ int main1()
 
 
 
-int main()
+int main1()
 {
   log::LogThread::init();
   printf("main(): pid = %d\n", getpid());
@@ -163,7 +167,6 @@ int main()
           continue;
         }
         //初始化连接
-        //addfd(epollfd,connfd,false); 
         users[connfd].init( connfd,cAddress);
         std::cout << HS::userConn_cnt << std::endl;
       }
