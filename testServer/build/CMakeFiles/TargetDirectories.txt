@@ -1,0 +1,3 @@
+/home/sun/Webserver1/testServer/build/CMakeFiles/rebuild_cache.dir
+/home/sun/Webserver1/testServer/build/CMakeFiles/out.exe.dir
+/home/sun/Webserver1/testServer/build/CMakeFiles/edit_cache.dir
