@@ -189,4 +189,6 @@ CMakeFiles/out.exe.dir/main.cpp.o: \
  /usr/include/c++/8/bits/list.tcc \
  /home/sun/Webserver1/Mywebserver/TCP/inc/locker.h \
  /usr/include/semaphore.h /usr/include/bits/semaphore.h \
- /home/sun/Webserver1/Mywebserver/TCP/inc/locker.h
+ /home/sun/Webserver1/Mywebserver/TCP/inc/locker.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/TcpConnect.h \
+ /home/sun/Webserver1/Mywebserver/TCP/inc/HttpServer.h

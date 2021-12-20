@@ -297,6 +297,30 @@ TCP/src/HttpServer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/HttpServer.cpp.s
 .PHONY : TCP/src/HttpServer.cpp.s
 
+TCP/src/TcpConnect.o: TCP/src/TcpConnect.cpp.o
+.PHONY : TCP/src/TcpConnect.o
+
+# target to build an object file
+TCP/src/TcpConnect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnect.cpp.o
+.PHONY : TCP/src/TcpConnect.cpp.o
+
+TCP/src/TcpConnect.i: TCP/src/TcpConnect.cpp.i
+.PHONY : TCP/src/TcpConnect.i
+
+# target to preprocess a source file
+TCP/src/TcpConnect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnect.cpp.i
+.PHONY : TCP/src/TcpConnect.cpp.i
+
+TCP/src/TcpConnect.s: TCP/src/TcpConnect.cpp.s
+.PHONY : TCP/src/TcpConnect.s
+
+# target to generate assembly for a file
+TCP/src/TcpConnect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/TCP/src/TcpConnect.cpp.s
+.PHONY : TCP/src/TcpConnect.cpp.s
+
 TCP/src/ThreadPool.o: TCP/src/ThreadPool.cpp.o
 .PHONY : TCP/src/ThreadPool.o
 
@@ -447,6 +471,9 @@ help:
 	@echo "... TCP/src/HttpServer.o"
 	@echo "... TCP/src/HttpServer.i"
 	@echo "... TCP/src/HttpServer.s"
+	@echo "... TCP/src/TcpConnect.o"
+	@echo "... TCP/src/TcpConnect.i"
+	@echo "... TCP/src/TcpConnect.s"
 	@echo "... TCP/src/ThreadPool.o"
 	@echo "... TCP/src/ThreadPool.i"
 	@echo "... TCP/src/ThreadPool.s"

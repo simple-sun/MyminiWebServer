@@ -3,17 +3,84 @@
 #include<assert.h>
 #include<errno.h>
 #include<stdio.h>
+#include<chrono>
+#include<ctime>
 
 #include"HttpServer.h"
 #include"EpollTools.h"
 #include"LogThread.h"
 #include"ThreadPool.h"
 #include"locker.h"
+#include"TcpConnect.h"
 
 #define MAXFD 65536
 #define MAXEVENTNUM 10000
 
 typedef HttpServer HS;
+
+int main1()
+{
+  
+
+  const char* ip = "127.0.0.1";
+  int port = 9527;
+
+  int listenfd = socket(PF_INET,SOCK_STREAM | SOCK_NONBLOCK, 0);
+  struct sockaddr_in address;
+  bzero(&address,sizeof(address));
+  address.sin_family = AF_INET;
+  inet_pton(AF_INET,ip,&address.sin_addr);
+  address.sin_port = htons(port);
+
+  bind(listenfd,(struct sockaddr*)&address, sizeof(address));
+  listen(listenfd,5);
+
+  int epollfd = epoll_create(5);
+  addfd(epollfd,listenfd,false);
+
+  epoll_event events[MAXEVENTNUM];
+
+  while(1)
+  {
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+    std::time_t tt = std::chrono::system_clock::to_time_t(now);
+    std::cout << ctime(&tt) << std::endl;
+    int num = epoll_wait(epollfd, events, MAXEVENTNUM,-1);
+    std::chrono::system_clock::time_point now1 = std::chrono::system_clock::now();
+    std::time_t tt1 = std::chrono::system_clock::to_time_t(now1);
+    std::cout << ctime(&tt1) << std::endl;
+    printf("%d events has been got\n", num);
+
+    for(int i = 0; i < num; i++)
+    {
+      int sockfd = events[i].data.fd;
+      if(sockfd == listenfd)
+      {
+        struct sockaddr_in cAddress;
+        socklen_t len = sizeof(cAddress);
+        
+        int connfd = accept(listenfd,(struct sockaddr*)&cAddress,
+                        &len);
+      }
+    }
+  }
+
+  close(epollfd);
+  close(listenfd);
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int main()
@@ -46,15 +113,21 @@ int main()
 
   ret = bind(listenfd,(struct sockaddr*)&address, sizeof(address));
   assert(ret >= 0);
-
   ret = listen(listenfd,5);
   assert(ret >= 0);
-
-  epoll_event events[MAXEVENTNUM];
+  
   int epollfd = epoll_create(5);
   assert(epollfd != -1);
   addfd(epollfd,listenfd,false);
+  
+  // TcpConnect t(port,ip);
+  // int listenfd = t.listenfd();
+  // int epollfd = t.epollfd();
+
+  epoll_event events[MAXEVENTNUM];
   HS::epollfd_ = epollfd;
+
+  
 
   while(1)
   {
@@ -92,6 +165,7 @@ int main()
         //初始化连接
         //addfd(epollfd,connfd,false); 
         users[connfd].init( connfd,cAddress);
+        std::cout << HS::userConn_cnt << std::endl;
       }
       else if( events[i].events & ( EPOLLRDHUP | EPOLLHUP | EPOLLERR))
       {
