@@ -6,6 +6,7 @@
 #include<assert.h>
 #include<stdio.h>
 #include<netinet/in.h>
+#include<errno.h>
 
 void addfd(int epollfd, int fd, bool one_shot)
 {
@@ -55,7 +56,8 @@ void addsig(int sig, void(handler)(int), bool restart)
     }
     sigfillset(&sg.sa_mask);
     assert(sigaction(sig,&sg,NULL) != -1);      
-}
+}  
+
 
 void showError(int connfd, const char* info)
 {

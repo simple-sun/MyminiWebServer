@@ -18,7 +18,7 @@
 
 typedef HttpServer HS;
 
-int main3()
+int main1()
 { 
 
   const char* ip = "127.0.0.1";
@@ -92,7 +92,7 @@ int main3()
 
 
 
-int main4()
+int main2()
 {
   log::LogThread::init();
   printf("main(): pid = %d\n", getpid());
@@ -209,5 +209,3 @@ int main4()
   delete tPool;
   return 0;  
 }
-
-

@@ -11,13 +11,9 @@
 #include"LogThread.h"
 
 
-
-
-
 TcpConnect::TcpConnect(int port, const char* ip)
             : port_(port),
-            ip_(ip),
-            
+            ip_(ip),            
             isListen(false),
             isCreatE(false)
 {

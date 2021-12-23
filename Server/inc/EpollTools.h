@@ -18,6 +18,7 @@ int setNonblocking(int fd);
 //添加信号
 void addsig(int sig, void(handler)(int), bool restart = true);
 
+
 void showError(int connfd, const char* info);
 
 
