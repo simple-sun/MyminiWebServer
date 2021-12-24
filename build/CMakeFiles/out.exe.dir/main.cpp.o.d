@@ -191,4 +191,7 @@ CMakeFiles/out.exe.dir/main.cpp.o: \
  /usr/include/semaphore.h /usr/include/bits/semaphore.h \
  /home/sun/Webserver1/Mywebserver/Server/inc/locker.h \
  /home/sun/Webserver1/Mywebserver/Server/inc/TcpConnect.h \
- /home/sun/Webserver1/Mywebserver/Server/inc/HttpServer.h
+ /home/sun/Webserver1/Mywebserver/Server/inc/HttpServer.h \
+ /home/sun/Webserver1/Mywebserver/Server/inc/ProcessPool.h \
+ /usr/include/sys/unistd.h /usr/include/sys/wait.h \
+ /home/sun/Webserver1/Mywebserver/Server/inc/EpollTools.h

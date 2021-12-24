@@ -7,7 +7,7 @@
                 "/usr/include",
                 "/usr/local/include",
                 "/usr/local/bin",
-                "${workspaceFolder}/TCP/inc",
+                "${workspaceFolder}/Server/inc",
                 "${workspaceFolder}/LOG/inc"
             ],
             "defines": [],
