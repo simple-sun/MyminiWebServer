@@ -62,7 +62,7 @@ ProcessPool< T>::ProcessPool(int listenfd)
     subProcess = new Process[ChildNum];
     for(int i = 0; i < ChildNum; i++)
     {
-        int ret = socketpair(PF_INET,SOCK_STREAM,0,subProcess[i].pipefd_);
+        int ret = socketpair(PF_UNIX,SOCK_STREAM,0,subProcess[i].pipefd_);
         assert(ret == 0);
         subProcess[i].pid_ = fork();
         if(subProcess->pid_ > 0)
@@ -237,7 +237,7 @@ void ProcessPool<T>::runChild()
     setPiped();
 
     int pipefd = subProcess[index_].pipefd_[1];
-    add(epollfd_,pipefd);
+    addfd(epollfd_,pipefd,false);
 
     epoll_event events[MAXEVENTNUM];
     T* users = new T[USERNUM];
@@ -258,11 +258,11 @@ void ProcessPool<T>::runChild()
         {
             for(int i = 0; i < sizeof(events);i++)
             {
-                int sockfd = events[i];
+                int sockfd = events[i].data.fd;
                 if(sockfd == pipefd && events[i].events == EPOLLIN)
                 {
                     int buf = 0;
-                    ret = recv(sockfd,buf,sizeof(buf),0);
+                    ret = recv(sockfd,(char*)&buf,sizeof(buf),0);
                     if(ret < 0)
                     {
                         //说明父进程没有传进来信号
@@ -272,13 +272,13 @@ void ProcessPool<T>::runChild()
                     {
                         struct sockaddr_in address;
                         socklen_t addlen = sizeof(address);
-                        int connfd = accept(listenfd_,&address,addlen);
+                        int connfd = accept(listenfd_,(struct sockaddr*)&address,&addlen);
                         if(connfd < 0)
                         {
                             LOG_FATAL << "accept() : connfd = " << connfd << log::end;
                         }
-                        addfd(epollfd_,connfd);
-                        users[sockfd].init(connfd,address)
+                        addfd(epollfd_,connfd,false);
+                        users[sockfd].init(connfd,address);
                     }
                 }
                 else if(sockfd == sigPipefd[0] && events[i].events == EPOLLIN)
