@@ -56,7 +56,7 @@ template<typename T>
 ProcessPool< T>::ProcessPool(int listenfd)
             :listenfd_(listenfd),
             index_(-1),
-            ChildNum(8),
+            ChildNum(1),
             stop_(false)
 {
     subProcess = new Process[ChildNum];
@@ -65,7 +65,8 @@ ProcessPool< T>::ProcessPool(int listenfd)
         int ret = socketpair(PF_UNIX,SOCK_STREAM,0,subProcess[i].pipefd_);
         assert(ret == 0);
         subProcess[i].pid_ = fork();
-        if(subProcess->pid_ > 0)
+        assert(subProcess[i].pid_ >= 0);
+        if(subProcess[i].pid_ > 0)
         {
             close(subProcess[i].pipefd_[1]);
             continue;
@@ -98,7 +99,7 @@ void ProcessPool<T>::setPiped()
 {
     epollfd_ = epoll_create(5);
 
-    int ret = socketpair(PF_INET,SOCK_STREAM,0,sigPipefd);
+    int ret = socketpair(PF_UNIX,SOCK_STREAM,0,sigPipefd);
 
     setNonblocking(sigPipefd[1]);
     addfd(epollfd_,sigPipefd[0],false);
@@ -124,7 +125,7 @@ void ProcessPool<T>::runParent()
 {
     setPiped();
 
-    epollfd_ = epoll_create(5);
+    //epollfd_ = epoll_create(5);
     addfd(epollfd_,listenfd_,false);
 
     epoll_event events[MAXEVENTNUM];
@@ -133,20 +134,21 @@ void ProcessPool<T>::runParent()
 
     while(!stop_)
     {
-        int num = epoll_wait(epollfd_,events,sizeof(events),-1);
+        int num = epoll_wait(epollfd_,events,MAXEVENTNUM,-1);
         if( num < 0 )
         {
             std::cout << "runParent() epoll_wait failed." << std::endl;
-            LOG_FATAL << "epoll_wait failed." << log::end;
+            //LOG_FATAL << "epoll_wait failed." << log::end;
+            break;
         }
         else if( num == 0)
         {
             std::cout << "no events waited." << std::endl;
-            LOG_FATAL << "no events waited." << log::end;
+            //LOG_FATAL << "no events waited." << log::end;
         }
         else
         {
-            for(int i = 0; i < sizeof(events); i++)
+            for(int i = 0; i < num; i++)
             {
                 int sockfd = events[i].data.fd;
                 if(sockfd == listenfd_)
@@ -163,8 +165,9 @@ void ProcessPool<T>::runParent()
                         j = (j++)%ChildNum;                        
                     } while (j != subNum); 
                     subNum = (j+1)%ChildNum;   
-                    send(subProcess[j].pipefd_[1],(char*)pipeSig,sizeof(pipeSig),0);   
-                    LOG_INFO << "send " << sockfd << " to subProcess " << j << log::end;            
+                    send(subProcess[i].pipefd_[1],(char*)pipeSig,
+                                                sizeof(pipeSig),0);   
+                    //LOG_INFO << "send " << sockfd << " to subProcess " << j << log::end;            
                 }
                 //处理父进程的信号
                 else if((sockfd == sigPipefd[0]) && (events[i].events == EPOLLIN))
@@ -185,7 +188,7 @@ void ProcessPool<T>::runParent()
                                 {
                                     if(subProcess[i].pid_ == tpid)
                                     {
-                                        LOG_INFO << "subprocess[" << i << "] close" << log::end;
+                                        //LOG_INFO << "subprocess[" << i << "] close" << log::end;
                                         subProcess[i].pid_ = -1;
                                         close(subProcess[i].pipefd_[0]);                                        
                                     }
@@ -208,7 +211,7 @@ void ProcessPool<T>::runParent()
                         //键盘输入，中断进程
                         else if(sigarr[j] == SIGINT)
                         {
-                            LOG_INFO << " kill all subProcess" << log::end;
+                            //LOG_INFO << " kill all subProcess" << log::end;
                             for( int k = 0; k < ChildNum; k++)
                             {
                                 int tpid = subProcess[k].pid_;
@@ -248,11 +251,11 @@ void ProcessPool<T>::runChild()
         int num = epoll_wait(pipefd,events,sizeof(events),-1);
         if(num < 0)
         {
-            LOG_FATAL << "epoll_wait num = " << num << log::end;
+            //LOG_FATAL << "epoll_wait num = " << num << log::end;
         }
         else if(num == 0)
         {
-            LOG_INFO << num << "event happened" << log::end;
+            //LOG_INFO << num << "event happened" << log::end;
         }
         else
         {
@@ -275,7 +278,7 @@ void ProcessPool<T>::runChild()
                         int connfd = accept(listenfd_,(struct sockaddr*)&address,&addlen);
                         if(connfd < 0)
                         {
-                            LOG_FATAL << "accept() : connfd = " << connfd << log::end;
+                            //LOG_FATAL << "accept() : connfd = " << connfd << log::end;
                         }
                         addfd(epollfd_,connfd,false);
                         users[sockfd].init(connfd,address);
@@ -307,7 +310,7 @@ void ProcessPool<T>::runChild()
                         }
                         if(sigarr[j] == SIGINT)
                         {
-                            LOG_INFO << "subProcess [" << j <<"] killed." << log::end;
+                            //LOG_INFO << "subProcess [" << j <<"] killed." << log::end;
                             stop_ = true;
                         }
                     }
@@ -319,6 +322,10 @@ void ProcessPool<T>::runChild()
             }
         }
     }
+    delete [] users;
+    users = NULL;
+    close(pipefd);
+    close(epollfd_);
 }
 
 #endif

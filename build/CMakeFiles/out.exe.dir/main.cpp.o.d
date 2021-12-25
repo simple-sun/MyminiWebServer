@@ -184,12 +184,8 @@ CMakeFiles/out.exe.dir/main.cpp.o: \
  /usr/include/c++/8/bits/basic_ios.tcc \
  /usr/include/c++/8/bits/ostream.tcc /usr/include/c++/8/istream \
  /usr/include/c++/8/bits/istream.tcc \
- /home/sun/Webserver1/Mywebserver/Server/inc/ThreadPool.h \
- /usr/include/c++/8/list /usr/include/c++/8/bits/stl_list.h \
- /usr/include/c++/8/bits/list.tcc \
  /home/sun/Webserver1/Mywebserver/Server/inc/locker.h \
  /usr/include/semaphore.h /usr/include/bits/semaphore.h \
- /home/sun/Webserver1/Mywebserver/Server/inc/locker.h \
  /home/sun/Webserver1/Mywebserver/Server/inc/TcpConnect.h \
  /home/sun/Webserver1/Mywebserver/Server/inc/HttpServer.h \
  /home/sun/Webserver1/Mywebserver/Server/inc/ProcessPool.h \
