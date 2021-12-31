@@ -167,7 +167,7 @@ HttpServer::HTTP_CODE HttpServer::parseContent(char* text)
 
 HttpServer::HTTP_CODE HttpServer::parseRequestlion(char* text)
 {
-    url_ =strpbrk(text,"\t"); 
+    url_ =strpbrk(text," \t"); 
     if(!url_)
     {
         return BAD_REQUEST;
@@ -184,14 +184,14 @@ HttpServer::HTTP_CODE HttpServer::parseRequestlion(char* text)
         return BAD_REQUEST;
     }
 
-    url_ += strspn(url_,"\t");
-    version_ = strpbrk(url_,"\t");
+    url_ += strspn(url_," \t");
+    version_ = strpbrk(url_," \t");
     if(!version_)
     {
         return BAD_REQUEST;
     }
     *version_ += '\0';
-    version_ += strspn(version_,"\t");
+    version_ += strspn(version_," \t");
     if(strcasecmp(version_,"HTTP/1.1") != 0)
     {
         return BAD_REQUEST;
@@ -225,7 +225,7 @@ HttpServer::HTTP_CODE HttpServer::parseHeaders(char* text)
     else if( strncasecmp(text,"Connection:",11) == 0)
     {
         text += 11;
-        text += strspn(text,"\t");
+        text += strspn(text," \t");
         if( strcasecmp( text,"keep-alive" ) == 0)
         {
             linger_ = true;
@@ -235,7 +235,7 @@ HttpServer::HTTP_CODE HttpServer::parseHeaders(char* text)
     else if(strncasecmp(text,"Content-Length:",15) == 0)
     {
         text += 15;
-        text += strspn(text,"\t");
+        text += strspn(text," \t");
         contentLength_ = atol(text);
     }
     //处理Host头部字段

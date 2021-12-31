@@ -11,11 +11,6 @@
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/ProcessPool.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/ProcessPool.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/Server/src/ProcessPool.cpp"
-},
-{
-  "directory": "/home/sun/Webserver1/Mywebserver/build",
   "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/TcpConnect.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/TcpConnect.cpp",
   "file": "/home/sun/Webserver1/Mywebserver/Server/src/TcpConnect.cpp"
 },
@@ -23,6 +18,11 @@
   "directory": "/home/sun/Webserver1/Mywebserver/build",
   "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/locker.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/locker.cpp",
   "file": "/home/sun/Webserver1/Mywebserver/Server/src/locker.cpp"
+},
+{
+  "directory": "/home/sun/Webserver1/Mywebserver/build",
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/testProcessPool.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/testProcessPool.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/Server/src/testProcessPool.cpp"
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",

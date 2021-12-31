@@ -2,94 +2,73 @@
 #define THREADPOOL_H
 
 #include<list>
-#include<cstdio>
-#include<exception>
 #include<pthread.h>
+#include<stdio.h>
+
 #include"locker.h"
 #include"LogThread.h"
+
+
 
 template<typename T>
 class ThreadPool
 {
 public:
-    ThreadPool(int thread_number = 8, int max_request = 10000);
+    ThreadPool(int threadnum = 4);
     ~ThreadPool();
 
-    bool append(T* request);
+    void append(T* req);
 
 private:
-    static void* workPool(void* arg);
+    static void* workfunc(void* arg);
     void run();
 
-    int thread_number_;    //线程池中的线程数
-    int max_requests_;     //请求队列中允许的最大请求数
-    pthread_t* threads_;    //描述线程池的数组
-    std::list<T*> workqueue_;  //请求队列
-    Locker queuelocker_;   //保护请求队列
-    Sem queuestat_;        //是否有待处理任务
-    bool stop_;            //
+    pthread_t* thread_;
+    int threadNum;
+    std::list<T*> workqueue;
+    Locker queueLock_;
 };
-template<typename T>
-ThreadPool< T >::ThreadPool(int thread_number, int max_request)
-                :thread_number_(thread_number),
-                max_requests_(max_request),
-                stop_(false),
-                threads_(NULL)
+
+template<typename T> 
+ThreadPool<T>:: ThreadPool(int threadnum)
+        :threadNum(threadnum)
 {
-    if(thread_number <= 0 || max_requests_ <= 0)
+    thread_ = new pthread_t[threadNum];
+
+    for(int i = 0; i< threadnum; i++)
     {
-        LOG_FATAL << "ThreadPool exception:: thread_number <= 0 || max_requests <= 0." << log::end;
-        throw std::exception();
-    }
-    threads_ = new pthread_t[thread_number];
-    if(!threads_)
-    {
-        LOG_FATAL << "ThreadPool exception:: thread is not exist." << log::end;
-        throw std::exception();
-    }
-    //创建thread_number_个线程
-    for(int i = 0; i < thread_number; i++)
-    {
-        printf("the %d thread is created\n", i);
-        if(pthread_create(threads_+i, NULL, workPool, this) != 0)
+        int ret = pthread_create(thread_+i,NULL,workfunc,this);
+        if(ret == -1)
         {
-            delete [] threads_;
-            LOG_FATAL << "ThreadPool exception:: pthread_create fail." << log::end;
-            throw std::exception();
+
+            printf("%d thread creat falied\n", i);
         }
-        if(pthread_detach(threads_[i]))
+        printf("%d thread is created\n",i);
+        LOG_INFO << i << " thread is created." << log::end;
+
+        if(pthread_detach(thread_[i]))
         {
-            delete [] threads_;
-            LOG_FATAL << "ThreadPool exception:: pthread_detach fail." << log::end;
-            throw std::exception();
+            printf("%d thread is detached\n", i);
+            LOG_INFO << i << " thread is detached." << log::end;
+
         }
     }
 }
 
 template<typename T>
-ThreadPool< T >::~ThreadPool()
+ThreadPool<T> :: ~ThreadPool()
 {
-    delete [] threads_;
-    stop_ = true;
+    delete [] thread_;
 }
-
 template<typename T>
-bool ThreadPool< T >::append(T* request)
+void ThreadPool<T> :: append(T* req)
 {
-    queuelocker_.lock();
-    if( workqueue_.size() > max_requests_)
-    {
-        queuelocker_.unlock();
-        return false;
-    }
-    workqueue_.push_back(request);
-    queuelocker_.unlock();
-    queuestat_.post();
-    return true;
+    queueLock_.lock();
+    workqueue.push_back(req);
+    queueLock_.unlock();
 }
-
 template<typename T>
-void* ThreadPool< T >::workPool(void* arg)
+void* ThreadPool<T> ::workfunc(void* arg)
 {
     ThreadPool* pool = (ThreadPool*)arg;
     pool->run();
@@ -97,25 +76,20 @@ void* ThreadPool< T >::workPool(void* arg)
 }
 
 template<typename T>
-void ThreadPool< T >::run()
+void ThreadPool<T> :: run()
 {
-    while(!stop_)
+    while(1)
     {
-        queuestat_.wait();
-        queuelocker_.lock();
-        if(workqueue_.empty())
+        if( workqueue.size() > 0)
         {
-            queuelocker_.unlock();
-            continue;
+            queueLock_.lock();
+            T* req = workqueue.front();
+            workqueue.pop_front();
+            queueLock_.unlock();
+            req->process();          
         }
-        T* request = workqueue_.front();
-        workqueue_.pop_front();
-        queuelocker_.unlock();
-        if( !request)
-        {
-            continue;
-        }
-        request->process();
     }
 }
+
+
 #endif
