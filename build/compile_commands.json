@@ -6,8 +6,18 @@
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",
-  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpServer.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/HttpServer.cpp",
-  "file": "/home/sun/Webserver1/Mywebserver/Server/src/HttpServer.cpp"
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/HttpProcessRead.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/Server/src/HttpProcessRead.cpp"
+},
+{
+  "directory": "/home/sun/Webserver1/Mywebserver/build",
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/HttpServer_1.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/Server/src/HttpServer_1.cpp"
+},
+{
+  "directory": "/home/sun/Webserver1/Mywebserver/build",
+  "command": "/usr/bin/c++  -I/home/sun/Webserver1/Mywebserver/Server/inc -I/home/sun/Webserver1/Mywebserver/LOG/inc -I/home/sun/Webserver1/Mywebserver/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.o -c /home/sun/Webserver1/Mywebserver/Server/src/Httpserver.cpp",
+  "file": "/home/sun/Webserver1/Mywebserver/Server/src/Httpserver.cpp"
 },
 {
   "directory": "/home/sun/Webserver1/Mywebserver/build",

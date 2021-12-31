@@ -273,29 +273,77 @@ Server/src/EpollTools.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/EpollTools.cpp.s
 .PHONY : Server/src/EpollTools.cpp.s
 
-Server/src/HttpServer.o: Server/src/HttpServer.cpp.o
-.PHONY : Server/src/HttpServer.o
+Server/src/HttpProcessRead.o: Server/src/HttpProcessRead.cpp.o
+.PHONY : Server/src/HttpProcessRead.o
 
 # target to build an object file
-Server/src/HttpServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer.cpp.o
-.PHONY : Server/src/HttpServer.cpp.o
+Server/src/HttpProcessRead.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o
+.PHONY : Server/src/HttpProcessRead.cpp.o
 
-Server/src/HttpServer.i: Server/src/HttpServer.cpp.i
-.PHONY : Server/src/HttpServer.i
+Server/src/HttpProcessRead.i: Server/src/HttpProcessRead.cpp.i
+.PHONY : Server/src/HttpProcessRead.i
 
 # target to preprocess a source file
-Server/src/HttpServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer.cpp.i
-.PHONY : Server/src/HttpServer.cpp.i
+Server/src/HttpProcessRead.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.i
+.PHONY : Server/src/HttpProcessRead.cpp.i
 
-Server/src/HttpServer.s: Server/src/HttpServer.cpp.s
-.PHONY : Server/src/HttpServer.s
+Server/src/HttpProcessRead.s: Server/src/HttpProcessRead.cpp.s
+.PHONY : Server/src/HttpProcessRead.s
 
 # target to generate assembly for a file
-Server/src/HttpServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer.cpp.s
-.PHONY : Server/src/HttpServer.cpp.s
+Server/src/HttpProcessRead.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.s
+.PHONY : Server/src/HttpProcessRead.cpp.s
+
+Server/src/HttpServer_1.o: Server/src/HttpServer_1.cpp.o
+.PHONY : Server/src/HttpServer_1.o
+
+# target to build an object file
+Server/src/HttpServer_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.o
+.PHONY : Server/src/HttpServer_1.cpp.o
+
+Server/src/HttpServer_1.i: Server/src/HttpServer_1.cpp.i
+.PHONY : Server/src/HttpServer_1.i
+
+# target to preprocess a source file
+Server/src/HttpServer_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.i
+.PHONY : Server/src/HttpServer_1.cpp.i
+
+Server/src/HttpServer_1.s: Server/src/HttpServer_1.cpp.s
+.PHONY : Server/src/HttpServer_1.s
+
+# target to generate assembly for a file
+Server/src/HttpServer_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.s
+.PHONY : Server/src/HttpServer_1.cpp.s
+
+Server/src/Httpserver.o: Server/src/Httpserver.cpp.o
+.PHONY : Server/src/Httpserver.o
+
+# target to build an object file
+Server/src/Httpserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.o
+.PHONY : Server/src/Httpserver.cpp.o
+
+Server/src/Httpserver.i: Server/src/Httpserver.cpp.i
+.PHONY : Server/src/Httpserver.i
+
+# target to preprocess a source file
+Server/src/Httpserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.i
+.PHONY : Server/src/Httpserver.cpp.i
+
+Server/src/Httpserver.s: Server/src/Httpserver.cpp.s
+.PHONY : Server/src/Httpserver.s
+
+# target to generate assembly for a file
+Server/src/Httpserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.s
+.PHONY : Server/src/Httpserver.cpp.s
 
 Server/src/TcpConnect.o: Server/src/TcpConnect.cpp.o
 .PHONY : Server/src/TcpConnect.o
@@ -492,9 +540,15 @@ help:
 	@echo "... Server/src/EpollTools.o"
 	@echo "... Server/src/EpollTools.i"
 	@echo "... Server/src/EpollTools.s"
-	@echo "... Server/src/HttpServer.o"
-	@echo "... Server/src/HttpServer.i"
-	@echo "... Server/src/HttpServer.s"
+	@echo "... Server/src/HttpProcessRead.o"
+	@echo "... Server/src/HttpProcessRead.i"
+	@echo "... Server/src/HttpProcessRead.s"
+	@echo "... Server/src/HttpServer_1.o"
+	@echo "... Server/src/HttpServer_1.i"
+	@echo "... Server/src/HttpServer_1.s"
+	@echo "... Server/src/Httpserver.o"
+	@echo "... Server/src/Httpserver.i"
+	@echo "... Server/src/Httpserver.s"
 	@echo "... Server/src/TcpConnect.o"
 	@echo "... Server/src/TcpConnect.i"
 	@echo "... Server/src/TcpConnect.s"
