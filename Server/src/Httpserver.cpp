@@ -54,8 +54,8 @@ bool HttpServer::read()
         {
             if(errno == EAGAIN )
             {
-                sleep(10);
-                continue;
+                //sleep(10);
+                break;
             }
             LOG_FATAL << "readByte = -1" << log::end;
             return false;

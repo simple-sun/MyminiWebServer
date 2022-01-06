@@ -36,7 +36,7 @@ private:
 
 private:
     //缓冲区
-    char* readBuffer;
+    char readBuffer[READBUFFERSIZE];
     int processPosition;
     int checkIndex_;
     int readIndex_;

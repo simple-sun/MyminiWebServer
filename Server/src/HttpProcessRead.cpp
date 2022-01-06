@@ -13,14 +13,15 @@ const char* docRoot = "var/www/html";
 HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
                 :checkstate_(CHECK_REQUESTLINE),
                 readIndex_(readIndex)
-{    
-    readBuffer = readbuffer;
+{
     memset(readBuffer,'\0',READBUFFERSIZE);
-    memset(filePath_,'\0',200);
+    memset(filePath_,'\0',200); 
+    size_t sz = sizeof(readbuffer) ;
+    memcpy(readBuffer, readbuffer,(size_t)READBUFFERSIZE);    
 }
 
 HttpProcessRead::~HttpProcessRead(){
-    delete readBuffer;
+    //delete readBuffer;
     delete url_;
     delete version_;
     delete host_;
@@ -31,12 +32,16 @@ HttpProcessRead::HTTPCODE HttpProcessRead::processRead()
 {
     HTTPCODE ret = NO_REQUEST;
     LINESTATUS lineStatus = LINE_OK;
-    char* text = getLine();
-    printf("get 1 http request: %s",*text);
+    char* text = 0 ;
+    
 
     while((lineStatus == LINE_OK && checkstate_ == CHECK_CONTENT)
             || (lineStatus = parseLine()) == LINE_OK)
     {
+        text =  getLine();
+        processPosition = checkIndex_;
+        printf("get 1 http request: %s. \n",text);
+        
         if(checkstate_ == CHECK_REQUESTLINE)
         {
             ret = parseRequest(text);
@@ -135,15 +140,18 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     if(strcasecmp(mtext,"GET"))
     {
         method_ = GET;
+        
     }
     else if(strcasecmp(mtext,"POST"))
     {
         method_ = POST;
+        
     }
     else
     {
         return BAD_REQUEST;
     }
+    printf("url is %s \n", url_);
 
     url_ += strspn(url_," \t");
     version_ = strpbrk(url_," \t");
@@ -151,8 +159,8 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     {
         return BAD_REQUEST;
     }
-    *version_++ = '\0';
-    version_ += strspn(version_," \0");
+    *version_ += '\0';
+    version_ += strspn(version_," \t");
     if(strcasecmp(version_,"HTTP/1.1"))
     {
         return BAD_REQUEST;
@@ -177,7 +185,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
     strncpy(filePath_+len, url_, 200-len-1);
     if(stat(filePath_,&filestat_) < 0)//腰疼，明晚接着写
     {
-        printf("%s is using by other",filePath_);
+        printf("%s is using by other \n",filePath_);
         return BAD_REQUEST;
     }
     if(filestat_.st_mode & S_IFDIR)
@@ -204,7 +212,7 @@ HttpProcessRead::LINESTATUS HttpProcessRead::parseLine()
             {
                 return LINE_HALFBAKED;
             }
-            else if(readBuffer[checkIndex_++] == '\n')
+            else if(readBuffer[checkIndex_+1] == '\n')
             {
                 readBuffer[checkIndex_++] = '\0';
                 readBuffer[checkIndex_++] = '\0';
