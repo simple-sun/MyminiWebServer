@@ -4,6 +4,7 @@
 #include<fcntl.h>
 #include<sys/mman.h>
 #include"sys/socket.h"
+#include"string.h"
 
 static const int READBUFFERSIZE = 2048;
 
@@ -18,7 +19,7 @@ enum HTTPCODE {  NO_REQUEST, GET_REQUEST, BAD_REQUEST, NO_RESOURCE};
 enum LINESTATUS { LINE_OK, LINE_WRONG, LINE_HALFBAKED };
 
 public:
-    HttpProcessRead(char* readbuffer[],int readIndex);
+    HttpProcessRead(char readbuffer[],int readIndex);
     ~HttpProcessRead();
 
     HTTPCODE processRead();

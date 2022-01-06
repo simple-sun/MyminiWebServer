@@ -1,19 +1,20 @@
 #include"HttpProcessRead.h"
-#include"string.h"
+#include"LogThread.h"
+#include"EpollTools.h"
+
 #include"stdio.h"
 #include<stdlib.h>
-#include"LogThread.h"
 #include<fcntl.h>
 #include<sys/stat.h>
-#include"EpollTools.h"
+
 
 const char* docRoot = "var/www/html";
 
-HttpProcessRead::HttpProcessRead(char* readbuffer[],int readIndex)
+HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
                 :checkstate_(CHECK_REQUESTLINE),
                 readIndex_(readIndex)
 {    
-    readBuffer = *readbuffer;
+    readBuffer = readbuffer;
     memset(readBuffer,'\0',READBUFFERSIZE);
     memset(filePath_,'\0',200);
 }

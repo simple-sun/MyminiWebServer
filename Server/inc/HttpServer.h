@@ -7,16 +7,15 @@
 #include<memory>
 
 
+
 class HttpServer
 {
-public:
-       
-    
+public:       
 
     HttpServer();
     ~HttpServer();
 
-    void init(int sockfd, sockaddr_in address);
+    void init(int sockfd, sockaddr_in& address);
     bool read();
     bool write();
     void close();
@@ -30,6 +29,10 @@ private:
 public:
     //连接用户数量
     static int userConn_cnt;
+
+private:
+    char readBuffer[READBUFFERSIZE];
+    int readIndex_;
 };
 
 
