@@ -12,10 +12,12 @@ static const int READBUFFERSIZE = 2048;
 
 class HttpProcessRead 
 {
+public:
     //状态
 enum METHOD {  GET,POST };
 enum CHECKSTATE { CHECK_REQUESTLINE,CHECK_HEAD, CHECK_CONTENT }; 
-enum HTTPCODE {  NO_REQUEST, GET_REQUEST, BAD_REQUEST, NO_RESOURCE};
+enum HTTPCODE {  NO_REQUEST, GET_REQUEST, BAD_REQUEST,
+                 NO_RESOURCE,FILE_REQUEST};
 enum LINESTATUS { LINE_OK, LINE_WRONG, LINE_HALFBAKED };
 
 public:
@@ -44,7 +46,7 @@ private:
     CHECKSTATE checkstate_;
 
     //HTTP请求
-
+public:
     char* url_;
     METHOD method_;
     char* version_;    

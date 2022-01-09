@@ -5,13 +5,14 @@
 #include<stdio.h>
 #include<ctime>
 #include<sys/types.h>
+#include<unistd.h>
+#include<signal.h>
 
 #include"HttpServer.h"
 #include"EpollTools.h"
 #include"LogThread.h"
-#include"ThreadPool.h"
+#include"ThreadPool.h" 
 #include"locker.h"
-#include"TcpConnect.h"
 
 #define MAXFD 65536
 #define MAXEVENTNUM 10000

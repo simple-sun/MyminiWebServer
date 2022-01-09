@@ -8,7 +8,7 @@
 #include<sys/stat.h>
 
 
-const char* docRoot = "var/www/html";
+const char* docRoot = "/home/sun/Webserver1/Mywebserver";
 
 HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
                 :checkstate_(CHECK_REQUESTLINE),
@@ -16,7 +16,7 @@ HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
 {
     memset(readBuffer,'\0',READBUFFERSIZE);
     memset(filePath_,'\0',200); 
-    size_t sz = sizeof(readbuffer) ;
+    // size_t sz = sizeof(readbuffer);
     memcpy(readBuffer, readbuffer,(size_t)READBUFFERSIZE);    
 }
 
@@ -151,7 +151,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     {
         return BAD_REQUEST;
     }
-    printf("url is %s \n", url_);
+    //printf("url is %s \n", url_);
 
     url_ += strspn(url_," \t");
     version_ = strpbrk(url_," \t");
@@ -170,6 +170,11 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
         url_ += 7;
         url_ = strchr(url_,'/');
     }
+    if(strncasecmp(url_,"/",1) == 0)
+    {
+        url_ = "/";
+        //url_ = strchr(url_,'/');
+    }
     if( !url_ || url_[0] != '/')
     {
         return BAD_REQUEST;
@@ -183,7 +188,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
     strcpy(filePath_,docRoot);
     int len = strlen(docRoot);
     strncpy(filePath_+len, url_, 200-len-1);
-    if(stat(filePath_,&filestat_) < 0)//腰疼，明晚接着写
+    if(stat(filePath_,&filestat_) < 0)
     {
         printf("%s is using by other \n",filePath_);
         return BAD_REQUEST;
@@ -197,7 +202,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
     
     fileAddr = (char*)mmap(0,filestat_.st_size,PROT_READ,
                                 MAP_PRIVATE,fd,0);    
-    return GET_REQUEST;    
+    return FILE_REQUEST;    
 }
 
 HttpProcessRead::LINESTATUS HttpProcessRead::parseLine()

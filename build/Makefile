@@ -297,29 +297,29 @@ Server/src/HttpProcessRead.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.s
 .PHONY : Server/src/HttpProcessRead.cpp.s
 
-Server/src/HttpServer_1.o: Server/src/HttpServer_1.cpp.o
-.PHONY : Server/src/HttpServer_1.o
+Server/src/HttpProcessWrite.o: Server/src/HttpProcessWrite.cpp.o
+.PHONY : Server/src/HttpProcessWrite.o
 
 # target to build an object file
-Server/src/HttpServer_1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.o
-.PHONY : Server/src/HttpServer_1.cpp.o
+Server/src/HttpProcessWrite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessWrite.cpp.o
+.PHONY : Server/src/HttpProcessWrite.cpp.o
 
-Server/src/HttpServer_1.i: Server/src/HttpServer_1.cpp.i
-.PHONY : Server/src/HttpServer_1.i
+Server/src/HttpProcessWrite.i: Server/src/HttpProcessWrite.cpp.i
+.PHONY : Server/src/HttpProcessWrite.i
 
 # target to preprocess a source file
-Server/src/HttpServer_1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.i
-.PHONY : Server/src/HttpServer_1.cpp.i
+Server/src/HttpProcessWrite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessWrite.cpp.i
+.PHONY : Server/src/HttpProcessWrite.cpp.i
 
-Server/src/HttpServer_1.s: Server/src/HttpServer_1.cpp.s
-.PHONY : Server/src/HttpServer_1.s
+Server/src/HttpProcessWrite.s: Server/src/HttpProcessWrite.cpp.s
+.PHONY : Server/src/HttpProcessWrite.s
 
 # target to generate assembly for a file
-Server/src/HttpServer_1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpServer_1.cpp.s
-.PHONY : Server/src/HttpServer_1.cpp.s
+Server/src/HttpProcessWrite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/HttpProcessWrite.cpp.s
+.PHONY : Server/src/HttpProcessWrite.cpp.s
 
 Server/src/Httpserver.o: Server/src/Httpserver.cpp.o
 .PHONY : Server/src/Httpserver.o
@@ -345,30 +345,6 @@ Server/src/Httpserver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.s
 .PHONY : Server/src/Httpserver.cpp.s
 
-Server/src/TcpConnect.o: Server/src/TcpConnect.cpp.o
-.PHONY : Server/src/TcpConnect.o
-
-# target to build an object file
-Server/src/TcpConnect.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/TcpConnect.cpp.o
-.PHONY : Server/src/TcpConnect.cpp.o
-
-Server/src/TcpConnect.i: Server/src/TcpConnect.cpp.i
-.PHONY : Server/src/TcpConnect.i
-
-# target to preprocess a source file
-Server/src/TcpConnect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/TcpConnect.cpp.i
-.PHONY : Server/src/TcpConnect.cpp.i
-
-Server/src/TcpConnect.s: Server/src/TcpConnect.cpp.s
-.PHONY : Server/src/TcpConnect.s
-
-# target to generate assembly for a file
-Server/src/TcpConnect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/TcpConnect.cpp.s
-.PHONY : Server/src/TcpConnect.cpp.s
-
 Server/src/locker.o: Server/src/locker.cpp.o
 .PHONY : Server/src/locker.o
 
@@ -392,54 +368,6 @@ Server/src/locker.s: Server/src/locker.cpp.s
 Server/src/locker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/locker.cpp.s
 .PHONY : Server/src/locker.cpp.s
-
-Server/src/testProcessPool.o: Server/src/testProcessPool.cpp.o
-.PHONY : Server/src/testProcessPool.o
-
-# target to build an object file
-Server/src/testProcessPool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/testProcessPool.cpp.o
-.PHONY : Server/src/testProcessPool.cpp.o
-
-Server/src/testProcessPool.i: Server/src/testProcessPool.cpp.i
-.PHONY : Server/src/testProcessPool.i
-
-# target to preprocess a source file
-Server/src/testProcessPool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/testProcessPool.cpp.i
-.PHONY : Server/src/testProcessPool.cpp.i
-
-Server/src/testProcessPool.s: Server/src/testProcessPool.cpp.s
-.PHONY : Server/src/testProcessPool.s
-
-# target to generate assembly for a file
-Server/src/testProcessPool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/testProcessPool.cpp.s
-.PHONY : Server/src/testProcessPool.cpp.s
-
-Server/src/testThreadPool.o: Server/src/testThreadPool.cpp.o
-.PHONY : Server/src/testThreadPool.o
-
-# target to build an object file
-Server/src/testThreadPool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/testThreadPool.cpp.o
-.PHONY : Server/src/testThreadPool.cpp.o
-
-Server/src/testThreadPool.i: Server/src/testThreadPool.cpp.i
-.PHONY : Server/src/testThreadPool.i
-
-# target to preprocess a source file
-Server/src/testThreadPool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/testThreadPool.cpp.i
-.PHONY : Server/src/testThreadPool.cpp.i
-
-Server/src/testThreadPool.s: Server/src/testThreadPool.cpp.s
-.PHONY : Server/src/testThreadPool.s
-
-# target to generate assembly for a file
-Server/src/testThreadPool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/testThreadPool.cpp.s
-.PHONY : Server/src/testThreadPool.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -543,24 +471,15 @@ help:
 	@echo "... Server/src/HttpProcessRead.o"
 	@echo "... Server/src/HttpProcessRead.i"
 	@echo "... Server/src/HttpProcessRead.s"
-	@echo "... Server/src/HttpServer_1.o"
-	@echo "... Server/src/HttpServer_1.i"
-	@echo "... Server/src/HttpServer_1.s"
+	@echo "... Server/src/HttpProcessWrite.o"
+	@echo "... Server/src/HttpProcessWrite.i"
+	@echo "... Server/src/HttpProcessWrite.s"
 	@echo "... Server/src/Httpserver.o"
 	@echo "... Server/src/Httpserver.i"
 	@echo "... Server/src/Httpserver.s"
-	@echo "... Server/src/TcpConnect.o"
-	@echo "... Server/src/TcpConnect.i"
-	@echo "... Server/src/TcpConnect.s"
 	@echo "... Server/src/locker.o"
 	@echo "... Server/src/locker.i"
 	@echo "... Server/src/locker.s"
-	@echo "... Server/src/testProcessPool.o"
-	@echo "... Server/src/testProcessPool.i"
-	@echo "... Server/src/testProcessPool.s"
-	@echo "... Server/src/testThreadPool.o"
-	@echo "... Server/src/testThreadPool.i"
-	@echo "... Server/src/testThreadPool.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

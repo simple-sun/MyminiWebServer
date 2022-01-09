@@ -1,0 +1,124 @@
+Date : 2022-01-04 19:13:28
+Directory : /home/sun/Webserver1/Mywebserver
+Total : 64 files,  8205 codes, 435 comments, 1513 blanks, all 10153 lines
+
+Languages
++-------------+------------+------------+------------+------------+------------+
+| language    | files      | code       | comment    | blank      | total      |
++-------------+------------+------------+------------+------------+------------+
+| C++         |         30 |      2,953 |        187 |        753 |      3,893 |
+| JSON        |          7 |      1,709 |          0 |          5 |      1,714 |
+| C           |          2 |      1,140 |        116 |        250 |      1,506 |
+| Log         |          2 |        758 |          0 |         62 |        820 |
+| CMake       |         16 |        644 |          0 |        144 |        788 |
+| CMake Cache |          2 |        605 |          0 |        130 |        735 |
+| Makefile    |          2 |        390 |        132 |        166 |        688 |
+| TypeScript  |          2 |          4 |          0 |          2 |          6 |
+| Markdown    |          1 |          2 |          0 |          1 |          3 |
++-------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                      | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                         |         64 |      8,205 |        435 |      1,513 |     10,153 |
+| LOG                                                                                                       |         10 |        563 |         15 |        236 |        814 |
+| LOG/inc                                                                                                   |          5 |        189 |          0 |        101 |        290 |
+| LOG/src                                                                                                   |          5 |        374 |         15 |        135 |        524 |
+| Server                                                                                                    |         10 |        819 |         33 |        138 |        990 |
+| Server/inc                                                                                                |          6 |        474 |         32 |         96 |        602 |
+| Server/src                                                                                                |          4 |        345 |          1 |         42 |        388 |
+| build                                                                                                     |         21 |      4,181 |        199 |        535 |      4,915 |
+| build/.cmake                                                                                              |          6 |      1,647 |          0 |          5 |      1,652 |
+| build/.cmake/api                                                                                          |          6 |      1,647 |          0 |          5 |      1,652 |
+| build/.cmake/api/v1                                                                                       |          6 |      1,647 |          0 |          5 |      1,652 |
+| build/.cmake/api/v1/query                                                                                 |          1 |          1 |          0 |          0 |          1 |
+| build/.cmake/api/v1/query/client-vscode                                                                   |          1 |          1 |          0 |          0 |          1 |
+| build/.cmake/api/v1/reply                                                                                 |          5 |      1,646 |          0 |          5 |      1,651 |
+| build/CMakeFiles                                                                                          |         11 |      1,840 |        118 |        343 |      2,301 |
+| build/CMakeFiles/3.20.2                                                                                   |          5 |      1,274 |        118 |        292 |      1,684 |
+| build/CMakeFiles/3.20.2/CompilerIdC                                                                       |          1 |        570 |         58 |        125 |        753 |
+| build/CMakeFiles/3.20.2/CompilerIdCXX                                                                     |          1 |        561 |         60 |        123 |        744 |
+| build/CMakeFiles/out.exe.dir                                                                              |          3 |         59 |          0 |          9 |         68 |
+| testServer                                                                                                |         17 |      2,390 |        180 |        504 |      3,074 |
+| testServer/build                                                                                          |         14 |      2,191 |        169 |        470 |      2,830 |
+| testServer/build/CMakeFiles                                                                               |         11 |      1,736 |        118 |        343 |      2,197 |
+| testServer/build/CMakeFiles/3.20.2                                                                        |          5 |      1,274 |        118 |        292 |      1,684 |
+| testServer/build/CMakeFiles/3.20.2/CompilerIdC                                                            |          1 |        570 |         58 |        125 |        753 |
+| testServer/build/CMakeFiles/3.20.2/CompilerIdCXX                                                          |          1 |        561 |         60 |        123 |        744 |
+| testServer/build/CMakeFiles/out.exe.dir                                                                   |          3 |         29 |          0 |          9 |         38 |
+| time                                                                                                      |          4 |        137 |          0 |         76 |        213 |
+| time/inc                                                                                                  |          2 |         63 |          0 |         36 |         99 |
+| time/src                                                                                                  |          2 |         74 |          0 |         40 |        114 |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| filename                                                                                                  | language    | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h                                                      | C++         |         30 |          0 |         14 |         44 |
+| /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h                                                        | C++         |         26 |          0 |         13 |         39 |
+| /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h                                                      | C++         |         51 |          0 |         17 |         68 |
+| /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h                                                      | C++         |         50 |          0 |         36 |         86 |
+| /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h                                                         | C++         |         32 |          0 |         21 |         53 |
+| /home/sun/Webserver1/Mywebserver/LOG/src/LogBuffer.cpp                                                    | C++         |          7 |          0 |         10 |         17 |
+| /home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp                                                      | C++         |         86 |          5 |         32 |        123 |
+| /home/sun/Webserver1/Mywebserver/LOG/src/LogStream.cpp                                                    | C++         |        111 |          1 |         35 |        147 |
+| /home/sun/Webserver1/Mywebserver/LOG/src/LogThread.cpp                                                    | C++         |        111 |          1 |         31 |        143 |
+| /home/sun/Webserver1/Mywebserver/LOG/src/Logger.cpp                                                       | C++         |         59 |          8 |         27 |         94 |
+| /home/sun/Webserver1/Mywebserver/README.md                                                                | Markdown    |          2 |          0 |          1 |          3 |
+| /home/sun/Webserver1/Mywebserver/Server/inc/EpollTools.h                                                  | C++         |         10 |          5 |         10 |         25 |
+| /home/sun/Webserver1/Mywebserver/Server/inc/HttpProcessRead.h                                             | C++         |         41 |          4 |         20 |         65 |
+| /home/sun/Webserver1/Mywebserver/Server/inc/HttpServer.h                                                  | C++         |         25 |          1 |         11 |         37 |
+| /home/sun/Webserver1/Mywebserver/Server/inc/ProcessPool.h                                                 | C++         |        283 |         19 |         29 |        331 |
+| /home/sun/Webserver1/Mywebserver/Server/inc/ThreadPool.h                                                  | C++         |         78 |          0 |         17 |         95 |
+| /home/sun/Webserver1/Mywebserver/Server/inc/locker.h                                                      | C++         |         37 |          3 |          9 |         49 |
+| /home/sun/Webserver1/Mywebserver/Server/src/EpollTools.cpp                                                | C++         |         58 |          0 |          9 |         67 |
+| /home/sun/Webserver1/Mywebserver/Server/src/HttpProcessRead.cpp                                           | C++         |        204 |          1 |         14 |        219 |
+| /home/sun/Webserver1/Mywebserver/Server/src/Httpserver.cpp                                                | C++         |         26 |          0 |         14 |         40 |
+| /home/sun/Webserver1/Mywebserver/Server/src/locker.cpp                                                    | C++         |         57 |          0 |          5 |         62 |
+| /home/sun/Webserver1/Mywebserver/build/.cmake/api/v1/query/client-vscode/query.json                       | JSON        |          1 |          0 |          0 |          1 |
+| /home/sun/Webserver1/Mywebserver/build/.cmake/api/v1/reply/cache-v2-e69bc80be1bb1bab6ac0.json             | JSON        |      1,163 |          0 |          1 |      1,164 |
+| /home/sun/Webserver1/Mywebserver/build/.cmake/api/v1/reply/codemodel-v2-e729d6cbe3bf6b63547e.json         | JSON        |         59 |          0 |          1 |         60 |
+| /home/sun/Webserver1/Mywebserver/build/.cmake/api/v1/reply/index-2022-01-05T03-04-31-0517.json            | JSON        |        110 |          0 |          1 |        111 |
+| /home/sun/Webserver1/Mywebserver/build/.cmake/api/v1/reply/target-out.exe-Debug-c435f07506dd6e62eae1.json | JSON        |        213 |          0 |          1 |        214 |
+| /home/sun/Webserver1/Mywebserver/build/.cmake/api/v1/reply/toolchains-v1-776008d071eac6db6945.json        | JSON        |        101 |          0 |          1 |        102 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeCache.txt                                                     | CMake Cache |        301 |          0 |         65 |        366 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake                             | CMake       |         61 |          0 |         18 |         79 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake                           | CMake       |         72 |          0 |         20 |         92 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CMakeSystem.cmake                                | CMake       |         10 |          0 |          6 |         16 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c                   | C           |        570 |         58 |        125 |        753 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp             | C++         |        561 |         60 |        123 |        744 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/CMakeDirectoryInformation.cmake                         | CMake       |         12 |          0 |          5 |         17 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/CMakeOutput.log                                         | Log         |        379 |          0 |         31 |        410 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/Makefile.cmake                                          | CMake       |        116 |          0 |          6 |        122 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/out.exe.dir/DependInfo.cmake                            | CMake       |         25 |          0 |          6 |         31 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/out.exe.dir/cmake_clean.cmake                           | CMake       |         32 |          0 |          2 |         34 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/out.exe.dir/compiler_depend.ts                          | TypeScript  |          2 |          0 |          1 |          3 |
+| /home/sun/Webserver1/Mywebserver/build/Makefile                                                           | Makefile    |        285 |         81 |        113 |        479 |
+| /home/sun/Webserver1/Mywebserver/build/cmake_install.cmake                                                | CMake       |         46 |          0 |          9 |         55 |
+| /home/sun/Webserver1/Mywebserver/build/compile_commands.json                                              | JSON        |         62 |          0 |          0 |         62 |
+| /home/sun/Webserver1/Mywebserver/main.cpp                                                                 | C++         |        113 |          8 |         23 |        144 |
+| /home/sun/Webserver1/Mywebserver/testServer/MyTools.cpp                                                   | C++         |        134 |          1 |         19 |        154 |
+| /home/sun/Webserver1/Mywebserver/testServer/MyTools.h                                                     | C++         |         17 |          8 |         12 |         37 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeCache.txt                                          | CMake Cache |        304 |          0 |         65 |        369 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake                  | CMake       |         61 |          0 |         18 |         79 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake                | CMake       |         72 |          0 |         20 |         92 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CMakeSystem.cmake                     | CMake       |         10 |          0 |          6 |         16 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c        | C           |        570 |         58 |        125 |        753 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp  | C++         |        561 |         60 |        123 |        744 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/CMakeDirectoryInformation.cmake              | CMake       |         12 |          0 |          5 |         17 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/CMakeOutput.log                              | Log         |        379 |          0 |         31 |        410 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/Makefile.cmake                               | CMake       |         42 |          0 |          6 |         48 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/out.exe.dir/DependInfo.cmake                 | CMake       |         15 |          0 |          6 |         21 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/out.exe.dir/cmake_clean.cmake                | CMake       |         12 |          0 |          2 |         14 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/out.exe.dir/compiler_depend.ts               | TypeScript  |          2 |          0 |          1 |          3 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/Makefile                                                | Makefile    |        105 |         51 |         53 |        209 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/cmake_install.cmake                                     | CMake       |         46 |          0 |          9 |         55 |
+| /home/sun/Webserver1/Mywebserver/testServer/main.cpp                                                      | C++         |         48 |          2 |          3 |         53 |
+| /home/sun/Webserver1/Mywebserver/time/inc/timePoint.h                                                     | C++         |         28 |          0 |         14 |         42 |
+| /home/sun/Webserver1/Mywebserver/time/inc/timmer.h                                                        | C++         |         35 |          0 |         22 |         57 |
+| /home/sun/Webserver1/Mywebserver/time/src/timePoint.cpp                                                   | C++         |         36 |          0 |         23 |         59 |
+| /home/sun/Webserver1/Mywebserver/time/src/timmer.cpp                                                      | C++         |         38 |          0 |         17 |         55 |
+| Total                                                                                                     |             |      8,205 |        435 |      1,513 |     10,153 |
++-----------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
