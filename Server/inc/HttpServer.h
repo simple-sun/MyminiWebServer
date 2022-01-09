@@ -2,9 +2,11 @@
 #define HTTPSERVER_H
 
 #include<netinet/in.h>
+#include<memory>
 
 #include"HttpProcessRead.h"
-#include<memory>
+#include"HttpProcessWrite.h"
+
 
 
 
@@ -26,6 +28,7 @@ public:
     static int epollfd_;
 private:
     std::shared_ptr<HttpProcessRead> processRead;
+    std::shared_ptr<HttpProcessWrite> processWrite;
 public:
     //连接用户数量
     static int userConn_cnt;

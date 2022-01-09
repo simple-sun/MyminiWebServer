@@ -3,9 +3,11 @@
 #include"EpollTools.h"
 #include"LogThread.h"
 
+
 #include"string.h"
 #include"sys/socket.h"
 #include"unistd.h"
+#include"sys/uio.h"
 
 HttpServer::HttpServer()    
 {
@@ -72,15 +74,59 @@ bool HttpServer::read()
 
 bool HttpServer::write()
 {
-    return 1;
+    int tmp = 0;
+    int byteSend = 0;
+    int byteToSend = processWrite->writeIndex_;
+    if(byteToSend == 0)
+    {
+        modfd(epollfd_,sockfd_,EPOLLIN);
+        //reset();
+        return true;
+    }
+    while (1)
+    {
+        tmp = writev(sockfd_,processWrite->iv_,processWrite->ivCnt_);
+        if( tmp <0)
+        {
+            munmap(processRead->fileAddr,processRead->filestat_.st_size);
+            processRead->fileAddr = 0;
+            return false;
+        }
+        byteToSend -= tmp;
+        byteSend += tmp;
+        if(byteToSend <= byteSend)
+        {
+            //发送HTTP响应成功，判断是否关闭连接
+            munmap(processRead->fileAddr,processRead->filestat_.st_size);
+            if(processRead->linger_)
+            {
+                //reset();
+                modfd(epollfd_,sockfd_,EPOLLIN);
+                return true;
+            }
+            else
+            {
+                modfd(epollfd_, sockfd_, EPOLLIN);
+                return false;
+            }
+        }
+    }  
+    return true;
 }
 
 void HttpServer::process()
 {
     processRead = std::make_shared<HttpProcessRead>(readBuffer,readIndex_);
-    if(( processRead->processRead()) == 0)
+    auto ret = processRead->processRead();
+    if(ret == 0)
     {
         modfd(epollfd_,sockfd_,EPOLLIN);
         return;
+    }
+    processWrite = std::make_shared<HttpProcessWrite>(processRead);
+    if( ! processWrite->processWrite(ret))
+    {
+        close();
     }           
+    modfd(epollfd_,sockfd_,EPOLLOUT);
 }

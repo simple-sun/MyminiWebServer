@@ -1,8 +1,10 @@
 #include"HttpProcessWrite.h"
 #include"LogThread.h"
+
 #include<algorithm>
 #include"stdio.h"
-
+#include"stdlib.h"
+#include"stdarg.h"
 
 const char* ok_200_title = "OK";
 const char* error_400_title = "BAD REQUEST";
@@ -11,7 +13,7 @@ const char* error_400_form =
 const char* error_404_title = "NOT FOUND";
 const char* error_404_form = "The request file was not found on this server.\n";
 
-HttpProcessWrite::HttpProcessWrite(HttpProcessRead* processRead)
+HttpProcessWrite::HttpProcessWrite(std::shared_ptr<HttpProcessRead> processRead)
                 :pRead(processRead)
 {
 
@@ -84,28 +86,30 @@ bool HttpProcessWrite::processWrite(HttpProcessRead::HTTPCODE readRet)
     return true;
 }
 
-bool HttpProcessWrite::WriteResponse(const std::string info)
+bool HttpProcessWrite::WriteResponse(const char* format, ...)
 {
     if(writeIndex_ > WRITEBUFFERSIZE)
     {
         LOG_FATAL << "writeIndex > WIRTEBUFFERSIZE, write saturation" << log::end;
         return false;
     }
-    // 有问题
-    //std::copy(write.begin()+writeIndex_,write.end(),info);
-    void* d = memcpy(writeBuffer+writeIndex_,&info,WRITEBUFFERSIZE-writeIndex_);
-    if( !d)
+    
+    va_list argList;
+    va_start (argList, format);
+    int len = vsnprintf(writeBuffer+writeIndex_,WRITEBUFFERSIZE-1-writeIndex_,
+                            format,argList);
+    if(len > WRITEBUFFERSIZE-1-writeIndex_)
     {
         return false;
     }
-    writeIndex_ += info.size();
+    writeIndex_ += len;
+    va_end(argList);    
     return true;
 }
 
 bool HttpProcessWrite::addStatus(int status, const char* title)
-{
-    std::string s = "HTTP/1.1" + std::to_string(status) + title;
-    return WriteResponse(s);
+{    
+    return WriteResponse("%s %d %s\r\n", "HTTP/1.1",status, title);
 }
 
 bool HttpProcessWrite::addHead(int contentLen)
@@ -113,35 +117,23 @@ bool HttpProcessWrite::addHead(int contentLen)
     return addContentLen(contentLen) && addLinger() && addBlankLine();
 }
 
-bool HttpProcessWrite::addContentLen(int conteneLen)
+bool HttpProcessWrite::addContentLen(int contentLen)
 {
-    std::string s = "ContentLength: " + std::to_string(conteneLen) + "\r\n";
-    return WriteResponse(s);
+    return WriteResponse("ContentLength: %d\r\n", contentLen);
 }
 
 bool HttpProcessWrite::addLinger()
 {
-    std::string st;
-    if(pRead->linger_)
-    {
-        st = "keep-alive";
-    }
-    else
-    {
-        st = "close";
-    }
-    std::string s = "Connection: " + st + "\r\n";
-    return WriteResponse(s);
+    
+    return WriteResponse("Connection: %s\r\n", (pRead->linger_ == true) ? "keep-alive" : "close");
 }
 
 bool HttpProcessWrite::addBlankLine()
 {
-    std::string s = "\r\n";
-    return WriteResponse(s);
+    return WriteResponse("%s","\r\n");
 }
 
 bool HttpProcessWrite::writeContent(const char* content)
 {
-    std::string s = content;
-    return WriteResponse(s);
+    return WriteResponse("%s",content);
 }

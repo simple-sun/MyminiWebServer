@@ -8,7 +8,7 @@
 #include<sys/stat.h>
 
 
-const char* docRoot = "/home/sun/Webserver1/Mywebserver";
+const char* docRoot = "/home/sun/Webserver1/Mywebserver/Html";
 
 HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
                 :checkstate_(CHECK_REQUESTLINE),
@@ -22,10 +22,10 @@ HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
 
 HttpProcessRead::~HttpProcessRead(){
     //delete readBuffer;
-    delete url_;
-    delete version_;
-    delete host_;
-    delete fileAddr;
+    //delete url_;
+    // delete version_;
+    // delete host_;
+    // delete fileAddr;
 }
 
 HttpProcessRead::HTTPCODE HttpProcessRead::processRead()
@@ -116,13 +116,13 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseHead(char* text)
     else if(strncasecmp( text, "Host:",5) == 0)
     {
         text += 5;
-        text += strspn(text,"\t");
+        text += strspn(text," \t");
         host_ = text;
     }
     else
     {
         LOG_FATAL << "unknow header" << text << log::end;
-        printf("unknow header %s\n",text);
+        //printf("unknow header %s\n",text);
     }
     return NO_REQUEST;
 }
@@ -172,7 +172,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     }
     if(strncasecmp(url_,"/",1) == 0)
     {
-        url_ = "/";
+        url_ = "/Bing.html";
         //url_ = strchr(url_,'/');
     }
     if( !url_ || url_[0] != '/')

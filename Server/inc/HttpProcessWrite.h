@@ -11,12 +11,12 @@ const int WRITEBUFFERSIZE = 2048;
 class HttpProcessWrite
 {
 public:
-    HttpProcessWrite(HttpProcessRead* processRead);
+    HttpProcessWrite(std::shared_ptr<HttpProcessRead> processRead);
     ~HttpProcessWrite();
 
     bool processWrite(HttpProcessRead::HTTPCODE readRet);
 private:
-    bool WriteResponse(const std::string info);
+    bool WriteResponse(const char* format, ...);
     bool addStatus(int status, const char* title);
 
     bool addHead(int contentLen);
@@ -26,7 +26,7 @@ private:
 
     bool writeContent(const char* content);
 
-private:
+public:
     char writeBuffer[WRITEBUFFERSIZE];
     int writeIndex_;
     //std::vector<char> write;    

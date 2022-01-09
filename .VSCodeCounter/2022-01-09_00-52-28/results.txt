@@ -1,0 +1,52 @@
+Date : 2022-01-09 00:52:28
+Directory : /home/sun/Webserver1/Mywebserver
+Total : 18 files,  1178 codes, 0 comments, 274 blanks, all 1452 lines
+
+Languages
++-------------+------------+------------+------------+------------+------------+
+| language    | files      | code       | comment    | blank      | total      |
++-------------+------------+------------+------------+------------+------------+
+| CMake Cache |          2 |        605 |          0 |        130 |        735 |
+| CMake       |         16 |        573 |          0 |        144 |        717 |
++-------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |         18 |      1,178 |          0 |        274 |      1,452 |
+| build                                                                                        |          9 |        604 |          0 |        137 |        741 |
+| build/CMakeFiles                                                                             |          7 |        257 |          0 |         63 |        320 |
+| build/CMakeFiles/3.20.2                                                                      |          3 |        143 |          0 |         44 |        187 |
+| build/CMakeFiles/out.exe.dir                                                                 |          2 |         60 |          0 |          8 |         68 |
+| testServer                                                                                   |          9 |        574 |          0 |        137 |        711 |
+| testServer/build                                                                             |          9 |        574 |          0 |        137 |        711 |
+| testServer/build/CMakeFiles                                                                  |          7 |        224 |          0 |         63 |        287 |
+| testServer/build/CMakeFiles/3.20.2                                                           |          3 |        143 |          0 |         44 |        187 |
+| testServer/build/CMakeFiles/out.exe.dir                                                      |          2 |         27 |          0 |          8 |         35 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| filename                                                                                     | language    | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| /home/sun/Webserver1/Mywebserver/build/CMakeCache.txt                                        | CMake Cache |        301 |          0 |         65 |        366 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake                | CMake       |         61 |          0 |         18 |         79 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake              | CMake       |         72 |          0 |         20 |         92 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/3.20.2/CMakeSystem.cmake                   | CMake       |         10 |          0 |          6 |         16 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/CMakeDirectoryInformation.cmake            | CMake       |         12 |          0 |          5 |         17 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/Makefile.cmake                             | CMake       |         42 |          0 |          6 |         48 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/out.exe.dir/DependInfo.cmake               | CMake       |         26 |          0 |          6 |         32 |
+| /home/sun/Webserver1/Mywebserver/build/CMakeFiles/out.exe.dir/cmake_clean.cmake              | CMake       |         34 |          0 |          2 |         36 |
+| /home/sun/Webserver1/Mywebserver/build/cmake_install.cmake                                   | CMake       |         46 |          0 |          9 |         55 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeCache.txt                             | CMake Cache |        304 |          0 |         65 |        369 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake     | CMake       |         61 |          0 |         18 |         79 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake   | CMake       |         72 |          0 |         20 |         92 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/3.20.2/CMakeSystem.cmake        | CMake       |         10 |          0 |          6 |         16 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/CMakeDirectoryInformation.cmake | CMake       |         12 |          0 |          5 |         17 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/Makefile.cmake                  | CMake       |         42 |          0 |          6 |         48 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/out.exe.dir/DependInfo.cmake    | CMake       |         15 |          0 |          6 |         21 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/CMakeFiles/out.exe.dir/cmake_clean.cmake   | CMake       |         12 |          0 |          2 |         14 |
+| /home/sun/Webserver1/Mywebserver/testServer/build/cmake_install.cmake                        | CMake       |         46 |          0 |          9 |         55 |
+| Total                                                                                        |             |      1,178 |          0 |        274 |      1,452 |
++----------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
