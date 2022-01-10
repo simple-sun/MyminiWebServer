@@ -31,7 +31,7 @@ int main( int argc,char* argv[] )
 
   addsig(SIGPIPE,SIG_IGN);
 
-  ThreadPool< HttpServer>* tPool = new ThreadPool<HttpServer>(1);
+  ThreadPool< HttpServer>* tPool = new ThreadPool<HttpServer>(2);
 
   HS* users = new HS[MAXFD];
   int user_count = 0;

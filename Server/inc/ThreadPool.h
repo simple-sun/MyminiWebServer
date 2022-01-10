@@ -27,6 +27,7 @@ private:
     int threadNum;
     std::list<T*> workqueue;
     Locker queueLock_;
+    Sem queueStat_;
 };
 
 template<typename T> 
@@ -38,7 +39,7 @@ ThreadPool<T>:: ThreadPool(int threadnum)
     for(int i = 0; i< threadnum; i++)
     {
         int ret = pthread_create(thread_+i,NULL,workfunc,this);
-        if(ret == -1)
+        if(ret != 0)
         {
 
             printf("%d thread creat falied\n", i);
@@ -48,6 +49,7 @@ ThreadPool<T>:: ThreadPool(int threadnum)
 
         if(pthread_detach(thread_[i]))
         {
+            delete [] thread_;
             printf("%d thread is detached\n", i);
             LOG_INFO << i << " thread is detached." << log::end;
 
@@ -66,6 +68,7 @@ void ThreadPool<T> :: append(T* req)
     queueLock_.lock();
     workqueue.push_back(req);
     queueLock_.unlock();
+    queueStat_.post();
 }
 template<typename T>
 void* ThreadPool<T> ::workfunc(void* arg)
@@ -82,6 +85,7 @@ void ThreadPool<T> :: run()
     {
         if( workqueue.size() > 0)
         {
+            queueStat_.wait();
             queueLock_.lock();
             T* req = workqueue.front();
             workqueue.pop_front();

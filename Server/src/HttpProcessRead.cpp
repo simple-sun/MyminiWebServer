@@ -172,7 +172,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     }
     if(strncasecmp(url_,"/",1) == 0)
     {
-        url_ = "/Bing.html";
+        url_ = "/Home.html";
         //url_ = strchr(url_,'/');
     }
     if( !url_ || url_[0] != '/')

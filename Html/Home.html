@@ -1,0 +1,121 @@
+<!---->
+<!DOCTYPE html> <!---表示，我们正在使用html5-->
+<html lang="en">    <!---标签，标记，所有HTML中标签的一个根节点--->
+<head>              <!--头标签-->
+    我的第一个网页
+    <meta charset="UTF-8"> <!---表示使用UTF-8字符集（包含所有国家需要用到的字符）
+                            ，GBK（全部中文字符集）-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <!--标题标签-->
+</head>
+<body>  <!--主题标签-->
+    我终于制作了我的第一个页面
+    <img> 图片标签
+    双标签    <body>  tag start   </body>    tag end    
+    单标签    <br />
+    HTML标签关系: <br />
+        1:嵌套关系 <br />
+        2:并列关系 <br />
+        标题标签
+        <h1>一级</h1>
+        <h6>六级</h6>
+        段落标签
+        <p>文本内容</p>
+        <p>上午：看Linux，1点之前</p>
+        <p>下午：打工</p>
+        <p>晚上：看mySQL，做题</p>
+        水平线标签
+        <hr />
+        换行标签
+        <br />
+        div 标签的使用
+        <br>hhhh
+        <div>  没有语义的div </div>
+        <span> 没有语义的span</span>
+
+        <h3>------文本格式化标签------</h3>
+        <b>一二三四五</b><br>
+        <strong>上山打老虎</strong> <br> <!---strong有强调语义-->
+        <i>老虎没打到</i><br>
+        <em>碰见二百五</em><br>          <!---em有强调语义-->   
+
+        <del>文字加删除线</del><br>
+        <ins>文字加下划线</ins>
+        
+        要求，水平线长度为500,颜色为red <br>
+        <hr width="500" color="red"> 
+        标签属性没有先后顺序，但是有默认值，属性之间用空格分开 <br>
+
+        图像标签 <br>
+        
+        <h4 id="tupian">1. 基本图像插入方式</h4> <br>
+        <img src="C:\Users\孙晟祺\Desktop\xj4.jfif" > <br>
+        2. 带有alt的图像 <br>
+        <img src="gi.jpg" alt=".这是仙剑4最后的照片"> <br>
+        3.title的使用 <br>
+        <img src="C:\Users\孙晟祺\Desktop\xj4.jfif" title="这是仙剑4最后的照片"> <br>
+        4.尺寸的使用 <br>
+        <img src="C:\Users\孙晟祺\Desktop\xj4.jfif" title="这是仙剑4最后的照片" width="400" height="300">
+
+        <h3> 友情连接：</h3>
+        <a href="http://www.baidu.com"> 百度</a> <br>
+        target = _blank 时为新打开页面，= _self时为自己跳转，self为默认值<br>
+        <a href="http://www.baidu.com" target="_blank"> <img src="C:\Users\孙晟祺\Desktop\xj4.jfif" width="100" height="100"></a>
+        <a href="#"> 没有确定的目标地址时</a> <br>
+
+        锚点定位 <br>
+        <a href="#tupian"> 查看图片</a>
+
+        <br>
+        base可以设置整理连接的打开状态
+        <base target = "_blank">
+        
+        input 是一个单标签
+        <br>
+
+        用户名：<input type="text">     <!--这是一个文本框-->
+        <br>
+        密  码：<input type="password" maxlength="8"> <br>
+        登录 <input type="radio">   <br>
+        <!-- 不早说 -->
+        性  别： <input type="radio" name = "gender"> 女 
+                <input type="radio" name = "gender" checked = "checked"> 男
+        <br>
+        <input type="button" value="登录"><br>
+        提交按钮<br>
+        <input type="submit" value = "登录"> <br>
+        图像按钮
+        <input type="image" src="https://tse1-mm.cn.bing.net/th/id/R-C.de7ddd4ce07bdd2ca13a0bea47fb29b5?rik=7%2bEJfUJpyH1EeA&riu=http%3a%2f%2fwww.daddd.com%2fupload%2f14040%2f2018%2f10-18%2f20181018115252_0507ertajehf_small.jpg&ehk=OChM2h6DzZzupLolJRgSho0FrOz5L5n2Z0LqVoRihQE%3d&risl=&pid=ImgRaw&r=0">
+        文件按钮
+        <input type="file">
+
+        <br>
+        label标签的使用
+        <label > 邮箱：<input type="text"></label>
+
+        <br>
+        年纪
+        <select >
+            <option >15</option>
+            <option >16</option>
+            <option >17</option>
+            <option >18</option>
+            <option >15</option>
+            <option >15</option>
+        </select>
+
+
+        <br>
+        表单域
+        <form action="url" method="get" name="表单域的名字">
+            
+        </form>
+
+
+        <form action="http://127.0.0.1:9527" method="get" name="表单域的名字">
+            
+        <input type="image" src="https://tse1-mm.cn.bing.net/th/id/R-C.de7ddd4ce07bdd2ca13a0bea47fb29b5?rik=7%2bEJfUJpyH1EeA&riu=http%3a%2f%2fwww.daddd.com%2fupload%2f14040%2f2018%2f10-18%2f20181018115252_0507ertajehf_small.jpg&ehk=OChM2h6DzZzupLolJRgSho0FrOz5L5n2Z0LqVoRihQE%3d&risl=&pid=ImgRaw&r=0" width="300" height="600">
+        </form>
+</body>
+</html>

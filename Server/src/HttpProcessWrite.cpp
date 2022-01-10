@@ -20,7 +20,7 @@ HttpProcessWrite::HttpProcessWrite(std::shared_ptr<HttpProcessRead> processRead)
 }
 HttpProcessWrite::~HttpProcessWrite()
 {
-
+    
 }
 
 
