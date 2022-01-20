@@ -23,10 +23,13 @@ enum LINESTATUS { LINE_OK, LINE_WRONG, LINE_HALFBAKED };
 public:
     HttpProcessRead(char readbuffer[],int readIndex);
     ~HttpProcessRead();
-
+ 
     HTTPCODE processRead();
 
-    void setRDBuffer();
+    void reset();
+
+
+    
 
 private:
     char* getLine() { return readBuffer+processPosition;}
@@ -56,11 +59,14 @@ public:
     char* host_;
 
     //http连接
-    char filePath_[200];
+    char filePath_[1024];
 
     struct stat filestat_;
 
     char* fileAddr;
+private:
+    //存储post传递的信息
+    char* postdata;
 };
 
 

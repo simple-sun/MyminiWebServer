@@ -13,10 +13,13 @@ public:
     Sem();
     ~Sem();
 
-    bool wait() { return sem_wait(&m_sem) == 0;}
-    bool post() { return sem_post(&m_sem) == 0;}
+    bool wait() { return sem_wait(&m_sem) == 0;}    //p操作
+    bool post() { return sem_post(&m_sem) == 0;}    //v操作
+    bool get()  {return sem_getvalue(&m_sem,&val) == 0;} //获取信号值
+
 private:
     sem_t m_sem;
+    int val;
 };
 
 //封装互斥锁

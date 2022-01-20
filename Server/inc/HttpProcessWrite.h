@@ -15,15 +15,24 @@ public:
     ~HttpProcessWrite();
 
     bool processWrite(HttpProcessRead::HTTPCODE readRet);
+    void reset();
 private:
     bool WriteResponse(const char* format, ...);
     bool addStatus(int status, const char* title);
 
     bool addHead(int contentLen);
+    bool addDate();
+    bool addContentType();
     bool addContentLen(int contentLen);
-    bool addLinger();
+    bool addMod();
+    bool addConnection();
+    bool addVary();
+    bool addServer();
+    bool addComp();
+    bool addPragma();
+    bool addAccpRange();
     bool addBlankLine();
-
+    
     bool writeContent(const char* content);
 
 public:

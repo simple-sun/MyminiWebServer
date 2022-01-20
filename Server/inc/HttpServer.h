@@ -3,9 +3,11 @@
 
 #include<netinet/in.h>
 #include<memory>
+#include<vector>
 
 #include"HttpProcessRead.h"
 #include"HttpProcessWrite.h"
+#include"MemoryPool.h"
 
 
 
@@ -22,6 +24,10 @@ public:
     bool write();
     void close();
     void process();
+
+private:
+    //void clearBuf();
+    void reset();
 public:
     int sockfd_;
     sockaddr_in sockaddr_;
@@ -34,10 +40,11 @@ public:
     static int userConn_cnt;
 
 private:
+    
     char readBuffer[READBUFFERSIZE];
+    MemoryPool<sizeof(char),1> readBuffe;
+    std::vector<char> readBuff;
     int readIndex_;
 };
-
-
 
 #endif

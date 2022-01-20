@@ -8,6 +8,7 @@ Sem::Sem()
         LOG_FATAL << "Sem::Sem() sem_init() exception." << log::end;
         throw std::exception();
     }
+    val = 0;
 }
 Sem::~Sem()
 {

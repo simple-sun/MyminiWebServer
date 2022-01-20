@@ -27,7 +27,8 @@ void HttpServer::init(int sockfd, sockaddr_in& address)
     userConn_cnt++;
     {
         readIndex_ = 0;
-        memset(readBuffer,'\0',2048);
+        //readBuffer = std::vector<char> (READBUFFERSIZE,0);
+        memset(readBuffer,'\0',READBUFFERSIZE);
     }
 }
 
@@ -49,9 +50,12 @@ bool HttpServer::read()
         return false;
     }
     int readByte = 0;
+
+    //ET模式读取数据
     while(1)
     {
         readByte = recv(sockfd_,readBuffer+readIndex_,READBUFFERSIZE-readIndex_,0);
+        printf("%d bytes messages has been recvd.\n",readByte);
         if(readByte == -1)
         {
             if(errno == EAGAIN )
@@ -76,37 +80,48 @@ bool HttpServer::write()
 {
     int tmp = 0;
     int byteSend = 0;
-    int byteToSend = processWrite->writeIndex_;
+    int byteToSend = processWrite->writeIndex_ + processRead->filestat_.st_size;
     if(byteToSend == 0)
     {
         modfd(epollfd_,sockfd_,EPOLLIN);
-        //reset();
+        reset();
         return true;
     }
     while (1)
     {
-        tmp = writev(sockfd_,processWrite->iv_,processWrite->ivCnt_);
+        //tmp = ::writev(sockfd_,processWrite->iv_,processWrite->ivCnt_);
+        tmp = ::write(sockfd_,processWrite->writeBuffer,strlen(processWrite->writeBuffer));
+        char buf[2048];
+        int len = snprintf(buf,2048,processRead->fileAddr);
+        tmp += ::write(sockfd_,buf,len);
+        printf("buf = %s\n", buf);
+        printf("HttpServer::write()::tmp = %d.\n",tmp);
         if( tmp <0)
         {
+            if(errno == EAGAIN)
+            {
+                modfd(epollfd_,sockfd_,EPOLLOUT);
+            }
             munmap(processRead->fileAddr,processRead->filestat_.st_size);
             processRead->fileAddr = 0;
             return false;
         }
         byteToSend -= tmp;
         byteSend += tmp;
-        if(byteToSend <= byteSend)
+
+        if(byteToSend <= 0)
         {
             //发送HTTP响应成功，判断是否关闭连接
             munmap(processRead->fileAddr,processRead->filestat_.st_size);
+            processRead->fileAddr = 0;
+            modfd(epollfd_,sockfd_,EPOLLIN);
             if(processRead->linger_)
             {
-                //reset();
-                modfd(epollfd_,sockfd_,EPOLLIN);
+                reset();               
                 return true;
             }
             else
-            {
-                modfd(epollfd_, sockfd_, EPOLLIN);
+            {               
                 return false;
             }
         }
@@ -118,8 +133,8 @@ void HttpServer::process()
 {
     processRead = std::make_shared<HttpProcessRead>(readBuffer,readIndex_);
     auto ret = processRead->processRead();
-    if(ret == 0)
-    {
+    if(ret == HttpProcessRead::HTTPCODE::NO_REQUEST)
+    {        
         modfd(epollfd_,sockfd_,EPOLLIN);
         return;
     }
@@ -128,5 +143,21 @@ void HttpServer::process()
     {
         close();
     }           
+    //clearBuf(); 
     modfd(epollfd_,sockfd_,EPOLLOUT);
+}
+
+// void HttpServer::clearBuf()
+// {
+//     memset(readBuffer,'\0',READBUFFERSIZE);
+// }
+
+void HttpServer::reset()
+{
+    readIndex_ = 0;
+    processRead->reset();        
+    processWrite->pRead = processRead;
+    processWrite->reset();
+
+    memset(readBuffer,'\0',READBUFFERSIZE);
 }

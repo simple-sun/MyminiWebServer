@@ -28,14 +28,18 @@ private:
     std::list<T*> workqueue;
     Locker queueLock_;
     Sem queueStat_;
+    bool stop_;
 };
 
 template<typename T> 
 ThreadPool<T>:: ThreadPool(int threadnum)
-        :threadNum(threadnum)
+        :threadNum(threadnum),
+        stop_(false),
+        thread_(NULL)
 {
     thread_ = new pthread_t[threadNum];
 
+    //创建threadNum个线程，并设置为脱离状态
     for(int i = 0; i< threadnum; i++)
     {
         int ret = pthread_create(thread_+i,NULL,workfunc,this);
@@ -61,6 +65,7 @@ template<typename T>
 ThreadPool<T> :: ~ThreadPool()
 {
     delete [] thread_;
+    stop_ = true;
 }
 template<typename T>
 void ThreadPool<T> :: append(T* req)
@@ -81,16 +86,20 @@ void* ThreadPool<T> ::workfunc(void* arg)
 template<typename T>
 void ThreadPool<T> :: run()
 {
-    while(1)
+    while(!stop_)
     {
-        if( workqueue.size() > 0)
+        queueStat_.wait();
+        queueLock_.lock();
+        if( ! workqueue.empty())
         {
-            queueStat_.wait();
-            queueLock_.lock();
+            
             T* req = workqueue.front();
             workqueue.pop_front();
             queueLock_.unlock();
             req->process();          
+        }
+        else{
+            queueLock_.unlock();
         }
     }
 }

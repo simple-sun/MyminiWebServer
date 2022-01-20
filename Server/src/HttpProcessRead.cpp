@@ -6,17 +6,18 @@
 #include<stdlib.h>
 #include<fcntl.h>
 #include<sys/stat.h>
+#include<unistd.h>
 
 
-const char* docRoot = "/home/sun/Webserver1/Mywebserver/Html";
+const char* docRoot = "/home/web/MyminiWebServer/Html";
 
 HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
                 :checkstate_(CHECK_REQUESTLINE),
-                readIndex_(readIndex)
+                readIndex_(readIndex),
+                linger_(false)
 {
     memset(readBuffer,'\0',READBUFFERSIZE);
     memset(filePath_,'\0',200); 
-    // size_t sz = sizeof(readbuffer);
     memcpy(readBuffer, readbuffer,(size_t)READBUFFERSIZE);    
 }
 
@@ -80,6 +81,8 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseContent(char* text)
     if(readIndex_ >= (contentLength_ + checkIndex_))
     {
         text[contentLength_] = '\0';
+        postdata = text;
+        //printf("parseContent: %s\n",text);
         return GET_REQUEST;
     }
     return NO_REQUEST;
@@ -107,7 +110,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseHead(char* text)
             linger_ = true;
         }
     }
-    else if(strncasecmp(text,"Content-Length",15) == 0)
+    else if(strncasecmp(text,"Content-Length:",15) == 0)
     {
         text += 15;
         text += strspn(text," \t");
@@ -137,12 +140,12 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     *url_++ = '\0';
     
     char* mtext = text;
-    if(strcasecmp(mtext,"GET"))
+    if(strcasecmp(mtext,"GET") == 0)
     {
         method_ = GET;
         
     }
-    else if(strcasecmp(mtext,"POST"))
+    else if(strcasecmp(mtext,"POST") == 0)
     {
         method_ = POST;
         
@@ -151,7 +154,6 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     {
         return BAD_REQUEST;
     }
-    //printf("url is %s \n", url_);
 
     url_ += strspn(url_," \t");
     version_ = strpbrk(url_," \t");
@@ -159,7 +161,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     {
         return BAD_REQUEST;
     }
-    *version_ += '\0';
+    *version_++ = '\0';
     version_ += strspn(version_," \t");
     if(strcasecmp(version_,"HTTP/1.1"))
     {
@@ -170,10 +172,16 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
         url_ += 7;
         url_ = strchr(url_,'/');
     }
+    if(strncasecmp(url_,"https://",8) == 0)
+    {
+        url_ += 8;
+        url_ = strchr(url_,'/');
+    }
     if(strncasecmp(url_,"/",1) == 0)
     {
-        url_ = "/Home.html";
-        //url_ = strchr(url_,'/');
+        //strcat(url_,"try.html");
+        url_ = "/home.html";
+        
     }
     if( !url_ || url_[0] != '/')
     {
@@ -187,6 +195,35 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
 {
     strcpy(filePath_,docRoot);
     int len = strlen(docRoot);
+    if(method_ == POST)
+    {
+        //链接数据库，读取用户名和密码
+        char name[100];
+        char password[100];
+        int i = 5;
+        for(; postdata[i] != '&';++i)
+        {
+            name[i-5] = postdata[i];
+        }
+        name[i-5] = '\0';
+
+        int j  = 0;
+        for(i = i+10; postdata[i] != '\0'; ++i,++j)
+        {
+            password[j] = postdata[i];
+        }
+        password[j] = '\0';
+
+        //根据登录数据，查询是否在数据库中存在
+        if( strlen(name) && strlen(password))
+        {
+            //查询数据：名字，密码
+            if(1)
+            {
+                strcpy(url_,"/try.html");
+            }
+        }
+    }
     strncpy(filePath_+len, url_, 200-len-1);
     if(stat(filePath_,&filestat_) < 0)
     {
@@ -202,6 +239,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
     
     fileAddr = (char*)mmap(0,filestat_.st_size,PROT_READ,
                                 MAP_PRIVATE,fd,0);    
+    close(fd);
     return FILE_REQUEST;    
 }
 
@@ -230,4 +268,24 @@ HttpProcessRead::LINESTATUS HttpProcessRead::parseLine()
         }
     }
     return LINE_HALFBAKED;
+}
+
+
+void HttpProcessRead::reset()
+{
+    processPosition = 0;
+    checkIndex_ = 0;
+    readIndex_ = 0;
+    checkstate_ = CHECK_REQUESTLINE;
+
+    url_ = 0;
+    method_ = GET;
+    version_ = 0;
+    contentLength_ = 0;
+    linger_ = false;
+    host_ = 0;
+
+    memset(filePath_,'\0',1024);
+    memset(readBuffer,'\0',READBUFFERSIZE);
+
 }

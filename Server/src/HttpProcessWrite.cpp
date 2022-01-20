@@ -5,6 +5,7 @@
 #include"stdio.h"
 #include"stdlib.h"
 #include"stdarg.h"
+#include<chrono>
 
 const char* ok_200_title = "OK";
 const char* error_400_title = "BAD REQUEST";
@@ -15,13 +16,8 @@ const char* error_404_form = "The request file was not found on this server.\n";
 
 HttpProcessWrite::HttpProcessWrite(std::shared_ptr<HttpProcessRead> processRead)
                 :pRead(processRead)
-{
-
-}
-HttpProcessWrite::~HttpProcessWrite()
-{
-    
-}
+{}
+HttpProcessWrite::~HttpProcessWrite(){}
 
 
 
@@ -53,14 +49,18 @@ bool HttpProcessWrite::processWrite(HttpProcessRead::HTTPCODE readRet)
         }
         case HttpProcessRead::HTTPCODE::FILE_REQUEST:
         {
-            addStatus(200,ok_200_title);            
+            addStatus(200,ok_200_title);       
+            //printf("writeBUffer : %s",writeBuffer);     
             if(pRead->filestat_.st_size != 0)
             { 
                 addHead(pRead->filestat_.st_size);
+                
                 iv_[0].iov_base = writeBuffer;
                 iv_[0].iov_len = writeIndex_;
+                printf("\nhead is:\n%s", writeBuffer);
                 iv_[1].iov_base = pRead->fileAddr;
                 iv_[1].iov_len = pRead->filestat_.st_size;
+                //printf("%s\n", pRead->fileAddr);
                 ivCnt_ = 2;
                 return true;
             }
@@ -86,9 +86,15 @@ bool HttpProcessWrite::processWrite(HttpProcessRead::HTTPCODE readRet)
     return true;
 }
 
+void HttpProcessWrite::reset()
+{
+    writeIndex_ = 0;
+    memset(writeBuffer,'\0',WRITEBUFFERSIZE);
+}
+
 bool HttpProcessWrite::WriteResponse(const char* format, ...)
 {
-    if(writeIndex_ > WRITEBUFFERSIZE)
+    if(writeIndex_ >= WRITEBUFFERSIZE)
     {
         LOG_FATAL << "writeIndex > WIRTEBUFFERSIZE, write saturation" << log::end;
         return false;
@@ -100,8 +106,10 @@ bool HttpProcessWrite::WriteResponse(const char* format, ...)
                             format,argList);
     if(len > WRITEBUFFERSIZE-1-writeIndex_)
     {
+        va_end(argList);
         return false;
     }
+
     writeIndex_ += len;
     va_end(argList);    
     return true;
@@ -114,18 +122,67 @@ bool HttpProcessWrite::addStatus(int status, const char* title)
 
 bool HttpProcessWrite::addHead(int contentLen)
 {
-    return addContentLen(contentLen) && addLinger() && addBlankLine();
+    return addContentType() && addContentLen(contentLen) && addConnection() 
+             && addBlankLine();
+    // addDate() &&addContentType() && addConnection() && addContentLen(contentLen) 
+    //         && addMod()  && addVary() 
+    //         && addServer() && addComp() && addPragma()
+    //         && addAccpRange() && addBlankLine();
+    //return addContentLen(contentLen) && addLinger() && addBlankLine();
+}
+bool HttpProcessWrite::addDate()
+{
+
+    //std::time_t tt = std::chrono::system_clock::to_time_t(tp);
+    return WriteResponse("Date: Sun, 13 Jan 2022 09:31:07 GMT\r\n");
+}
+
+bool HttpProcessWrite::addContentType()
+{
+    return WriteResponse("Content-Type:%s\r\n", "text/html");
 }
 
 bool HttpProcessWrite::addContentLen(int contentLen)
 {
-    return WriteResponse("ContentLength: %d\r\n", contentLen);
+    return WriteResponse("ContentLength:%d\r\n", contentLen);
 }
 
-bool HttpProcessWrite::addLinger()
+bool HttpProcessWrite::addMod()
+{
+    return  WriteResponse("Last-Modified: Thu, 14 Sep 2017 03:04:00 GMT\r\n");
+}
+
+bool HttpProcessWrite::addConnection()
 {
     
-    return WriteResponse("Connection: %s\r\n", (pRead->linger_ == true) ? "keep-alive" : "close");
+    //return WriteResponse("Connection:%s\r\n", (pRead->linger_ == true) ? "Keep-Alive" : "close");
+    pRead->linger_ = false;
+    return WriteResponse("Connection: %s\r\n", "close");
+}
+
+bool HttpProcessWrite::addVary()
+{
+    return WriteResponse("Vary: Accept-Encoding\r\n");
+}
+
+bool HttpProcessWrite::addServer()
+{
+    return WriteResponse("Server: 124.24.176.229:9527\r\n");
+}
+
+bool HttpProcessWrite::addComp()
+{
+    return WriteResponse("X-UA-Compatible: IE=Edge,chrome=1\r\n");
+}
+
+bool HttpProcessWrite::addPragma()
+{
+    return WriteResponse("Pragma: no-cache\r\n");
+}
+
+bool HttpProcessWrite::addAccpRange()
+{
+    return WriteResponse("Accept-Ranges: bytes\r\n");
 }
 
 bool HttpProcessWrite::addBlankLine()
