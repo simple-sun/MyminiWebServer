@@ -1,8 +1,6 @@
 CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: \
- /home/sun/Webserver1/Mywebserver/LOG/src/LogFile.cpp \
- /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h \
- /usr/include/c++/8/string \
+ /home/web/MyminiWebServer/LOG/src/LogFile.cpp /usr/include/stdc-predef.h \
+ /home/web/MyminiWebServer/LOG/inc/LogFile.h /usr/include/c++/8/string \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
@@ -97,12 +95,11 @@ CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o: \
  /usr/include/c++/8/bits/functional_hash.h \
  /usr/include/c++/8/bits/basic_string.tcc /usr/include/assert.h \
  /usr/include/string.h /usr/include/strings.h \
- /home/sun/Webserver1/Mywebserver/time/inc/timePoint.h \
- /usr/include/c++/8/chrono /usr/include/c++/8/ratio \
- /usr/include/c++/8/limits /usr/include/c++/8/ctime \
- /usr/include/c++/8/bits/parse_numbers.h /usr/include/c++/8/iostream \
- /usr/include/c++/8/ostream /usr/include/c++/8/ios \
- /usr/include/c++/8/bits/ios_base.h \
+ /home/web/MyminiWebServer/time/inc/timePoint.h /usr/include/c++/8/chrono \
+ /usr/include/c++/8/ratio /usr/include/c++/8/limits \
+ /usr/include/c++/8/ctime /usr/include/c++/8/bits/parse_numbers.h \
+ /usr/include/c++/8/iostream /usr/include/c++/8/ostream \
+ /usr/include/c++/8/ios /usr/include/c++/8/bits/ios_base.h \
  /usr/include/c++/8/bits/locale_classes.h \
  /usr/include/c++/8/bits/locale_classes.tcc \
  /usr/include/c++/8/system_error \

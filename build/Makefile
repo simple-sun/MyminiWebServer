@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sun/Webserver1/Mywebserver
+CMAKE_SOURCE_DIR = /home/web/MyminiWebServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sun/Webserver1/Mywebserver/build
+CMAKE_BINARY_DIR = /home/web/MyminiWebServer/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sun/Webserver1/Mywebserver/build/CMakeFiles /home/sun/Webserver1/Mywebserver/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/web/MyminiWebServer/build/CMakeFiles /home/web/MyminiWebServer/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sun/Webserver1/Mywebserver/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/web/MyminiWebServer/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -369,6 +369,30 @@ Server/src/locker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/Server/src/locker.cpp.s
 .PHONY : Server/src/locker.cpp.s
 
+m.o: m.cpp.o
+.PHONY : m.o
+
+# target to build an object file
+m.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/m.cpp.o
+.PHONY : m.cpp.o
+
+m.i: m.cpp.i
+.PHONY : m.i
+
+# target to preprocess a source file
+m.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/m.cpp.i
+.PHONY : m.cpp.i
+
+m.s: m.cpp.s
+.PHONY : m.s
+
+# target to generate assembly for a file
+m.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/m.cpp.s
+.PHONY : m.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -480,6 +504,9 @@ help:
 	@echo "... Server/src/locker.o"
 	@echo "... Server/src/locker.i"
 	@echo "... Server/src/locker.s"
+	@echo "... m.o"
+	@echo "... m.i"
+	@echo "... m.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

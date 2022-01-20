@@ -1,7 +1,7 @@
 CMakeFiles/out.exe.dir/Server/src/EpollTools.cpp.o: \
- /home/sun/Webserver1/Mywebserver/Server/src/EpollTools.cpp \
+ /home/web/MyminiWebServer/Server/src/EpollTools.cpp \
  /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/Server/inc/EpollTools.h \
+ /home/web/MyminiWebServer/Server/inc/EpollTools.h \
  /usr/include/sys/epoll.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/libc-header-start.h \

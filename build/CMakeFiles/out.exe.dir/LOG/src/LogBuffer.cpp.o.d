@@ -1,7 +1,6 @@
 CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o: \
- /home/sun/Webserver1/Mywebserver/LOG/src/LogBuffer.cpp \
- /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
+ /home/web/MyminiWebServer/LOG/src/LogBuffer.cpp \
+ /usr/include/stdc-predef.h /home/web/MyminiWebServer/LOG/inc/LogBuffer.h \
  /usr/include/string.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \

@@ -1,7 +1,6 @@
 CMakeFiles/out.exe.dir/time/src/timmer.cpp.o: \
- /home/sun/Webserver1/Mywebserver/time/src/timmer.cpp \
- /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/time/inc/timmer.h \
+ /home/web/MyminiWebServer/time/src/timmer.cpp /usr/include/stdc-predef.h \
+ /home/web/MyminiWebServer/time/inc/timmer.h \
  /usr/include/c++/8/functional \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -128,4 +127,4 @@ CMakeFiles/out.exe.dir/time/src/timmer.cpp.o: \
  /usr/include/c++/8/bits/atomic_base.h \
  /usr/include/c++/8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/8/backward/auto_ptr.h \
- /home/sun/Webserver1/Mywebserver/time/inc/timePoint.h
+ /home/web/MyminiWebServer/time/inc/timePoint.h

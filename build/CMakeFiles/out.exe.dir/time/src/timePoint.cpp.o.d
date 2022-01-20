@@ -1,8 +1,7 @@
 CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o: \
- /home/sun/Webserver1/Mywebserver/time/src/timePoint.cpp \
+ /home/web/MyminiWebServer/time/src/timePoint.cpp \
  /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/time/inc/timePoint.h \
- /usr/include/c++/8/string \
+ /home/web/MyminiWebServer/time/inc/timePoint.h /usr/include/c++/8/string \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sun/Webserver1/Mywebserver/build"
+			"value" : "/home/web/MyminiWebServer/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -283,10 +283,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/x86_64-redhat-linux-gcc-8"
 		},
 		{
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sun/Webserver1/Mywebserver"
+			"value" : "/home/web/MyminiWebServer"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sun/Webserver1/Mywebserver/build"
+			"value" : "/home/web/MyminiWebServer/build"
 		},
 		{
 			"name" : "template_SOURCE_DIR",
@@ -1151,7 +1151,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sun/Webserver1/Mywebserver"
+			"value" : "/home/web/MyminiWebServer"
 		}
 	],
 	"kind" : "cache",

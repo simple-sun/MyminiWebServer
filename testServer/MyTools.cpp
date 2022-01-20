@@ -16,7 +16,7 @@ void addfd(int epollfd, int fd, bool one_shot)
 {
     epoll_event event;
     event.data.fd = fd;
-    event.events = EPOLLET | EPOLLOUT | EPOLLRDHUP;
+    event.events = EPOLLET | EPOLLIN | EPOLLRDHUP;
     if(one_shot)
     {
         event.events |= EPOLLONESHOT;

@@ -1,7 +1,6 @@
 CMakeFiles/out.exe.dir/Server/src/locker.cpp.o: \
- /home/sun/Webserver1/Mywebserver/Server/src/locker.cpp \
- /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/Server/inc/locker.h \
+ /home/web/MyminiWebServer/Server/src/locker.cpp \
+ /usr/include/stdc-predef.h /home/web/MyminiWebServer/Server/inc/locker.h \
  /usr/include/c++/8/exception \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -37,8 +36,8 @@ CMakeFiles/out.exe.dir/Server/src/locker.cpp.o: \
  /usr/include/bits/stdint-intn.h /usr/include/sys/select.h \
  /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
  /usr/include/bits/types/__sigset_t.h /usr/include/bits/semaphore.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h \
- /usr/include/c++/8/vector /usr/include/c++/8/bits/stl_algobase.h \
+ /home/web/MyminiWebServer/LOG/inc/LogThread.h /usr/include/c++/8/vector \
+ /usr/include/c++/8/bits/stl_algobase.h \
  /usr/include/c++/8/bits/functexcept.h \
  /usr/include/c++/8/bits/cpp_type_traits.h \
  /usr/include/c++/8/ext/type_traits.h \
@@ -126,14 +125,14 @@ CMakeFiles/out.exe.dir/Server/src/locker.cpp.o: \
  /usr/include/c++/8/system_error \
  /usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
  /usr/include/c++/8/bits/std_mutex.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/8/functional /usr/include/c++/8/bits/std_function.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h \
- /usr/include/c++/8/iostream /usr/include/c++/8/ostream \
- /usr/include/c++/8/ios /usr/include/c++/8/bits/ios_base.h \
+ /home/web/MyminiWebServer/LOG/inc/logger.h \
+ /home/web/MyminiWebServer/LOG/inc/LogStream.h \
+ /home/web/MyminiWebServer/LOG/inc/LogBuffer.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/c++/8/functional \
+ /usr/include/c++/8/bits/std_function.h \
+ /home/web/MyminiWebServer/LOG/inc/LogFile.h /usr/include/c++/8/iostream \
+ /usr/include/c++/8/ostream /usr/include/c++/8/ios \
+ /usr/include/c++/8/bits/ios_base.h \
  /usr/include/c++/8/bits/locale_classes.h \
  /usr/include/c++/8/bits/locale_classes.tcc /usr/include/c++/8/streambuf \
  /usr/include/c++/8/bits/streambuf.tcc \

@@ -1,7 +1,7 @@
 CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o: \
- /home/sun/Webserver1/Mywebserver/Server/src/HttpProcessRead.cpp \
+ /home/web/MyminiWebServer/Server/src/HttpProcessRead.cpp \
  /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/Server/inc/HttpProcessRead.h \
+ /home/web/MyminiWebServer/Server/inc/HttpProcessRead.h \
  /usr/include/fcntl.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
@@ -30,8 +30,8 @@ CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o: \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/string.h \
  /usr/include/bits/libc-header-start.h /usr/include/bits/types/locale_t.h \
  /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h \
- /usr/include/c++/8/vector /usr/include/c++/8/bits/stl_algobase.h \
+ /home/web/MyminiWebServer/LOG/inc/LogThread.h /usr/include/c++/8/vector \
+ /usr/include/c++/8/bits/stl_algobase.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
@@ -134,13 +134,13 @@ CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o: \
  /usr/include/c++/8/system_error \
  /usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
  /usr/include/c++/8/bits/std_mutex.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
+ /home/web/MyminiWebServer/LOG/inc/logger.h \
+ /home/web/MyminiWebServer/LOG/inc/LogStream.h \
+ /home/web/MyminiWebServer/LOG/inc/LogBuffer.h \
  /usr/include/c++/8/functional /usr/include/c++/8/bits/std_function.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h \
- /usr/include/c++/8/iostream /usr/include/c++/8/ostream \
- /usr/include/c++/8/ios /usr/include/c++/8/bits/ios_base.h \
+ /home/web/MyminiWebServer/LOG/inc/LogFile.h /usr/include/c++/8/iostream \
+ /usr/include/c++/8/ostream /usr/include/c++/8/ios \
+ /usr/include/c++/8/bits/ios_base.h \
  /usr/include/c++/8/bits/locale_classes.h \
  /usr/include/c++/8/bits/locale_classes.tcc /usr/include/c++/8/streambuf \
  /usr/include/c++/8/bits/streambuf.tcc \
@@ -154,7 +154,7 @@ CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o: \
  /usr/include/c++/8/bits/basic_ios.tcc \
  /usr/include/c++/8/bits/ostream.tcc /usr/include/c++/8/istream \
  /usr/include/c++/8/bits/istream.tcc \
- /home/sun/Webserver1/Mywebserver/Server/inc/EpollTools.h \
+ /home/web/MyminiWebServer/Server/inc/EpollTools.h \
  /usr/include/sys/epoll.h /usr/include/bits/epoll.h \
  /usr/include/c++/8/stdlib.h /usr/include/sys/stat.h \
  /usr/include/bits/statx.h /usr/include/linux/stat.h \
@@ -165,4 +165,7 @@ CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o: \
  /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
  /usr/include/asm-generic/posix_types.h /usr/include/bits/statx-generic.h \
  /usr/include/bits/types/struct_statx_timestamp.h \
- /usr/include/bits/types/struct_statx.h
+ /usr/include/bits/types/struct_statx.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h

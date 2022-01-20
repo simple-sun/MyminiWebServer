@@ -1,7 +1,6 @@
 CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o: \
- /home/sun/Webserver1/Mywebserver/LOG/src/LogThread.cpp \
- /usr/include/stdc-predef.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogThread.h \
+ /home/web/MyminiWebServer/LOG/src/LogThread.cpp \
+ /usr/include/stdc-predef.h /home/web/MyminiWebServer/LOG/inc/LogThread.h \
  /usr/include/c++/8/vector /usr/include/c++/8/bits/stl_algobase.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -123,14 +122,14 @@ CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o: \
  /usr/include/c++/8/system_error \
  /usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
  /usr/include/c++/8/bits/std_mutex.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/logger.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogStream.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogBuffer.h \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/8/functional /usr/include/c++/8/bits/std_function.h \
- /home/sun/Webserver1/Mywebserver/LOG/inc/LogFile.h \
- /usr/include/c++/8/iostream /usr/include/c++/8/ostream \
- /usr/include/c++/8/ios /usr/include/c++/8/bits/ios_base.h \
+ /home/web/MyminiWebServer/LOG/inc/logger.h \
+ /home/web/MyminiWebServer/LOG/inc/LogStream.h \
+ /home/web/MyminiWebServer/LOG/inc/LogBuffer.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/c++/8/functional \
+ /usr/include/c++/8/bits/std_function.h \
+ /home/web/MyminiWebServer/LOG/inc/LogFile.h /usr/include/c++/8/iostream \
+ /usr/include/c++/8/ostream /usr/include/c++/8/ios \
+ /usr/include/c++/8/bits/ios_base.h \
  /usr/include/c++/8/bits/locale_classes.h \
  /usr/include/c++/8/bits/locale_classes.tcc /usr/include/c++/8/streambuf \
  /usr/include/c++/8/bits/streambuf.tcc \

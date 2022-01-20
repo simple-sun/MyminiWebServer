@@ -9,7 +9,7 @@
 namespace log
 {
 
-    const char *logPath = "/home/sun/456/";
+    const char *logPath = "/home/web/log/";
 
     const int LogThread::maxBufSize = 1000 * 1024;
     
