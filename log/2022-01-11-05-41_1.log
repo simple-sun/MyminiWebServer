@@ -1,0 +1,20 @@
+13:41:23.788858		ThreadPool.h   	48	ThreadPool     	Info:     0 thread is created.
+13:41:28.571247		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:28.571301		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:28.571507		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+13:41:28.571529		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+13:41:28.571535		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+13:41:28.571541		HttpProcessRead	124	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/
+13:41:28.571545		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+13:41:28.571550		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9
+13:41:28.572525		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:53.224565		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:53.224800		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:53.225040		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+13:41:53.225077		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+13:41:53.225084		HttpProcessRead	124	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/?x=215&y=125
+13:41:53.225091		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+13:41:53.225096		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9
+13:41:53.227021		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:53.240936		main.cpp       	80	main           	Info:     1 events has been got 
+13:41:53.241034		main.cpp       	118	main           	Fatal:    events[8].8193

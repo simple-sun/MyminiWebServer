@@ -1,0 +1,23 @@
+15:14:18.076210		ThreadPool.h   	48	ThreadPool     	Info:     0 thread is created.
+15:14:20.854995		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:20.855118		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:20.855352		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+15:14:20.855374		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+15:14:20.855380		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+15:14:20.855385		HttpProcessRead	124	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/?x=211&y=179
+15:14:20.855390		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+15:14:20.855395		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9
+15:14:20.856640		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:35.759066		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:35.759285		main.cpp       	122	main           	Fatal:    events[6].8193
+15:14:40.554256		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:40.554390		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:40.554532		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+15:14:40.554554		HttpProcessRead	124	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+15:14:40.554560		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+15:14:40.554565		HttpProcessRead	124	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/?x=134&y=144
+15:14:40.554569		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+15:14:40.554573		HttpProcessRead	124	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9
+15:14:40.556414		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:44.424240		main.cpp       	84	main           	Info:     1 events has been got 
+15:14:44.424410		main.cpp       	122	main           	Fatal:    events[6].8193
