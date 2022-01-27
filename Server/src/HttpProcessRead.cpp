@@ -180,6 +180,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     if(strncasecmp(url_,"/",1) == 0)
     {
         //strcat(url_,"try.html");
+        if(method_ == GET)
         url_ = "/home.html";
         
     }
@@ -218,9 +219,10 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
         if( strlen(name) && strlen(password))
         {
             //查询数据：名字，密码
+            printf("HttpProcessRead::doRequset:: name = %s, password = %s \n",name,password);
             if(1)
             {
-                strcpy(url_,"/try.html");
+                strcat(url_,"try.html");
             }
         }
     }
