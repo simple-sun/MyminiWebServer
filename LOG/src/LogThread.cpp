@@ -6,6 +6,7 @@
 #include <thread>
 #include <assert.h>
 
+
 namespace log
 {
 

@@ -3,6 +3,7 @@
 
 #include "string.h"
 
+
 namespace log
 {
 

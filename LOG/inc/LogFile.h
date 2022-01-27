@@ -4,7 +4,6 @@
 #include <string>
 #include <sys/types.h>
 
-
 namespace log
 {
     class LogFile

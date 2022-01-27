@@ -6,12 +6,6 @@
 #include <iostream>
 
 
-
-// const char *strerror_tl(int savedErrno)
-// {
-//     return strerror_r(savedErrno, t_errnobuf, sizeof t_errnobuf);
-// }
-
 namespace log
 {
     LogFile::LogFile(const char *fileName)

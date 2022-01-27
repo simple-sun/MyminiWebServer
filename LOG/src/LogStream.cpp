@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 
+
 namespace log
 {
     

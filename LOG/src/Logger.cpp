@@ -1,9 +1,9 @@
 #include "logger.h"
 #include "timePoint.h"
-//#include "LocalMessage.h"
 #include "assert.h"
 #include <iostream>
 #include<thread>
+
 
 namespace log
 {

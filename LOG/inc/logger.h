@@ -5,6 +5,7 @@
 #include "LogFile.h"
 #include <functional>
 
+
 namespace log
 {
   enum LogLevel
