@@ -219,7 +219,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
         if( strlen(name) && strlen(password))
         {
             //查询数据：名字，密码
-            printf("HttpProcessRead::doRequset:: name = %s, password = %s \n",name,password);
+            printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
             if(1)
             {
                 strcat(url_,"try.html");
