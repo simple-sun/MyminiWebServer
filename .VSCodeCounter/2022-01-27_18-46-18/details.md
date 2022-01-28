@@ -1,12 +1,12 @@
 # Details
 
-Date : 2022-01-09 00:52:28
+Date : 2022-01-27 18:46:18
 
-Directory /home/sun/Webserver1/Mywebserver
+Directory /home/web/MyminiWebServer
 
-Total : 18 files,  1178 codes, 0 comments, 274 blanks, all 1452 lines
+Total : 18 files,  1181 codes, 0 comments, 274 blanks, all 1455 lines
 
-[summary](results.md)
+[summary](results.md) / details / [diff summary](diff.md) / [diff details](diff-details.md)
 
 ## Files
 | filename | language | code | comment | blank | total |
@@ -17,8 +17,8 @@ Total : 18 files,  1178 codes, 0 comments, 274 blanks, all 1452 lines
 | [build/CMakeFiles/3.20.2/CMakeSystem.cmake](/build/CMakeFiles/3.20.2/CMakeSystem.cmake) | CMake | 10 | 0 | 6 | 16 |
 | [build/CMakeFiles/CMakeDirectoryInformation.cmake](/build/CMakeFiles/CMakeDirectoryInformation.cmake) | CMake | 12 | 0 | 5 | 17 |
 | [build/CMakeFiles/Makefile.cmake](/build/CMakeFiles/Makefile.cmake) | CMake | 42 | 0 | 6 | 48 |
-| [build/CMakeFiles/out.exe.dir/DependInfo.cmake](/build/CMakeFiles/out.exe.dir/DependInfo.cmake) | CMake | 26 | 0 | 6 | 32 |
-| [build/CMakeFiles/out.exe.dir/cmake_clean.cmake](/build/CMakeFiles/out.exe.dir/cmake_clean.cmake) | CMake | 34 | 0 | 2 | 36 |
+| [build/CMakeFiles/out.exe.dir/DependInfo.cmake](/build/CMakeFiles/out.exe.dir/DependInfo.cmake) | CMake | 27 | 0 | 6 | 33 |
+| [build/CMakeFiles/out.exe.dir/cmake_clean.cmake](/build/CMakeFiles/out.exe.dir/cmake_clean.cmake) | CMake | 36 | 0 | 2 | 38 |
 | [build/cmake_install.cmake](/build/cmake_install.cmake) | CMake | 46 | 0 | 9 | 55 |
 | [testServer/build/CMakeCache.txt](/testServer/build/CMakeCache.txt) | CMake Cache | 304 | 0 | 65 | 369 |
 | [testServer/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake](/testServer/build/CMakeFiles/3.20.2/CMakeCCompiler.cmake) | CMake | 61 | 0 | 18 | 79 |
@@ -30,4 +30,4 @@ Total : 18 files,  1178 codes, 0 comments, 274 blanks, all 1452 lines
 | [testServer/build/CMakeFiles/out.exe.dir/cmake_clean.cmake](/testServer/build/CMakeFiles/out.exe.dir/cmake_clean.cmake) | CMake | 12 | 0 | 2 | 14 |
 | [testServer/build/cmake_install.cmake](/testServer/build/cmake_install.cmake) | CMake | 46 | 0 | 9 | 55 |
 
-[summary](results.md)
+[summary](results.md) / details / [diff summary](diff.md) / [diff details](diff-details.md)

@@ -249,6 +249,30 @@ LOG/src/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.s
 .PHONY : LOG/src/Logger.cpp.s
 
+MySQL/src/MysqlConn.o: MySQL/src/MysqlConn.cpp.o
+.PHONY : MySQL/src/MysqlConn.o
+
+# target to build an object file
+MySQL/src/MysqlConn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o
+.PHONY : MySQL/src/MysqlConn.cpp.o
+
+MySQL/src/MysqlConn.i: MySQL/src/MysqlConn.cpp.i
+.PHONY : MySQL/src/MysqlConn.i
+
+# target to preprocess a source file
+MySQL/src/MysqlConn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.i
+.PHONY : MySQL/src/MysqlConn.cpp.i
+
+MySQL/src/MysqlConn.s: MySQL/src/MysqlConn.cpp.s
+.PHONY : MySQL/src/MysqlConn.s
+
+# target to generate assembly for a file
+MySQL/src/MysqlConn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/out.exe.dir/build.make CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.s
+.PHONY : MySQL/src/MysqlConn.cpp.s
+
 Server/src/EpollTools.o: Server/src/EpollTools.cpp.o
 .PHONY : Server/src/EpollTools.o
 
@@ -489,6 +513,9 @@ help:
 	@echo "... LOG/src/Logger.o"
 	@echo "... LOG/src/Logger.i"
 	@echo "... LOG/src/Logger.s"
+	@echo "... MySQL/src/MysqlConn.o"
+	@echo "... MySQL/src/MysqlConn.i"
+	@echo "... MySQL/src/MysqlConn.s"
 	@echo "... Server/src/EpollTools.o"
 	@echo "... Server/src/EpollTools.i"
 	@echo "... Server/src/EpollTools.s"

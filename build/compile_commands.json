@@ -1,72 +1,77 @@
 [
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/EpollTools.cpp.o -c /home/web/MyminiWebServer/Server/src/EpollTools.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/EpollTools.cpp.o -c /home/web/MyminiWebServer/Server/src/EpollTools.cpp",
   "file": "/home/web/MyminiWebServer/Server/src/EpollTools.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o -c /home/web/MyminiWebServer/Server/src/HttpProcessRead.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o -c /home/web/MyminiWebServer/Server/src/HttpProcessRead.cpp",
   "file": "/home/web/MyminiWebServer/Server/src/HttpProcessRead.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpProcessWrite.cpp.o -c /home/web/MyminiWebServer/Server/src/HttpProcessWrite.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/HttpProcessWrite.cpp.o -c /home/web/MyminiWebServer/Server/src/HttpProcessWrite.cpp",
   "file": "/home/web/MyminiWebServer/Server/src/HttpProcessWrite.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.o -c /home/web/MyminiWebServer/Server/src/Httpserver.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/Httpserver.cpp.o -c /home/web/MyminiWebServer/Server/src/Httpserver.cpp",
   "file": "/home/web/MyminiWebServer/Server/src/Httpserver.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/locker.cpp.o -c /home/web/MyminiWebServer/Server/src/locker.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/Server/src/locker.cpp.o -c /home/web/MyminiWebServer/Server/src/locker.cpp",
   "file": "/home/web/MyminiWebServer/Server/src/locker.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogBuffer.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogBuffer.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogBuffer.cpp",
   "file": "/home/web/MyminiWebServer/LOG/src/LogBuffer.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogFile.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogFile.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogFile.cpp",
   "file": "/home/web/MyminiWebServer/LOG/src/LogFile.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogStream.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogStream.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogStream.cpp",
   "file": "/home/web/MyminiWebServer/LOG/src/LogStream.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogThread.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o -c /home/web/MyminiWebServer/LOG/src/LogThread.cpp",
   "file": "/home/web/MyminiWebServer/LOG/src/LogThread.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o -c /home/web/MyminiWebServer/LOG/src/Logger.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o -c /home/web/MyminiWebServer/LOG/src/Logger.cpp",
   "file": "/home/web/MyminiWebServer/LOG/src/Logger.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o -c /home/web/MyminiWebServer/time/src/timePoint.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o -c /home/web/MyminiWebServer/time/src/timePoint.cpp",
   "file": "/home/web/MyminiWebServer/time/src/timePoint.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/time/src/timmer.cpp.o -c /home/web/MyminiWebServer/time/src/timmer.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/time/src/timmer.cpp.o -c /home/web/MyminiWebServer/time/src/timmer.cpp",
   "file": "/home/web/MyminiWebServer/time/src/timmer.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/m.cpp.o -c /home/web/MyminiWebServer/m.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o -c /home/web/MyminiWebServer/MySQL/src/MysqlConn.cpp",
+  "file": "/home/web/MyminiWebServer/MySQL/src/MysqlConn.cpp"
+},
+{
+  "directory": "/home/web/MyminiWebServer/build",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/m.cpp.o -c /home/web/MyminiWebServer/m.cpp",
   "file": "/home/web/MyminiWebServer/m.cpp"
 },
 {
   "directory": "/home/web/MyminiWebServer/build",
-  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/main.cpp.o -c /home/web/MyminiWebServer/main.cpp",
+  "command": "/usr/bin/c++  -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc  -g -lpthread -DDEBUG -g -o CMakeFiles/out.exe.dir/main.cpp.o -c /home/web/MyminiWebServer/main.cpp",
   "file": "/home/web/MyminiWebServer/main.cpp"
 }
 ]

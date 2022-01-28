@@ -8,7 +8,8 @@
                 "/usr/local/include",
                 "/usr/local/bin",
                 "${workspaceFolder}/Server/inc",
-                "${workspaceFolder}/LOG/inc"
+                "${workspaceFolder}/LOG/inc",
+                "/usr/lib64/mysql"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

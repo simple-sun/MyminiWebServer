@@ -29,7 +29,7 @@ int mai()
     // int epollfd = epoll_create(5);
     // assert(epollfd != -1);
     // addfd(epollfd,listenfd,false);
-
+    return 1;
 
 
 }

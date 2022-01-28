@@ -1,6 +1,7 @@
 #include"HttpProcessRead.h"
 #include"LogThread.h"
 #include"EpollTools.h"
+#include"MysqlConn.h"
 
 #include"stdio.h"
 #include<stdlib.h>
@@ -18,7 +19,14 @@ HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
 {
     memset(readBuffer,'\0',READBUFFERSIZE);
     memset(filePath_,'\0',200); 
-    memcpy(readBuffer, readbuffer,(size_t)READBUFFERSIZE);    
+    memcpy(readBuffer, readbuffer,(size_t)READBUFFERSIZE); 
+    
+    //将数据从数据库转存到本地
+    auto conn = SqlPool::getInstance();
+    conn->init("localhost","root","Sun15045344359","user",3306);
+    
+    initMysqlData(conn);
+
 }
 
 HttpProcessRead::~HttpProcessRead(){
@@ -290,4 +298,37 @@ void HttpProcessRead::reset()
     memset(filePath_,'\0',1024);
     memset(readBuffer,'\0',READBUFFERSIZE);
 
+}
+
+
+
+//MySQL数据处理
+
+void HttpProcessRead::initMysqlData(SqlPool* sqlPool)
+{
+    //从连接池获取链接
+    MYSQL* mysql = nullptr;
+    ConnectMysql mysqlConn(&mysql,sqlPool);
+
+    //在表中检索username，password，并输出到userData中
+    if(mysql_query(mysql,"SELECT username,passwd FROM user"))
+    {
+        printf("SELECT error:%s \n",mysql_error(mysql));
+        LOG_FATAL << "SELECT error "<< mysql_error(mysql) <<log::end;
+    }
+
+    //从表中检索结果集
+    MYSQL_RES* ret = mysql_store_result(mysql);
+    //从结果集中检索列数
+    int colNum = mysql_num_fields(ret);
+    //获取所有字段的数组
+    MYSQL_FIELD* fields = mysql_fetch_field(ret);
+
+    //从结果集中提取数据
+    while(MYSQL_ROW row = mysql_fetch_row(ret))
+    {
+        std::string tmpname = row[0];
+        std::string tmppassword = row[1];
+        userData[tmpname] = tmppassword;
+    }
 }

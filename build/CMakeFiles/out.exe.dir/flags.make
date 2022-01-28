@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc
+CXX_INCLUDES = -I/home/web/MyminiWebServer/Server/inc -I/home/web/MyminiWebServer/LOG/inc -I/home/web/MyminiWebServer/time/inc -I/home/web/MyminiWebServer/MySQL/inc
 
 CXX_FLAGS =  -g -lpthread -DDEBUG -g
 

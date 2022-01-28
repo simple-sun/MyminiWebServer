@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o.d"
   "CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o"
   "CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o.d"
+  "CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o"
+  "CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o.d"
   "CMakeFiles/out.exe.dir/Server/src/EpollTools.cpp.o"
   "CMakeFiles/out.exe.dir/Server/src/EpollTools.cpp.o.d"
   "CMakeFiles/out.exe.dir/Server/src/HttpProcessRead.cpp.o"

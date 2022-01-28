@@ -6,17 +6,22 @@ project(template)
 include_directories(Server/inc)
 include_directories(LOG/inc)
 include_directories(time/inc)
+include_directories(MySQL/inc)
 #include_directories(old/inc)
 #include_directories(HTTP/inc)
 
 aux_source_directory(Server/src DIR_SRCS)
 aux_source_directory(LOG/src DIR_SRCS)
 aux_source_directory(time/src DIR_SRCS)
+aux_source_directory(MySQL/src DIR_SRCS)
 #aux_source_directory(old/src DIR_SRCS)
 #aux_source_directory(HTTP/src DIR_SRCS)
 
 
 aux_source_directory(./ DIR_SRCS)
+
+#添加mysql第三方库
+link_libraries("/usr/lib64/mysql/libmysqlclient.so")
 
 set(TEST_MATH ${DIR_SRCS})   #这句话要是不加，则不会生成src下的目录
 

@@ -237,10 +237,24 @@ CMakeFiles/out.exe.dir/time/src/timmer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/time/src/timmer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/web/MyminiWebServer/time/src/timmer.cpp -o CMakeFiles/out.exe.dir/time/src/timmer.cpp.s
 
+CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o: CMakeFiles/out.exe.dir/flags.make
+CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o: ../MySQL/src/MysqlConn.cpp
+CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o -MF CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o.d -o CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o -c /home/web/MyminiWebServer/MySQL/src/MysqlConn.cpp
+
+CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/web/MyminiWebServer/MySQL/src/MysqlConn.cpp > CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.i
+
+CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/web/MyminiWebServer/MySQL/src/MysqlConn.cpp -o CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.s
+
 CMakeFiles/out.exe.dir/m.cpp.o: CMakeFiles/out.exe.dir/flags.make
 CMakeFiles/out.exe.dir/m.cpp.o: ../m.cpp
 CMakeFiles/out.exe.dir/m.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/out.exe.dir/m.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/out.exe.dir/m.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/m.cpp.o -MF CMakeFiles/out.exe.dir/m.cpp.o.d -o CMakeFiles/out.exe.dir/m.cpp.o -c /home/web/MyminiWebServer/m.cpp
 
 CMakeFiles/out.exe.dir/m.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/out.exe.dir/m.cpp.s: cmake_force
 CMakeFiles/out.exe.dir/main.cpp.o: CMakeFiles/out.exe.dir/flags.make
 CMakeFiles/out.exe.dir/main.cpp.o: ../main.cpp
 CMakeFiles/out.exe.dir/main.cpp.o: CMakeFiles/out.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/out.exe.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/out.exe.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/out.exe.dir/main.cpp.o -MF CMakeFiles/out.exe.dir/main.cpp.o.d -o CMakeFiles/out.exe.dir/main.cpp.o -c /home/web/MyminiWebServer/main.cpp
 
 CMakeFiles/out.exe.dir/main.cpp.i: cmake_force
@@ -279,6 +293,7 @@ out_exe_OBJECTS = \
 "CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o" \
 "CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o" \
 "CMakeFiles/out.exe.dir/time/src/timmer.cpp.o" \
+"CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o" \
 "CMakeFiles/out.exe.dir/m.cpp.o" \
 "CMakeFiles/out.exe.dir/main.cpp.o"
 
@@ -297,11 +312,13 @@ out.exe: CMakeFiles/out.exe.dir/LOG/src/LogThread.cpp.o
 out.exe: CMakeFiles/out.exe.dir/LOG/src/Logger.cpp.o
 out.exe: CMakeFiles/out.exe.dir/time/src/timePoint.cpp.o
 out.exe: CMakeFiles/out.exe.dir/time/src/timmer.cpp.o
+out.exe: CMakeFiles/out.exe.dir/MySQL/src/MysqlConn.cpp.o
 out.exe: CMakeFiles/out.exe.dir/m.cpp.o
 out.exe: CMakeFiles/out.exe.dir/main.cpp.o
 out.exe: CMakeFiles/out.exe.dir/build.make
+out.exe: /usr/lib64/mysql/libmysqlclient.so
 out.exe: CMakeFiles/out.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable out.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/web/MyminiWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable out.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/out.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
