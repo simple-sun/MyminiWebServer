@@ -4,9 +4,10 @@
 #include"MysqlConn.h"
 #include"LogThread.h"
 
+
 SqlPool::SqlPool()
 {
-    maxConn = 100;
+    maxConn = 10;
     currConn = 0;
     freeConn = maxConn - currConn;
 }
@@ -26,7 +27,7 @@ void SqlPool::init(std::string url, std::string user, std::string password, std:
 
     for(int i = 0; i < maxConn; i++)
     {
-        MYSQL* conn = NULL;
+        MYSQL* conn = nullptr;
         conn = mysql_init(conn);
         if(conn == NULL)
         {
@@ -35,7 +36,8 @@ void SqlPool::init(std::string url, std::string user, std::string password, std:
         } 
         conn = mysql_real_connect(conn, url_.c_str(),user_.c_str(),password_.c_str(),
                     databaseName_.c_str(),port,NULL,0);
-        assert(conn != NULL);
+        // AfxMessageBox(mysql_error(conn));
+        //assert(conn != NULL);
         connList.push(conn);
         freeConn++;        
     }
@@ -53,7 +55,7 @@ MYSQL* SqlPool::getDatebaseConn()
         return NULL;
     }
 
-    sig.wait();
+    //sig.wait();
 
     lock.lock();
 

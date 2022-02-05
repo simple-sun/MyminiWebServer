@@ -2,6 +2,7 @@
 #include"HttpProcessRead.h"
 #include"EpollTools.h"
 #include"LogThread.h"
+#include"MysqlConn.h"
 
 
 #include"string.h"
@@ -27,7 +28,6 @@ void HttpServer::init(int sockfd, sockaddr_in& address)
     userConn_cnt++;
     {
         readIndex_ = 0;
-        //readBuffer = std::vector<char> (READBUFFERSIZE,0);
         memset(readBuffer,'\0',READBUFFERSIZE);
     }
 }
@@ -121,7 +121,8 @@ bool HttpServer::write()
                 return true;
             }
             else
-            {               
+            {            
+                reset();   
                 return false;
             }
         }
@@ -132,7 +133,14 @@ bool HttpServer::write()
 void HttpServer::process()
 {
     processRead = std::make_shared<HttpProcessRead>(readBuffer,readIndex_);
+    
+    //将数据从数据库转存到本地
+    auto conn = SqlPool::getInstance();
+    conn->init("127.0.0.1","root","Sun15045344359","userdata",3306);    
+    processRead->initMysqlData(conn);
+
     auto ret = processRead->processRead();
+
     if(ret == HttpProcessRead::HTTPCODE::NO_REQUEST)
     {        
         modfd(epollfd_,sockfd_,EPOLLIN);
@@ -143,14 +151,9 @@ void HttpServer::process()
     {
         close();
     }           
-    //clearBuf(); 
     modfd(epollfd_,sockfd_,EPOLLOUT);
 }
 
-// void HttpServer::clearBuf()
-// {
-//     memset(readBuffer,'\0',READBUFFERSIZE);
-// }
 
 void HttpServer::reset()
 {

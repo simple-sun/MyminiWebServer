@@ -10,7 +10,7 @@
 namespace log
 {
 
-    const char *logPath = "/home/web/log/";
+    const char *logPath = "/home/web/MyminiWebServer/log/";
 
     const int LogThread::maxBufSize = 1000 * 1024;
     

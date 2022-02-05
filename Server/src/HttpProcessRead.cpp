@@ -21,20 +21,12 @@ HttpProcessRead::HttpProcessRead(char readbuffer[],int readIndex)
     memset(filePath_,'\0',200); 
     memcpy(readBuffer, readbuffer,(size_t)READBUFFERSIZE); 
     
-    //将数据从数据库转存到本地
-    auto conn = SqlPool::getInstance();
-    conn->init("localhost","root","Sun15045344359","user",3306);
     
-    initMysqlData(conn);
-
+    
 }
 
 HttpProcessRead::~HttpProcessRead(){
-    //delete readBuffer;
-    //delete url_;
-    // delete version_;
-    // delete host_;
-    // delete fileAddr;
+    
 }
 
 HttpProcessRead::HTTPCODE HttpProcessRead::processRead()
@@ -155,8 +147,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
     }
     else if(strcasecmp(mtext,"POST") == 0)
     {
-        method_ = POST;
-        
+        method_ = POST;        
     }
     else
     {
@@ -185,13 +176,24 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
         url_ += 8;
         url_ = strchr(url_,'/');
     }
-    if(strncasecmp(url_,"/",1) == 0)
+    // if(strncasecmp(url_,"/favicon.ico",12) == 0)
+    // {
+    //     url_ = "/favicon.ico";
+    // }
+    //if(strncasecmp(url_,"/",1) == 0)
+    if(strlen(url_) == 1)
     {
         //strcat(url_,"try.html");
         if(method_ == GET)
-        url_ = "/home.html";
-        
+        {
+            url_ = "/home.html"; 
+        }       
+        else if(method_ = POST)
+        {
+            url_ = "/Signin.html";
+        }
     }
+    
     if( !url_ || url_[0] != '/')
     {
         return BAD_REQUEST;
@@ -204,34 +206,83 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
 {
     strcpy(filePath_,docRoot);
     int len = strlen(docRoot);
-    if(method_ == POST)
+
+    //处理指针，看是注册还是登录
+    const char* p = strrchr(url_,'/');
+
+    if(method_ == POST && (*(p+1) == '0' || *(p+1) == '1' || *(p+1) == '4'))
     {
-        //链接数据库，读取用户名和密码
-        char name[100];
-        char password[100];
-        int i = 5;
-        for(; postdata[i] != '&';++i)
+        if(*(p+1) == '4')
         {
-            name[i-5] = postdata[i];
-        }
-        name[i-5] = '\0';
-
-        int j  = 0;
-        for(i = i+10; postdata[i] != '\0'; ++i,++j)
-        {
-            password[j] = postdata[i];
-        }
-        password[j] = '\0';
-
-        //根据登录数据，查询是否在数据库中存在
-        if( strlen(name) && strlen(password))
-        {
-            //查询数据：名字，密码
-            printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
-            if(1)
+            strcpy(url_,"/home.html");
+        }   
+        else
+        {     
+            //链接数据库，读取用户名和密码
+            char name[100];
+            char password[100];
+            int i = 5;
+            for(; postdata[i] != '&';++i)
             {
-                strcat(url_,"try.html");
+                name[i-5] = postdata[i];
             }
+            name[i-5] = '\0';
+
+            int j  = 0;
+            for(i = i+10; postdata[i] != '\0'; ++i,++j)
+            {
+                password[j] = postdata[i];
+            }
+            password[j] = '\0';
+            if(*(p+1) == '0')
+            {
+            //根据登录数据，查询是否在数据库中存在
+            if( strlen(name) && strlen(password))
+            {
+                //查询数据：名字，密码
+                printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
+                //
+                if(userData[name] == password)
+                {
+                    strcpy(url_,"/login.html");
+                }
+                else{
+                    strcpy(url_,"/logfail.html");
+                }
+            }
+        }
+        //如果是1，说明是注册请求
+        else if(*(p+1) == '1')
+        {
+            printf("get your signin requsetion!\n name is %s,password is %s\n",
+                    name,password);
+
+            char* sqlInsert = (char*)malloc(sizeof(char) * 200);
+            strcpy(sqlInsert, "INSERT INTO userdata VALUES (");
+            strcat(sqlInsert,"'");
+            strcat(sqlInsert, name);
+            strcat(sqlInsert, "', ");
+            strcat(sqlInsert,"'");
+            strcat(sqlInsert, password);
+            strcat(sqlInsert,"'");
+            strcat(sqlInsert, ")");
+
+            if(userData.find(name) == userData.end())
+            {
+                lock.lock();
+                int ret = mysql_query(mysql_,sqlInsert);
+                userData[name] = password;
+                lock.unlock();
+
+                if(!ret)
+                {
+                    strcpy(url_,"/signSuccess.html");
+                }
+                else{
+                    strcpy(url_,"/signFailed.html");
+                }
+            }
+        }
         }
     }
     strncpy(filePath_+len, url_, 200-len-1);
@@ -307,18 +358,18 @@ void HttpProcessRead::reset()
 void HttpProcessRead::initMysqlData(SqlPool* sqlPool)
 {
     //从连接池获取链接
-    MYSQL* mysql = nullptr;
-    ConnectMysql mysqlConn(&mysql,sqlPool);
+    mysql_ = nullptr;
+    ConnectMysql mysqlConn(&mysql_,sqlPool);
 
     //在表中检索username，password，并输出到userData中
-    if(mysql_query(mysql,"SELECT username,passwd FROM user"))
+    if(mysql_query(mysql_,"SELECT name,password FROM userdata"))
     {
-        printf("SELECT error:%s \n",mysql_error(mysql));
-        LOG_FATAL << "SELECT error "<< mysql_error(mysql) <<log::end;
+        printf("SELECT error:%s \n",mysql_error(mysql_));
+        LOG_FATAL << "SELECT error "<< mysql_error(mysql_) <<log::end;
     }
 
     //从表中检索结果集
-    MYSQL_RES* ret = mysql_store_result(mysql);
+    MYSQL_RES* ret = mysql_store_result(mysql_);
     //从结果集中检索列数
     int colNum = mysql_num_fields(ret);
     //获取所有字段的数组

@@ -50,7 +50,6 @@ bool HttpProcessWrite::processWrite(HttpProcessRead::HTTPCODE readRet)
         case HttpProcessRead::HTTPCODE::FILE_REQUEST:
         {
             addStatus(200,ok_200_title);       
-            //printf("writeBUffer : %s",writeBuffer);     
             if(pRead->filestat_.st_size != 0)
             { 
                 addHead(pRead->filestat_.st_size);
@@ -60,7 +59,6 @@ bool HttpProcessWrite::processWrite(HttpProcessRead::HTTPCODE readRet)
                 printf("\nhead is:\n%s", writeBuffer);
                 iv_[1].iov_base = pRead->fileAddr;
                 iv_[1].iov_len = pRead->filestat_.st_size;
-                //printf("%s\n", pRead->fileAddr);
                 ivCnt_ = 2;
                 return true;
             }
@@ -124,16 +122,9 @@ bool HttpProcessWrite::addHead(int contentLen)
 {
     return addContentType() && addContentLen(contentLen) && addConnection() 
              && addBlankLine();
-    // addDate() &&addContentType() && addConnection() && addContentLen(contentLen) 
-    //         && addMod()  && addVary() 
-    //         && addServer() && addComp() && addPragma()
-    //         && addAccpRange() && addBlankLine();
-    //return addContentLen(contentLen) && addLinger() && addBlankLine();
 }
 bool HttpProcessWrite::addDate()
 {
-
-    //std::time_t tt = std::chrono::system_clock::to_time_t(tp);
     return WriteResponse("Date: Sun, 13 Jan 2022 09:31:07 GMT\r\n");
 }
 
@@ -157,7 +148,8 @@ bool HttpProcessWrite::addConnection()
     
     //return WriteResponse("Connection:%s\r\n", (pRead->linger_ == true) ? "Keep-Alive" : "close");
     pRead->linger_ = false;
-    return WriteResponse("Connection: %s\r\n", "close");
+    //return WriteResponse("Connection: %s\r\n", "Keep-alive");
+    return WriteResponse("Connection: %s\r\n", "Close");
 }
 
 bool HttpProcessWrite::addVary()

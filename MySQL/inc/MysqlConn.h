@@ -22,7 +22,12 @@ public:
     void init(std::string url, std::string user, std::string password, std::string databaseName,
                     int port);
 
-
+    //创建静态事件
+    static SqlPool* getInstance()
+    {
+        static SqlPool sqlPool_;
+        return &sqlPool_;
+    }
 private:
     Locker lock;
     std::queue<MYSQL*> connList;   //连接池

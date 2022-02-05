@@ -1,0 +1,21 @@
+00:19:42.678579		ThreadPool.h   	52	ThreadPool     	Info:     0 thread is created.
+00:19:42.683373		ThreadPool.h   	52	ThreadPool     	Info:     1 thread is created.
+00:19:44.477865		main.cpp       	76	main           	Info:     1 events has been got 
+00:19:44.477921		main.cpp       	76	main           	Info:     1 events has been got 
+00:19:44.478074		HttpProcessRead	127	parseHead      	Fatal:    unknow headerCache-Control: max-age=0
+00:19:44.478078		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+00:19:44.478082		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 Edg/97.0.1072.76
+00:19:44.478086		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+00:19:44.478089		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+00:19:44.478091		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+00:19:48.936246		main.cpp       	76	main           	Info:     -1 events has been got 
+00:19:48.936270		main.cpp       	76	main           	Info:     1 events has been got 
+00:20:01.875750		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:02.811334		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:06.259417		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:07.894144		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:10.981807		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:12.654769		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:16.061386		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:17.747283		main.cpp       	76	main           	Info:     -1 events has been got 
+00:20:19.385410		main.cpp       	76	main           	Info:     -1 events has been got 

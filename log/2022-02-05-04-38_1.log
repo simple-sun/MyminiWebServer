@@ -1,0 +1,40 @@
+12:38:23.732904		ThreadPool.h   	52	ThreadPool     	Info:     0 thread is created.
+12:38:23.734765		ThreadPool.h   	52	ThreadPool     	Info:     1 thread is created.
+12:38:26.460403		main.cpp       	76	main           	Info:     1 events has been got 
+12:38:26.470907		main.cpp       	76	main           	Info:     2 events has been got 
+12:38:26.587131		HttpProcessRead	127	parseHead      	Fatal:    unknow headerCache-Control: max-age=0
+12:38:26.587142		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+12:38:26.587145		HttpProcessRead	127	parseHead      	Fatal:    unknow headerOrigin: http://120.24.176.229:9527
+12:38:26.587148		HttpProcessRead	127	parseHead      	Fatal:    unknow headerContent-Type: application/x-www-form-urlencoded
+12:38:26.587151		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 Edg/97.0.1072.76
+12:38:26.587155		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+12:38:26.587173		HttpProcessRead	127	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/
+12:38:26.587177		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+12:38:26.587181		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+12:38:41.754853		main.cpp       	76	main           	Info:     -1 events has been got 
+12:38:41.755775		main.cpp       	76	main           	Info:     1 events has been got 
+12:38:54.982428		main.cpp       	76	main           	Info:     1 events has been got 
+12:38:55.046634		main.cpp       	76	main           	Info:     1 events has been got 
+12:38:55.218711		HttpProcessRead	127	parseHead      	Fatal:    unknow headerCache-Control: max-age=0
+12:38:55.218742		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+12:38:55.218747		HttpProcessRead	127	parseHead      	Fatal:    unknow headerOrigin: http://120.24.176.229:9527
+12:38:55.218751		HttpProcessRead	127	parseHead      	Fatal:    unknow headerContent-Type: application/x-www-form-urlencoded
+12:38:55.218756		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 Edg/97.0.1072.76
+12:38:55.218761		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+12:38:55.218765		HttpProcessRead	127	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/
+12:38:55.218769		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+12:38:55.218772		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+12:38:55.219581		main.cpp       	76	main           	Info:     1 events has been got 
+12:39:03.278302		main.cpp       	76	main           	Info:     1 events has been got 
+12:39:03.404264		main.cpp       	76	main           	Info:     1 events has been got 
+12:39:03.755529		HttpProcessRead	127	parseHead      	Fatal:    unknow headerCache-Control: max-age=0
+12:39:03.755548		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+12:39:03.755553		HttpProcessRead	127	parseHead      	Fatal:    unknow headerOrigin: http://120.24.176.229:9527
+12:39:03.755561		HttpProcessRead	127	parseHead      	Fatal:    unknow headerContent-Type: application/x-www-form-urlencoded
+12:39:03.755566		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 Edg/97.0.1072.76
+12:39:03.755571		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+12:39:03.755575		HttpProcessRead	127	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/
+12:39:03.755586		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+12:39:03.755593		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+12:39:03.778996		main.cpp       	76	main           	Info:     -1 events has been got 
+12:39:03.779215		main.cpp       	76	main           	Info:     1 events has been got 

@@ -1,0 +1,12 @@
+09:47:49.087574		ThreadPool.h   	52	ThreadPool     	Info:     0 thread is created.
+09:47:49.090238		ThreadPool.h   	52	ThreadPool     	Info:     1 thread is created.
+09:48:14.668806		main.cpp       	76	main           	Info:     1 events has been got 
+09:48:14.669507		main.cpp       	76	main           	Info:     1 events has been got 
+09:48:14.669705		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36
+09:48:14.669714		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+09:48:14.669718		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+09:48:14.669722		HttpProcessRead	127	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9
+09:48:14.669725		HttpProcessRead	127	parseHead      	Fatal:    unknow headerCache-Control: max-age=0
+09:48:14.669729		HttpProcessRead	127	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+09:48:14.669804		main.cpp       	76	main           	Info:     1 events has been got 
+09:49:00.824209		main.cpp       	76	main           	Info:     -1 events has been got 

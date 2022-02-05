@@ -1,0 +1,19 @@
+00:35:21.125871		ThreadPool.h   	52	ThreadPool     	Info:     0 thread is created.
+00:35:21.127573		ThreadPool.h   	52	ThreadPool     	Info:     1 thread is created.
+00:35:23.169963		main.cpp       	76	main           	Info:     1 events has been got 
+00:35:23.174327		main.cpp       	76	main           	Info:     1 events has been got 
+00:35:23.174515		HttpProcessRead	131	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 Edg/97.0.1072.69
+00:35:23.174528		HttpProcessRead	131	parseHead      	Fatal:    unknow headerAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+00:35:23.174532		HttpProcessRead	131	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+00:35:23.174536		HttpProcessRead	131	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+00:35:23.174540		HttpProcessRead	131	parseHead      	Fatal:    unknow headerCache-Control: max-age=0
+00:35:23.174543		HttpProcessRead	131	parseHead      	Fatal:    unknow headerUpgrade-Insecure-Requests: 1
+00:35:23.174648		main.cpp       	76	main           	Info:     1 events has been got 
+00:35:24.324450		main.cpp       	76	main           	Info:     1 events has been got 
+00:35:24.325100		main.cpp       	76	main           	Info:     1 events has been got 
+00:35:24.325194		HttpProcessRead	131	parseHead      	Fatal:    unknow headerUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 Edg/97.0.1072.69
+00:35:24.325205		HttpProcessRead	131	parseHead      	Fatal:    unknow headerAccept: image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+00:35:24.325208		HttpProcessRead	131	parseHead      	Fatal:    unknow headerAccept-Encoding: gzip, deflate
+00:35:24.325213		HttpProcessRead	131	parseHead      	Fatal:    unknow headerAccept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+00:35:24.325216		HttpProcessRead	131	parseHead      	Fatal:    unknow headerReferer: http://120.24.176.229:9527/
+00:35:24.325323		main.cpp       	76	main           	Info:     1 events has been got 

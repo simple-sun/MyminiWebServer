@@ -4,7 +4,10 @@
 #include<fcntl.h>
 #include<sys/mman.h>
 #include"sys/socket.h"
-#include"string.h"
+#include<string>
+#include<map>
+
+#include"MysqlConn.h"
 
 static const int READBUFFERSIZE = 2048;
 
@@ -26,10 +29,9 @@ public:
  
     HTTPCODE processRead();
 
-    void reset();
+    void reset();    
 
-
-    
+    void initMysqlData(SqlPool* sqlPool);
 
 private:
     char* getLine() { return readBuffer+processPosition;}
@@ -67,6 +69,13 @@ public:
 private:
     //存储post传递的信息
     char* postdata;
+    std::map<std::string,std::string> userData;
+
+    //MySQL链接
+    MYSQL* connPool_;
+    MYSQL* mysql_;
+    Locker lock;
+    //std::shared_ptr<SqlPool> sqlPool_;
 };
 
 
