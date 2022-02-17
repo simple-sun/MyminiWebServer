@@ -7,7 +7,6 @@
 
 #include"HttpProcessRead.h"
 #include"HttpProcessWrite.h"
-#include"MemoryPool.h"
 
 
 
@@ -42,7 +41,6 @@ public:
 private:
     
     char readBuffer[READBUFFERSIZE];
-    MemoryPool<sizeof(char),1> readBuffe;
     std::vector<char> readBuff;
     int readIndex_;
 };

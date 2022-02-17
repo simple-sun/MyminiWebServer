@@ -17,16 +17,14 @@ namespace log
     LogThread *entity = nullptr;
 
     LogThread::LogThread()
-        : currentBuf_(new char[maxBufSize]),
-          currentBufIndex_(0),
-          preBuf_(new char[maxBufSize]),
-          logger([this](char *line, int zise) -> void
-                 { apendMessage(line, zise); }),
-          logFile_(logPath)
+        : currentBuf_(new char[maxBufSize])
+        ,currentBufIndex_(0)
+        ,preBuf_(new char[maxBufSize])
+        ,logger([this](char *line, int zise) -> void { apendMessage(line, zise); })
+        ,logFile_(logPath)
     {
         auto logThread = std::thread([this]
                                      { logLoop(); });
-
         logThread.detach();              
     }
 
@@ -130,6 +128,7 @@ namespace log
             logFile_.writeMessage(temp.first, temp.second);
         }
     }
+    
     void LogThread::deleteBuf(std::vector<std::pair<char *, int>> &buf, int beginIndex)
     {
         for (int i = beginIndex; i < buf.size(); i++)

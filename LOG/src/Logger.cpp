@@ -12,7 +12,9 @@ namespace log
     char logMessageBuffer[logMessageSize];
 
     Logger::Logger(std::function<void(char *, int)> cb)
-        : fileN(maxNameSize, '0'), funN(maxNameSize, '0'), levelS(maxNameSize, '0')
+        : fileN(maxNameSize, '0')
+        , funN(maxNameSize, '0')
+        , levelS(maxNameSize, '0')
     {
         stream_.setCallBack(cb);
     }

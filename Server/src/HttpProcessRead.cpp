@@ -186,11 +186,11 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
         //strcat(url_,"try.html");
         if(method_ == GET)
         {
-            url_ = "/home.html"; 
+            strcpy(url_,"/home.html"); 
         }       
         else if(method_ = POST)
         {
-            url_ = "/Signin.html";
+            strcpy(url_ ,"/Signin.html");
         }
     }
     
@@ -209,7 +209,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
 
     //处理指针，看是注册还是登录
     const char* p = strrchr(url_,'/');
-
+    //0代表登录，1代表注册，4代表注册之后登录
     if(method_ == POST && (*(p+1) == '0' || *(p+1) == '1' || *(p+1) == '4'))
     {
         if(*(p+1) == '4')
@@ -236,53 +236,57 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
             password[j] = '\0';
             if(*(p+1) == '0')
             {
-            //根据登录数据，查询是否在数据库中存在
-            if( strlen(name) && strlen(password))
-            {
-                //查询数据：名字，密码
-                printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
-                //
-                if(userData[name] == password)
+                //根据登录数据，查询是否在数据库中存在
+                if( strlen(name) && strlen(password))
                 {
-                    strcpy(url_,"/login.html");
-                }
-                else{
-                    strcpy(url_,"/logfail.html");
+                    //查询数据：名字，密码
+                    printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
+                    //
+                    if(userData[name] == password)
+                    {
+                        strcpy(url_,"/login.html");
+                    }
+                    else{
+                        strcpy(url_,"/logfail.html");
+                    }
                 }
             }
-        }
-        //如果是1，说明是注册请求
-        else if(*(p+1) == '1')
-        {
-            printf("get your signin requsetion!\n name is %s,password is %s\n",
-                    name,password);
-
-            char* sqlInsert = (char*)malloc(sizeof(char) * 200);
-            strcpy(sqlInsert, "INSERT INTO userdata VALUES (");
-            strcat(sqlInsert,"'");
-            strcat(sqlInsert, name);
-            strcat(sqlInsert, "', ");
-            strcat(sqlInsert,"'");
-            strcat(sqlInsert, password);
-            strcat(sqlInsert,"'");
-            strcat(sqlInsert, ")");
-
-            if(userData.find(name) == userData.end())
+            //如果是1，说明是注册请求
+            else if(*(p+1) == '1')
             {
-                lock.lock();
-                int ret = mysql_query(mysql_,sqlInsert);
-                userData[name] = password;
-                lock.unlock();
+                printf("get your signin requsetion!\n name is %s,password is %s\n",
+                        name,password);
 
-                if(!ret)
+                char* sqlInsert = (char*)malloc(sizeof(char) * 200);
+                strcpy(sqlInsert, "INSERT INTO userdata VALUES (");
+                strcat(sqlInsert,"'");
+                strcat(sqlInsert, name);
+                strcat(sqlInsert, "', ");
+                strcat(sqlInsert,"'");
+                strcat(sqlInsert, password);
+                strcat(sqlInsert,"'");
+                strcat(sqlInsert, ")");
+
+                if(userData.find(name) == userData.end())
                 {
-                    strcpy(url_,"/signSuccess.html");
+                    lock.lock();
+                    int ret = mysql_query(mysql_,sqlInsert);
+                    userData[name] = password;
+                    lock.unlock();
+
+                    if(!ret)
+                    {
+                        strcpy(url_,"/signSuccess.html");
+                    }
+                    else
+                    {
+                        strcpy(url_,"/signFailed.html");
+                    }
                 }
                 else{
-                    strcpy(url_,"/signFailed.html");
+                    strcpy(url_,"/signFailedUserExist.html");
                 }
             }
-        }
         }
     }
     strncpy(filePath_+len, url_, 200-len-1);
@@ -299,7 +303,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
     int fd = open(filePath_,O_RDONLY);
     
     fileAddr = (char*)mmap(0,filestat_.st_size,PROT_READ,
-                                MAP_PRIVATE,fd,0);    
+                                MAP_SHARED,fd,0);    
     close(fd);
     return FILE_REQUEST;    
 }

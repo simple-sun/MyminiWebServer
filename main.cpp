@@ -39,7 +39,7 @@ int main( int argc,char* argv[] )
 
   int listenfd = socket(PF_INET, SOCK_STREAM , 0);
   assert(listenfd >= 0);
-  //优雅的退出
+  //设置退出机制
   struct linger tmp = {1,0};
   setsockopt(listenfd,SOL_SOCKET, SO_LINGER, &tmp, sizeof(tmp));
   //实现端口复用
@@ -74,12 +74,6 @@ int main( int argc,char* argv[] )
     //assert(num >= 0);
     printf("%d events has been got.\n", num);
     LOG_INFO << num << " events has been got "<< log::end;
-    // if( (num < 0) && errno != EINTR)
-    // {
-    //   LOG_FATAL << "epoll_wait failed.\n" << log::end;
-    //   printf("epoll_wait failed.\n");
-    //   break;
-    // }
 
     for(int i = 0; i < num; i++)
     {
@@ -115,7 +109,6 @@ int main( int argc,char* argv[] )
         users[sockfd].close();
         LOG_FATAL << "events[" << sockfd << "]." << events[i].events << log::end;
       }
-      // else if EPOLLHUP |
       else if (events[i].events & EPOLLIN)
       {
         //由读的结果，判断下一步
