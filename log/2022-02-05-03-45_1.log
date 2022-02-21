@@ -1,7 +1,0 @@
-11:45:19.874644		ThreadPool.h   	52	ThreadPool     	Info:     0 thread is created.
-11:45:19.877753		ThreadPool.h   	52	ThreadPool     	Info:     1 thread is created.
-11:45:25.725717		main.cpp       	76	main           	Info:     1 events has been got 
-11:45:25.727135		main.cpp       	76	main           	Info:     1 events has been got 
-11:45:25.728271		main.cpp       	76	main           	Info:     1 events has been got 
-11:45:57.140939		ThreadPool.h   	52	ThreadPool     	Info:     0 thread is created.
-11:45:57.142984		ThreadPool.h   	52	ThreadPool     	Info:     1 thread is created.

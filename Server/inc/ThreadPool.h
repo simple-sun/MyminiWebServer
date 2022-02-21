@@ -45,16 +45,19 @@ ThreadPool<T>:: ThreadPool(int threadnum)
         int ret = pthread_create(thread_+i,NULL,workfunc,this);
         if(ret != 0)
         {
-
-            printf("%d thread creat falied\n", i);
+            //创建线程失败，打印语句
+            LOG_FATAL << i << "thread creat falied" << log::end;
+            //printf("%d thread creat falied\n", i);
         }
-        printf("%d thread is created\n",i);
+        //成功创建线程
+        //printf("%d thread is created\n",i);
         LOG_INFO << i << " thread is created." << log::end;
 
         if(pthread_detach(thread_[i]))
         {
             delete [] thread_;
-            printf("%d thread is detached\n", i);
+            //将线程设置为分离线程
+            //printf("%d thread is detached\n", i);
             LOG_INFO << i << " thread is detached." << log::end;
 
         }

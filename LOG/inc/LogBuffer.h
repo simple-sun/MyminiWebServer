@@ -13,8 +13,7 @@ namespace log
     {
     public:
         LogBuffer()
-        {
-        }
+        {}
 
         bool writeIn(const char *line, unsigned int size)
         {
@@ -39,7 +38,5 @@ namespace log
         static thread_local char data_[bufferSize];
         static thread_local int writeIndex_;
     };
-
 } //namespace log
-
 #endif

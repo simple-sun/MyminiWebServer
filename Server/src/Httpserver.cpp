@@ -55,7 +55,6 @@ bool HttpServer::read()
     while(1)
     {
         readByte = recv(sockfd_,readBuffer+readIndex_,READBUFFERSIZE-readIndex_,0);
-        printf("%d bytes messages has been recvd.\n",readByte);
         if(readByte == -1)
         {
             if(errno == EAGAIN )
@@ -94,8 +93,8 @@ bool HttpServer::write()
         char buf[2048];
         int len = snprintf(buf,2048,processRead->fileAddr);
         tmp += ::write(sockfd_,buf,len);
-        printf("buf = %s\n", buf);
-        printf("HttpServer::write()::tmp = %d.\n",tmp);
+        // printf("buf = %s\n", buf);
+        // printf("HttpServer::write()::tmp = %d.\n",tmp);
         if( tmp <0)
         {
             if(errno == EAGAIN)

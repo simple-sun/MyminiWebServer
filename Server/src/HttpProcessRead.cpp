@@ -41,7 +41,8 @@ HttpProcessRead::HTTPCODE HttpProcessRead::processRead()
     {
         text =  getLine();
         processPosition = checkIndex_;
-        printf("get 1 http request: %s. \n",text);
+        //打印获取的http请求信息
+        //printf("get 1 http request: %s. \n",text);
         
         if(checkstate_ == CHECK_REQUESTLINE)
         {
@@ -176,14 +177,8 @@ HttpProcessRead::HTTPCODE HttpProcessRead::parseRequest(char* text)
         url_ += 8;
         url_ = strchr(url_,'/');
     }
-    // if(strncasecmp(url_,"/favicon.ico",12) == 0)
-    // {
-    //     url_ = "/favicon.ico";
-    // }
-    //if(strncasecmp(url_,"/",1) == 0)
     if(strlen(url_) == 1)
     {
-        //strcat(url_,"try.html");
         if(method_ == GET)
         {
             strcpy(url_,"/home.html"); 
@@ -240,7 +235,7 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
                 if( strlen(name) && strlen(password))
                 {
                     //查询数据：名字，密码
-                    printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
+                    //printf("HttpProcessRead::doRequset:: username = %s, password = %s \n",name,password);
                     //
                     if(userData[name] == password)
                     {
@@ -254,8 +249,9 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
             //如果是1，说明是注册请求
             else if(*(p+1) == '1')
             {
-                printf("get your signin requsetion!\n name is %s,password is %s\n",
-                        name,password);
+                //打印获取的用户名、密码
+                // printf("get your signin requsetion!\n name is %s,password is %s\n",
+                //         name,password);
 
                 char* sqlInsert = (char*)malloc(sizeof(char) * 200);
                 strcpy(sqlInsert, "INSERT INTO userdata VALUES (");
@@ -292,12 +288,16 @@ HttpProcessRead::HTTPCODE HttpProcessRead::doRequset()
     strncpy(filePath_+len, url_, 200-len-1);
     if(stat(filePath_,&filestat_) < 0)
     {
-        printf("%s is using by other \n",filePath_);
+        //如果文件处于打开状态，提示
+        LOG_FATAL << filePath_ << "is using by other" << log::end;
+        //printf("%s is using by other \n",filePath_);
         return BAD_REQUEST;
     }
     if(filestat_.st_mode & S_IFDIR)
     {
-        printf("%s is dir",filePath_);
+        //如果路径是文件夹，提示
+        //printf("%s is dir",filePath_);
+        LOG_FATAL << filePath_ << "is dir" << log::end;
         return BAD_REQUEST;
     }
     int fd = open(filePath_,O_RDONLY);
@@ -368,7 +368,8 @@ void HttpProcessRead::initMysqlData(SqlPool* sqlPool)
     //在表中检索username，password，并输出到userData中
     if(mysql_query(mysql_,"SELECT name,password FROM userdata"))
     {
-        printf("SELECT error:%s \n",mysql_error(mysql_));
+        //如果查询失败，打印并记录
+        //printf("SELECT error:%s \n",mysql_error(mysql_));
         LOG_FATAL << "SELECT error "<< mysql_error(mysql_) <<log::end;
     }
 

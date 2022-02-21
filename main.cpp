@@ -22,9 +22,11 @@ typedef HttpServer HS;
 int main( int argc,char* argv[] )
 {
   log::LogThread::init();
-  printf("main(): pid = %d\n", getpid());
+  //打印线程号
+  //printf("main(): pid = %d\n", getpid());
   
-  printf("argc = %d, argv[0] = %s, argv[1] = %s\n", argc,argv[0],argv[1]);
+  //打印输入的ip地址，端口号
+  //printf("argc = %d, argv[0] = %s, argv[1] = %s\n", argc,argv[0],argv[1]);
 
   const char* ip = "172.22.30.196";
   int port = 9527;
@@ -72,16 +74,15 @@ int main( int argc,char* argv[] )
   {
     int num = epoll_wait(epollfd, events, MAXEVENTNUM,-1);   
     //assert(num >= 0);
-    printf("%d events has been got.\n", num);
+    //打印epoll事件数目
+    //printf("%d events has been got.\n", num);
     LOG_INFO << num << " events has been got "<< log::end;
 
     for(int i = 0; i < num; i++)
-    {
-      printf("events.[%d] is handling\n", events[i].events);
+    {      
       int sockfd = events[i].data.fd;
       if(sockfd == listenfd)
       {
-        printf("%d events.[%d].data.fd == listenfd\n",i,i);
         struct sockaddr_in cAddress;
         socklen_t len = sizeof(cAddress);
         int connfd = accept(listenfd,(struct sockaddr*)&cAddress,
@@ -89,7 +90,8 @@ int main( int argc,char* argv[] )
         if(connfd < 0)
         {
           LOG_FATAL << "errno is " << errno << log::end;
-          printf("errno is %d\n",errno);
+          //发生errno，打印errno事件
+          //printf("errno is %d\n",errno);
           continue;
         }
         if(HS::userConn_cnt >= MAXFD)
@@ -99,13 +101,10 @@ int main( int argc,char* argv[] )
         }
         //初始化连接
         users[connfd].init( connfd,cAddress);
-        printf("user[%d] is created\n", connfd);
-        printf("%d user is created\n", HS::userConn_cnt);
       }
       else if( events[i].events & ( EPOLLRDHUP |  EPOLLERR | EPOLLHUP))
       {
         //遇到异常，关闭连接
-        printf("error users [%d] is closed.\n", sockfd);
         users[sockfd].close();
         LOG_FATAL << "events[" << sockfd << "]." << events[i].events << log::end;
       }
@@ -119,22 +118,16 @@ int main( int argc,char* argv[] )
         }
         else
         {
-          printf("close users[%d].\n",sockfd);
           users[sockfd].close();
         }
       }
       else if(events[i].events & EPOLLOUT)
       {
-        printf("wtrite out data\n");
         if( !users[sockfd].write())
         {
-          printf("Connection: Close, close users[%d].\n",sockfd);
           sleep(1);
           users[sockfd].close();
-        }        
-        else{
-          printf("html has been send\n");
-        }
+        }  
       }      
       else
       {

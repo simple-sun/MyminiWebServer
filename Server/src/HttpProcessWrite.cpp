@@ -56,7 +56,6 @@ bool HttpProcessWrite::processWrite(HttpProcessRead::HTTPCODE readRet)
                 
                 iv_[0].iov_base = writeBuffer;
                 iv_[0].iov_len = writeIndex_;
-                printf("\nhead is:\n%s", writeBuffer);
                 iv_[1].iov_base = pRead->fileAddr;
                 iv_[1].iov_len = pRead->filestat_.st_size;
                 ivCnt_ = 2;
