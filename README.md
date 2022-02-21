@@ -26,8 +26,7 @@
 
 
 
-![image-20220221120227165](C:\Users\孙晟祺\AppData\Roaming\Typora\typora-user-images\image-20220221120227165.png)
-
+![image-20220221120227165](https://user-images.githubusercontent.com/69040952/154888565-b7b9f5a3-a43d-4256-b161-118740ef93da.png)
 
 
 
