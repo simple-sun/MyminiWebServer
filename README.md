@@ -12,7 +12,7 @@
 
 （1）实现**GET**、**POST**两种http请求方法，使用**状态机**解析HTTP报文，采用CGI脚本进行post响应。
 
-（2）利用**线程池技术+非阻塞seocket+epoll（ET模式）+事件处理（模拟Proactor）**实现了多用户并发访问，增加并行服务数量。
+（2）利用**线程池技术+非阻塞seocket+epoll（ET模式）+事件处理（模拟Proactor）**实现了多用户并发访问，增加并行服务数量（默认开启两个线程，可以手动更改）。
 
 （3）利用MySQL数据库，将用户的数据存储在MySQL数据库中，用户在首次访问时可以进行注册，后续可以直接输入用户名、密码进行登录。
 
@@ -24,8 +24,7 @@
 **框架**
 
 
-
-![image-20220221120227165](https://user-images.githubusercontent.com/69040952/154888565-b7b9f5a3-a43d-4256-b161-118740ef93da.png)
+![image](https://user-images.githubusercontent.com/69040952/154946673-c8a60a4a-62d3-457b-9860-cbcebd41f2c2.png)
 
 ------------
 **Demo演示**
