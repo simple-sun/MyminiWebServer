@@ -79,7 +79,7 @@ void ThreadPool<T> :: append(T* req)
     queueStat_.post();
 }
 template<typename T>
-void* ThreadPool<T> ::workfunc(void* arg)
+void* ThreadPool<T> :: workfunc(void* arg)
 {
     ThreadPool* pool = (ThreadPool*)arg;
     pool->run();
@@ -101,7 +101,8 @@ void ThreadPool<T> :: run()
             queueLock_.unlock();
             req->process();          
         }
-        else{
+        else
+        {
             queueLock_.unlock();
         }
     }

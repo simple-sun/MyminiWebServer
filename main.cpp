@@ -123,6 +123,7 @@ int main( int argc,char* argv[] )
       }
       else if(events[i].events & EPOLLOUT)
       {
+        //如果写事件完成，关闭fd
         if( !users[sockfd].write())
         {
           sleep(1);

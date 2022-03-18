@@ -88,13 +88,10 @@ bool HttpServer::write()
     }
     while (1)
     {
-        //tmp = ::writev(sockfd_,processWrite->iv_,processWrite->ivCnt_);
         tmp = ::write(sockfd_,processWrite->writeBuffer,strlen(processWrite->writeBuffer));
         char buf[2048];
         int len = snprintf(buf,2048,processRead->fileAddr);
         tmp += ::write(sockfd_,buf,len);
-        // printf("buf = %s\n", buf);
-        // printf("HttpServer::write()::tmp = %d.\n",tmp);
         if( tmp <0)
         {
             if(errno == EAGAIN)
